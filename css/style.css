@@ -26,7 +26,6 @@ h2 {
 }
 
 .page-sections-maps{
-    
     margin-left: 70%;
     margin-top: -7%;
 }
@@ -62,4 +61,21 @@ header {
 
 .writings {
     margin-top: 5%;
+    font-size: 15px;
+    margin-right: 10%;
+    margin-left: 1%;
+    line-height: 1.1;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+a {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black ;
+    background-color: #cfc ;
+}
+
