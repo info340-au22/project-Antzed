@@ -16,24 +16,22 @@ h1 {
 
 
 .page-sections {
-    margin-top: -6.5%;
+    font-size: 20px;
 }
 
 .page-sections-maps{
-    font-size: 30px;
+    
     margin-left: 70%;
-    margin-top: -6.5%;
+    margin-top: -7%;
 }
 
 .page-sections-routes{
-    font-size: 30px;
     margin-left: 78%;
     margin-right: 10%;
     margin-top: -3.5%;
 }
 
 .page-sections-shop{
-    font-size: 30px;
     margin-left: 88%;
     margin-right: 10%;
     margin-top: -3.5%;
