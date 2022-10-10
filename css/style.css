@@ -12,9 +12,15 @@
 
 h1 {
     font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .page-sections {
     font-size: 20px;
 }
@@ -39,12 +45,14 @@ h1 {
 
 header {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(111, 178, 199, .6);
 }
 
 .background {
     background: url("../img/hiking-banner.jpg");
     background-repeat: no-repeat;
     size: 200%;
+
 }
 
 .intro {
