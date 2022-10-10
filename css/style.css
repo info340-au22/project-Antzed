@@ -53,5 +53,11 @@ header {
 }
 
 .writings {
+    color: darkblue;
     margin-top: 5%;
+    font-size: 15px;
+    margin-right: 10%;
+    margin-left: 1%;
+    line-height: 1.1;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
