@@ -1,3 +1,11 @@
+.container-fluid #logo:hover{
+    text-decoration: none;
+}
+
+.bg-primary {
+    background-color: #8CD9BD !important;
+}
+
 .header-logo {
     margin-right: 100%;
     margin-left: 0%;
