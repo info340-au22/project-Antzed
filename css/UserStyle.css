@@ -1,3 +1,31 @@
 .bg-primary {
     background-color: #8CD9BD !important;
 }
+
+header {
+    margin-bottom: 10px;
+}
+
+.side-navigation {
+    font-size: 2rem;
+    text-align: center;
+}
+
+main {
+    margin: 10px 7px;
+    background-color: #9FB14E;
+    border-radius: 1.5rem;
+}
+
+img {
+    border-radius: 50%;
+    max-width: 270px;
+    margin: 20px auto;
+}
+
+
+/* .side-navigation {
+    background-color: #706F43;
+    display: flex;
+    flex-direction: column;
+} */
