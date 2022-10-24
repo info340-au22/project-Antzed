@@ -6,6 +6,64 @@
     background-color: #8CD9BD !important;
 }
 
+
+
+html, body {
+    height: 100%
+}
+
+body {
+    overflow: "visible";
+}
+
+.searchBar {
+    position: relative;
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right:15%;
+}
+
+.sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.review-background {
+    background-color: #6aa38f;
+    
+    /* background-image: url(../img/soil.jpg);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* size: 400%; */
+    /* background-color: rgba(149, 90, 50, 1); */
+    /* box-shadow: 5px 10px; */
+}
+
+.cards {
+    margin-top: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* margin-right: 3%;
+    margin-left: 3%; */
+}
+
+.bg-secondary {
+    background-color: #aecfc3 !important;
+}
+
+.border-secondary {
+    background-color: #aecfc3 !important;
+}
+
+header {
+    position: fixed;
+    top:0;
+}
+
 .header-logo {
     margin-right: 100%;
     margin-left: 0%;
