@@ -1,3 +1,9 @@
 .bg-primary {
     background-color: #8CD9BD !important;
 }
+
+.sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
