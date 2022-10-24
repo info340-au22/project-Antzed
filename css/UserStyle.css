@@ -80,7 +80,7 @@ main {
     margin: 1.5rem;
 }
 
-.friend-section p {
+.friend-body p {
     margin-top: 2rem;
     font-size: 2rem;
 }
@@ -93,6 +93,10 @@ main {
 .main-card {
     overflow: scroll;
 }
+
+.main-card {
+    height: 600px;
+}
 /* .side-navigation {
     background-color: #706F43;
     display: flex;
@@ -102,6 +106,27 @@ main {
 @media (min-width:992px) {
     .main-card {
         height: 360px;
+    }
+
+    h1 {
+        font-weight: 500;
+    }
+
+    .recent-section p {
+        font-size: 1.2rem;
+    }
+
+    .friend-section img {
+        max-width: 50px;
+    }
+
+    .friend-body img {
+        max-width: 20px;
+    }
+
+    .friend-body p {
+        font-size: 1.2rem;
+        margin-top: 1.4rem;
     }
 
 }
