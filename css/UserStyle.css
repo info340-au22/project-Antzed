@@ -11,21 +11,97 @@ header {
     text-align: center;
 }
 
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+p {
+    font-family: 'Helvetica', sans-serif;
+}
+
 main {
     margin: 10px 7px;
     background-color: #9FB14E;
     border-radius: 1.5rem;
 }
 
-img {
+.side-navigation img {
     border-radius: 50%;
     max-width: 270px;
     margin: 20px auto;
+    margin-bottom: 3rem;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
 }
 
+.inputfield {
+    height: 70px;
+    font-size: 1.5rem;
+    background-color: #D9D9D9;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
 
+.textinput {
+    height: 15rem;
+    font-size: 1.5rem;
+    background-color: #D9D9D9;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.card {
+    background-color: #955A32;
+    margin: 2rem 1.5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.main-card {
+    background-color: #D9D9D9;
+    border-radius: 1.5rem;
+}
+
+.trail {
+    margin: 1.5rem;
+    font-size: 1.5rem;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.recent-section p {
+    font-size: 1.7rem;
+}
+
+.recent-card {
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);  
+}
+
+.friend-section img {
+    max-width: 90px;
+    border-radius: 50%;
+    margin: 1.5rem;
+}
+
+.friend-section p {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.friend-body img {
+    max-width: 40px;
+    margin: 0;
+}
+
+.main-card {
+    overflow: scroll;
+}
 /* .side-navigation {
     background-color: #706F43;
     display: flex;
     flex-direction: column;
 } */
+
+@media (min-width:992px) {
+    .main-card {
+        height: 360px;
+    }
+
+}

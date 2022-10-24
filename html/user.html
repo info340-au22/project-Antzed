@@ -40,16 +40,99 @@
   </header>
 
   <main>
-    <div class="container">
-      <section class="side-navigation">
-        <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
-        <p>Cody Tu</p>
-        <P>Address</p>
-      </section>
+    <div class="container-fluid p-1">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 no-gutters limit">
+        <section class="side-navigation">
+          <div class="card">
+            <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
+            <div class="input-group mb-4">
+              <input type="first-name" class="form-control form-control-lg inputfield" id="firstNameInput"
+                placeholder="First Name">
+              <input type="last-name" class="form-control form-control-lg inputfield" id="lastNameInput"
+                placeholder="Last Name">
+            </div>
+            <div class="form-group mb-4">
+              <input type="address" class="form-control form-control-lg inputfield" id="addressInput"
+                placeholder="Address">
+            </div>
+            <div class="form-group mb-4">
+              <input type="email" class="form-control form-control-lg inputfield" id="emailInput" placeholder="Email">
+            </div>
+            <div class="form-group mb-4">
+              <input type="hiking-level" class="form-control form-control-lg inputfield" id="hikingInput"
+                placeholder="Hiking Level">
+            </div>
+            <div class="form-group mb-4">
+              <textarea class="form-control form-control-lg textinput" placeholder="About Me"></textarea>
+            </div>
+          </div>
+        </section>
+        </div>
 
-      <section>
+        <div class="col-lg-6 col-sm-12 no-gutters limit"> 
+        <section class="recent-section">
+          <div class="card">
+            <h1 class="text-light mb-4">Recent Activity</h1>
+            <div class="main-card">
+              <div class="trail">
+                <p class="mb-1 h4">Mailbox Peak</p>
+                <p class="mx-5">Hard | Mailbox Peak Trail, Washington 98045</p>
+              </div>
+              <div class="trail">
+                <p class="mb-1 h4">Mailbox Peak</p>
+                <p class="mx-5">Hard | Mailbox Peak Trail, Washington 98045</p>
+              </div>
+              <div class="trail">
+                <p class="mb-1 h4">Mailbox Peak</p>
+                <p class="mx-5">Hard | Mailbox Peak Trail, Washington 98045</p>
+              </div>
+              <div class="trail">
+                <p class="mb-1 h4">Mailbox Peak</p>
+                <p class="mx-5">Hard | Mailbox Peak Trail, Washington 98045</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      </section>
+        <section class="friend-section">
+          <div class="card">
+            <h1 class="text-light mb-4">Friends</h1>
+            <div class="main-card">
+              <div class="row">
+                <div class="col-auto">
+                  <img src="../img/blank-profile-picture.jpg" alt="friend user picture">
+                </div>
+                <div class="col friend-body">
+                  <p class="h6">Friend Name</p>
+                  <img src="../img/message-icon.png" alt="message icon">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-auto">
+                  <img src="../img/blank-profile-picture.jpg" alt="friend user picture">
+                </div>
+                <div class="col friend-body">
+                  <p class="h6">Friend Name</p>
+                  <img src="../img/message-icon.png" alt="message icon">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-auto">
+                  <img src="../img/blank-profile-picture.jpg" alt="friend user picture">
+                </div>
+                <div class="col friend-body">
+                  <p class="h6">Friend Name</p>
+                  <img src="../img/message-icon.png" alt="message icon">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+      </div>
     </div>
   </main>
 
