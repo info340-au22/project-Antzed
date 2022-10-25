@@ -35,39 +35,17 @@ body {
     left: 0;
 }
 
-
-
-
-
 section {
     min-height: 90vh;
 }
 
-
-@media (min-width:712px) {
-    section {
-        min-height: 100vh;
-    }
-}
-
-
-
 .review-background {
     background-color: #6aa38f;
-    
-    /* background-image: url(../img/soil.jpg);
-    background-size: cover;
-    /* background-repeat: no-repeat; */
-    /* size: 400%; */
-    /* background-color: rgba(149, 90, 50, 1); */
-    /* box-shadow: 5px 10px; */
 }
 
 .cards {
     margin-top: 20%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* margin-right: 3%;
-    margin-left: 3%; */
 }
 
 .bg-secondary {
@@ -106,26 +84,6 @@ p {
 h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.page-sections {
-    font-size: 20px;
-}
-
-.page-sections-maps{
-    margin-left: 70%;
-    margin-top: -7%;
-}
-
-.page-sections-routes{
-    margin-left: 78%;
-    margin-right: 10%;
-    margin-top: -3.5%;
-}
-
-.page-sections-shop{
-    margin-left: 88%;
-    margin-right: 10%;
-    margin-top: -3.5%;
-}
 
 header {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -143,21 +101,6 @@ header {
 .intro {
     margin-bottom: 30%;
     margin-top: 70%;
-}
-
-.writings {
-    margin-top: 5%;
-    font-size: 15px;
-    margin-right: 10%;
-    margin-left: 1%;
-    line-height: 1.1;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-a {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
 }
 
 a:hover {
