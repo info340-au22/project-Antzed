@@ -41,6 +41,30 @@ section {
     min-height: 100vh;
 }
 
+@media (min-width:320px) {
+    section {
+        min-height: 30vh;
+    }
+}
+
+@media (min-width:480px) {
+    section {
+        min-height: 50vh;
+    }
+}
+
+@media (min-width:768px) {
+    section {
+        min-height: 90vh;
+    }
+}
+
+@media (min-width:1024px) {
+    section {
+        min-height: 100vh;
+    }
+}
+
 .review-background {
     background-color: #6aa38f;
     
