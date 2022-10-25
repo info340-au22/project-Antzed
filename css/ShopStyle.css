@@ -1,9 +1,33 @@
-.bg-primary {
-    background-color: #8CD9BD !important;
+
+* { 
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+  }
+
+header {
+    margin-bottom: 10px;
 }
 
-.sticky {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+footer {
+    display: block;
+  }
+
+.footer {
+    margin-top: 1rem;
 }
+
+p{
+    font-family: 'Roboto Slab','Helvetica', sans-serif;
+}
+
+h3{
+    font-family: 'Roboto Condensed','Helvetica', sans-serif;
+}
+
+#navbarSupportedContent{
+    font-family: 'Roboto Condensed','Helvetica', sans-serif;
+}
+
+
+

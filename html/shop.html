@@ -1,5 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="author" content="Ben Ferry, Anthony Zhang, Cody Tu, Fatima Dineh">
+    <meta name="description"
+        content="An interactive web app to help everyone find the right way to enjoy the plentiful trails here in Washington.">
+    <title>Get To The Trail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/ShopStyle.css">
+
+</head>
+
+<body>
+
+
+<header>
+        <section>
+          <nav class="navbar navbar-expand-lg bg-primary shadow-sm rounded">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-auto">
+                  <a class="navbar-brand" id="logo" href="../home.html"><img src="../img/walking.png"
+                      alt="a logo of a man walking" width=5%>Get To The Trail</a>
+                </div>
+              </div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-4">
+                    <a class="nav-link" aria-current="page" href="../html/trails.html">Trail</a>
+                  </li>
+                  <li class="nav-item px-4">
+                    <a class="nav-link" href="../html/shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item px-4">
+                    <a class="nav-link active" href="../html/user.html">User</a>
+                  </li>
+              </div>
+            </div>
+          </nav>
+        </section>
+</header>
+
+
+<main>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <strong class="text-dark"> Categories:</strong>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Clothing & Accessories</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Water filter</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Navigation</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">First Aid & Health</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pass</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Type" aria-label="Search">
+                  <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+<section class="product_buy">
+    <div class="row d-flex">
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex"> 
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img class="card-img-top pb-3" src="../img/Backpack.jpeg" alt="a logo of a man walking" height=350px>
+                <h3 class="card-title">BackPack</h3>
+                <p class="card-text">Mountainsmith Clear Creek 15 </p>
+                <p class="card-text">Price: $44.73</p>
+                <a href="#" class="btn btn-outline-dark">Buy</a>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex"> 
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img class="card-img-top pb-3" src="../img/compass.jpg" alt="a logo of a man walking" height=350px>
+                <h3 class="card-title">Compass</h3>
+                <p class="card-text">Suunto M-3 D Leader</p>
+                <p class="card-text">Price: $73.00</p>
+                <a href="#" class="btn btn-outline-dark">Buy</a>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img class="card-img-top pb-3" src="../img/First_aid.jpeg" alt="a logo of a man walking" height=350px>
+                <h3 class="card-title">First Aid Kit</h3>
+                <p class="card-text">Hart Outdoor Day Hike</p>
+                <p class="card-text">Price: $13.95</p>
+                <a href="#" class="btn btn-outline-dark">Buy</a>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/Water.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Water Filter</h3>
+            <p class="card-text">Sawyer Mini Water Filter</p>
+            <p class="card-text">Price: $22.95</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+</div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/satellite.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Satellite</h3>
+            <p class="card-text">Garmin inReach Mini 2</p>
+            <p class="card-text">Price: $400</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/pass.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Pass</h3>
+            <p class="card-text">America the Beautiful Pass</p>
+            <p class="card-text">Price: $79.99</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+</div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/trekking_poles.jpg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Trekking Poles </h3>
+            <p class="card-text">Black Diamond Alpine Carbon Cork</p>
+            <p class="card-text">Price: $199.95</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/spray.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Sunscreen Spray</h3>
+            <p class="card-text">Sun Bum Mineral SPF 30 6 FL OZ</p>
+            <p class="card-text">Price: $20.50</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/rain.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Rain Pants</h3>
+            <p class="card-text">REI Co-op Essential</p>
+            <p class="card-text"> Price: $59.95</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/convert.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Convertible Pants</h3>
+            <p class="card-text">REI Co-op Sahara</p>
+            <p class="card-text">Price: $79.95</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/shirt.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Vuori Uluwatu</h3>
+            <p class="card-text">2.0 Water Long-Sleeve T-Shirt</p>
+            <p class="card-text"> Price: $46.00</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3 d-flex mt-2"> 
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top pb-3" src="../img/boot.jpeg" alt="a logo of a man walking" height=350px>
+            <h3 class="card-title">Hiking Boots </h3>
+            <p class="card-text">Merrell Moab 2 Mid Waterproof</p>
+            <p class="card-text"> Price: $145.00</p>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+    <footer class="bg-light text-center text-lg-start footer">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <p>© 2020 Copyright</p>
+        <address>
+            <a href="mailto:fdineh@uw.edu, anthoz3@uw.edu, ctu4@uw.edu, Bbferry@uw.edu">Contact us here </a> 
+        </address>
+        </div>
+    </footer>
+</div>
+</div>
+
+</main>
+
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Ben Ferry, Anthony Zhang, Cody Tu, Fatima Dineh">
@@ -54,3 +311,4 @@
     </body>
 
 </html>
+
