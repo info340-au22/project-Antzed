@@ -1,14 +1,10 @@
-.container-fluid #logo:hover{
-    text-decoration: none;
-}
-
 .bg-primary {
     background-color: #8CD9BD !important;
 }
 
 footer {
     display: block;
-  }
+}
 
 .footer {
     margin-top: 1rem;
@@ -43,9 +39,13 @@ section {
     background-color: #6aa38f;
 }
 
+header .cards{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .cards {
     margin-top: 20%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
 }
 
 .bg-secondary {
@@ -59,34 +59,6 @@ section {
 header {
     position: fixed;
     top:0;
-}
-
-.header-logo {
-    margin-right: 100%;
-    margin-left: 0%;
-    margin-top: -5%;
-    z-index: 0;
-}
-
-.page-title {
-    margin-left: 10%;
-    margin-top: 2%;
-}
-
-h1 {
-    font-size: 35px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-header {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgba(111, 178, 199, .6);
     z-index: 1;
 }
@@ -96,11 +68,6 @@ header {
     background-repeat: no-repeat;
     size: 200%;
 
-}
-
-.intro {
-    margin-bottom: 30%;
-    margin-top: 70%;
 }
 
 a:hover {
