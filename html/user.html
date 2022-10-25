@@ -40,10 +40,23 @@
   </header>
 
   <main>
-    <div class="container-fluid p-1">
+    
       <div class="row">
-        <div class="col-lg-6 col-sm-12 no-gutters limit">
+        <div class="col-lg-3 d-lg-block d-sm-none pe-0">
         <section class="side-navigation">
+          <div class="card">
+            <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
+            <p class="mb-1 mt-3 h3 font-weight-bold">Cody Tu</p> 
+            <p>Address</p>
+            <button type="button" class="btn btn-primary btn-lg mb-2 mt-5">Profile</button>
+            <button type="button" class="btn btn-primary btn-lg mb-2">Saved Trails</button>
+            <button type="button" class="btn btn-primary btn-lg mb-2">Hike History</button>
+          </div>
+        </section>
+        </div>
+<!-- user profile -->
+        <div class="col-lg-5 col-sm-12 no-gutters limit pe-0">
+        <section class="user-section">
           <div class="card">
             <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
             <div class="input-group mb-4">
@@ -69,10 +82,10 @@
           </div>
         </section>
         </div>
-
-        <div class="col-lg-6 col-sm-12 no-gutters limit"> 
+<!-- recent -->
+        <div class="col-lg-4 col-sm-12 no-gutters limit ps-0"> 
         <section class="recent-section">
-          <div class="card">
+          <div class="card mb-3">
             <h1 class="text-light mb-4">Recent Activity</h1>
             <div class="main-card">
               <div class="trail">
@@ -94,9 +107,9 @@
             </div>
           </div>
         </section>
-
+<!-- friend -->
         <section class="friend-section">
-          <div class="card">
+          <div class="card mt-1">
             <h1 class="text-light mb-4">Friends</h1>
             <div class="main-card">
               <div class="row">
@@ -133,6 +146,8 @@
         </section>
       </div>
     </div>     
+    </div>
+    </section>
   </main>
 
   <footer class="bg-light text-center text-lg-start footer">

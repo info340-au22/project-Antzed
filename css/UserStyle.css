@@ -6,7 +6,7 @@ header {
     margin-bottom: 10px;
 }
 
-.side-navigation {
+.user-section {
     font-size: 2rem;
     text-align: center;
 }
@@ -26,7 +26,7 @@ main {
     border-radius: 1.5rem;
 }
 
-.side-navigation img {
+.user-section img {
     border-radius: 50%;
     max-width: 270px;
     margin: 20px auto;
@@ -113,19 +113,20 @@ footer {
 
 @media (min-width:992px) {
     .main-card {
-        height: 360px;
+        height: 249px;
     }
 
     h1 {
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 1.8rem;
     }
 
     .recent-section p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .friend-section img {
-        max-width: 50px;
+        max-width: 40px;
     }
 
     .friend-body img {
@@ -137,4 +138,47 @@ footer {
         margin-top: 1.4rem;
     }
 
+    .side-navigation .card {
+        margin: 32px 5px;
+    }
+
+    .user-section img {
+        max-width: 150px;
+    }
+
+    .inputfield {
+        font-size: 1rem;
+        height: 50px;
+    }
+
+    .textinput {
+        font-size: 1rem;
+        height: 10rem;
+    }
+
+    .user-section .card {
+        margin: 32px 2px;
+    }
+
+    .side-navigation .card{
+        background-color: #706F43;
+        margin: 0;
+        padding-bottom: 62.5vh;
+    }
+
+    .side-navigation {
+        text-align: center;
+    }
+
+    .side-navigation img {
+        border-radius: 50%;
+        max-width: 100px;
+        margin: 20px auto;
+    }
+
+    .side-navigation button {
+        background-color: #706F43;
+        border-color: black;
+        color: black;
+    }
 }
