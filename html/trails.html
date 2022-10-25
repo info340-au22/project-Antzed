@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ben Ferry, Anthony Zhang, Cody Tu, Fatima Dineh">
+    <meta name="description"
+        content="An interactive web app to help everyone find the right way to enjoy the plentiful trails here in Washington.">
+    <title>Get To The Trail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-auto">
+            <a class="navbar-brand" id="logo" href="../home.html"><img src="../img/walking.png" alt="a logo of a man walking" width=5%>Get To The Trail</a>
+          </div>
+        </div>
+       
+        <button class="navbar-toggler my-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item px-4">
+              <a class="nav-link active" aria-current="page" href="./html/trails.html">Trail</a>
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="./shop.html">Shop</a>
+            </li>
+            <li class="nav-item px-4">
+              <a class="nav-link" href="./user.html">User</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <header class="container-fluid bg-light py-5">
+        <div class="container">
+          <h1>Find Your Trail</h1>
+          <p class="lead">Filter or browse these trails to find the best route for you.</p>
+        </div>
+      </header>
+      <div class="container-fluid border-top border-bottom">
+        <div class="d-flex container justify-content-between my-2">
+          <p>Filters<p>
+          <p>Most Popular</p>
+          <p>Difficulty</p>
+          <p>Best in Season</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="d-flex col-auto col-md-6 col-xl-3 rounded mt-4">
+            <div class="card">
+              <img src="../img/trails_img/mb-peak-img.jpeg" class=".card-img-top"alt="Mailbox peak">
+              <div class="card-body">
+                <h2>Mailbox Peak</h2>
+                <p>A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#open-desc">
+                  See More
+                </button>
+                <div class="modal fade" id="open-desc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header container-fluid bg-light">
+                        <h5 class="modal-title" id="open-desc">About Mailbox Peak</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="d-flex flex-column">
+                          <div id="carouselfortrail" class="carousel slide mx-5 mb-4" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="../img/trails_img/mbp-map.png" class="d-block w-100" alt="Mailbox peak trail map">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-img.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 1">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-2.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 2">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselfortrail" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselfortrail" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                          <div>
+                            <h2>Key Details</h2>
+                            <p class="lead">A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                          </div>
+                          <div class="my-2">
+                            <h2>Trail Infromation</h2>
+                            <p>Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. 
+                              Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.</p>
+                          </div>
+                          <div>
+                            <h2>Trail Status</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex col-auto col-md-6 col-xl-3 rounded mt-4">
+            <div class="card">
+              <img src="../img/trails_img/mb-peak-img.jpeg" class=".card-img-top round"alt="Mailbox peak">
+              <div class="card-body">
+                <h2>Mailbox Peak</h2>
+                <p>A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#open-desc">
+                  See More
+                </button>
+                <div class="modal fade" id="open-desc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header container-fluid bg-light">
+                        <h5 class="modal-title" id="open-desc">About Mailbox Peak</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="d-flex flex-column">
+                          <div id="carouselfortrail" class="carousel slide mx-5 mb-4" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="../img/trails_img/mbp-map.png" class="d-block w-100" alt="Mailbox peak trail map">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-img.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 1">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-2.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 2">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselfortrail" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselfortrail" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                          <div>
+                            <h2>Key Details</h2>
+                            <p class="lead">A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                          </div>
+                          <div class="my-2">
+                            <h2>Trail Infromation</h2>
+                            <p>Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. 
+                              Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.</p>
+                          </div>
+                          <div>
+                            <h2>Trail Status</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex col-auto col-md-6 col-xl-3 rounded mt-4">
+            <div class="card">
+              <img src="../img/trails_img/mb-peak-img.jpeg" class=".card-img-top round"alt="Mailbox peak">
+              <div class="card-body">
+                <h2>Mailbox Peak</h2>
+                <p>A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#open-desc">
+                  See More
+                </button>
+                <div class="modal fade" id="open-desc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header container-fluid bg-light">
+                        <h5 class="modal-title" id="open-desc">About Mailbox Peak</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="d-flex flex-column">
+                          <div id="carouselfortrail" class="carousel slide mx-5 mb-4" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="../img/trails_img/mbp-map.png" class="d-block w-100" alt="Mailbox peak trail map">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-img.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 1">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-2.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 2">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselfortrail" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselfortrail" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                          <div>
+                            <h2>Key Details</h2>
+                            <p class="lead">A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                          </div>
+                          <div class="my-2">
+                            <h2>Trail Infromation</h2>
+                            <p>Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. 
+                              Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.</p>
+                          </div>
+                          <div>
+                            <h2>Trail Status</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex col-auto col-md-6 col-xl-3 rounded mt-4">
+            <div class="card">
+              <img src="../img/trails_img/mb-peak-img.jpeg" class=".card-img-top round"alt="Mailbox peak">
+              <div class="card-body">
+                <h2>Mailbox Peak</h2>
+                <p>A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#open-desc">
+                  See More
+                </button>
+                <div class="modal fade" id="open-desc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header container-fluid bg-light">
+                        <h5 class="modal-title" id="open-desc">About Mailbox Peak</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="d-flex flex-column">
+                          <div id="carouselfortrail" class="carousel slide mx-5 mb-4" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselfortrail" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="../img/trails_img/mbp-map.png" class="d-block w-100" alt="Mailbox peak trail map">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-img.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 1">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="../img/trails_img/mb-peak-2.jpeg" class="d-block w-100" alt="Mailbox Peak summit angle 2">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselfortrail" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselfortrail" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                          <div>
+                            <h2>Key Details</h2>
+                            <p class="lead">A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.</p>
+                          </div>
+                          <div class="my-2">
+                            <h2>Trail Infromation</h2>
+                            <p>Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. 
+                              Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.</p>
+                          </div>
+                          <div>
+                            <h2>Trail Status</h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </main>
+</body>
+
+</html>

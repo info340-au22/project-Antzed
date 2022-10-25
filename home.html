@@ -7,107 +7,114 @@
     <meta name="description"
         content="An interactive web app to help everyone find the right way to enjoy the plentiful trails here in Washington.">
     <title>Get To The Trail</title>
-    <link rel="stylesheet" href="css/HomStyle.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/HomeStyle.css">
+    
 
 
 </head>
 
 <body class="background">
-    <header>
-        <H1 class=page-title>Get To The Trail</H1>
-        <img class="header-logo" src="img/walking.png" alt="a logo of a man walking" width=10% height=10%>
-        <div class=page-sections>
-            <h2 class="page-sections-maps"><a href="https://www.alltrails.com/explore/us/washington/seattle?b_tl_lat=48.0769680376136&b_tl_lng=-123.41847023314847&b_br_lat=47.12631300209631&b_br_lng=-121.2417297668526" aria-label="link to 'All Trails' hiking routes">Map</a> </h2>
-            <h2 class="page-sections-routes"><a href="https://www.alltrails.com/trail/us/washington/green-lake-loop-trail" aria-label="link to 'Green lake trail' information page">Routes</a> </h2>
-            <h2 class="page-sections-shop"><a href="https://www.amazon.com/hiking-gear/s?k=hiking+gear" aria-label="Link to amazon.com hiking gear">Shop</a></h2>
-
-        </div>
-
-
-    </header>
-    <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/html/user.asp">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    <section>
+      <header>
+          <nav class="navbar navbar-expand-lg bg-primary shadow-sm rounded border border-dark">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-auto">
+                  <a class="navbar-brand active" id="logo" href="./home.html"><img src="img/walking.png" alt="a logo of a man walking" width=5%>Get To The Trail</a>
+                </div>
+              </div>
+             
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-4">
+                    <a class="nav-link" aria-current="page" href="./html/trails.html">Trail</a>
+                  </li>
+                  <li class="nav-item px-4">
+                    <a class="nav-link" href="./html/shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item px-4">
+                    <a class="nav-link" href="./html/user.html">User</a>
+                  </li>
+              </div>
+            </div>
+          </nav>
+      
+      
+      </header>
+      
+      
+      <div class="searchBar">
+        <div class="align-item-center justify-content-center px-5">
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </span>
           </div>
         </div>
-      </nav>
+      </div>
+    </section>
+    <section class="review-background">
+      <div class="container">
+        <div class="row">
+          <div class="d-flex col-auto col-xl-3 rounded mx-auto cards">
+            <div class="col-auto ">
+              <div class="card shadow-lg bg-secondary ml-5" style="width: 18rem;">
+                <img class="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Hiking Trail 1</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="d-flex col-auto col-xl-3 rounded mx-auto cards">
+            <div class="col-auto">
+              <div class="card shadow-lg bg-secondary" style="width: 18rem;">
+                <img class="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Hiking Trail 2</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="d-flex col-auto col-xl-3 rounded mx-auto cards">
+            <div class="col-auto">
+              <div class="card shadow-lg bg-secondary" style="width: 18rem;">
+                <img class="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Hiking Trail 3</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
 
-
-
-
-
-    <div class="writings">
-        <section class=box>
-            <!-- problem domain -->
-            <section>
-                <h2>Problem/Data Domain:</h2>
-                <p>
-                    Most people can agree that hiking is good for your health and also the best way to experience and appreciate the outdoors and the environment for all groups of ages ranging from middle childhood to adulthood and even old age. However, as beneficial hiking is, most people do not participate in it due to the accessibility of it. For many, beginner hikers are overloaded with the amount of trails in Seattle or they might just know some trails but most of them are far away and not really local. And especially for most beginners, they may not even know which ones to choose that fit their skill level. Many web applications such as <a href="https://www.wta.org/" arial-label="link to Washington Trail Association website"</a>Washington Trails Associations</a> are currently attempting to solve this problem through listing each trail in Washington however, we want to build a community for beginners and veterans to share their knowledge with all topics that relate with hiking. We want to address this problem through building our own web application.
-                </p>
-            </section>
-            <!-- App Description -->
-            <section>
-                <h2>App Description:</h2>
-                <p>The users for our application will be hikers and anyone who wants to get into hiking. It will allow them to
-                    determine which hike would be perfect for them. If you are new to Washington or live here and want to go on
-                    a hike, you can just use the website, and it will help you figure out what hike you are looking for. This
-                    website is excellent for people of all races and backgrounds because hiking is for everyone, and you rarely
-                    see people on your hikes, so you won’t feel like you are being targeted or being excluded. The website users
-                    can click on the map and see the hikes all over the maps. If you want to look for hiking gear or shoes to
-                    hike in, it will show you stores that sell that stuff. Our last feature will be tagging organizations which
-                    will list a bunch of organizations in the area that you could join.
-                    <br>Our users will be able to see information like 
-                    <ul>
-                    <li>Fun places to hike</li>
-                    <li>Uploaded outdoor images of hikes</li>
-                    <li>You will be able to see information about the hike, what route to take, difficulties, elevation, and
-                    distance</li>
-                    <li>Users can upload data about closed roads or hikes</li>
-                    </ul>
-                    This website will solve the problems by making it easier for people to go hiking and find hikes. It will also provide them with all the information in one without having to look elsewhere.
-                </p>
-            </section>
-        </section>
-
-    </div>
-    
-
-
+  
+  <div class="sticky">
     <footer>
       <address>
           Contact us here <a href="mailto:fdineh@uw.edu, anthoz3@uw.edu, ctu4@uw.edu, Bbferry@uw.edu">Email</a> 
       </address>
       <p>&copy; 2022 The Authors</p>
-  </footer>
+    </footer>
+  </div>
 
 </body>
 
