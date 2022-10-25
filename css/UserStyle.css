@@ -103,6 +103,14 @@ main {
     flex-direction: column;
 } */
 
+footer {
+    display: block;
+  }
+
+.footer {
+    margin-top: 1rem;
+}
+
 @media (min-width:992px) {
     .main-card {
         height: 360px;
