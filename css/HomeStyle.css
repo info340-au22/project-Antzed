@@ -6,7 +6,13 @@
     background-color: #8CD9BD !important;
 }
 
+footer {
+    display: block;
+  }
 
+.footer {
+    margin-top: 1rem;
+}
 
 html, body {
     height: 100%
@@ -28,6 +34,8 @@ body {
     bottom: 0;
     left: 0;
 }
+
+
 
 section {
     min-height: 100vh;
@@ -111,6 +119,7 @@ h2 {
 header {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgba(111, 178, 199, .6);
+    z-index: 1;
 }
 
 .background {
