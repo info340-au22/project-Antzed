@@ -21,9 +21,10 @@ p {
 }
 
 main {
-    margin: 10px 7px;
-    background-color: #9FB14E;
+    margin: 10px 0;
+    background-color: #aecfc3;
     border-radius: 1.5rem;
+    margin-right: 0;
 }
 
 .user-section img {
