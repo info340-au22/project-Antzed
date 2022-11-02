@@ -9,3 +9,11 @@ footer {
 .footer {
     margin-top: 1rem;
 }
+
+/* .card {
+    border-radius: 5px;
+} */
+
+.card img {
+    border-radius: 0.375rem 0.375rem 0 0;
+}
