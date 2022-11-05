@@ -1,3 +1,4 @@
+/* home page */
 .bg-primary {
     background-color: #8CD9BD !important;
 }
@@ -28,7 +29,7 @@ body {
     left: 0;
 }
 
-section {
+.home-section {
     min-height: 90vh;
 }
 
@@ -42,9 +43,6 @@ header .cards{
 
 .cards {
     margin-top: 20%;
-}
-
-.card {
     width: 18rem;
 }
 
@@ -56,7 +54,7 @@ header .cards{
     background-color: #aecfc3 !important;
 }
 
-header {
+.home-header {
     position: fixed;
     top:0;
     background-color: rgba(111, 178, 199, .6);
@@ -75,3 +73,151 @@ a:hover {
     background-color: #cfc ;
 }
 
+
+/* user page */
+
+.user-header {
+    margin-bottom: 10px;
+}
+
+.user-section {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.user-section img {
+    border-radius: 50%;
+    max-width: 270px;
+    margin: 20px auto;
+    margin-bottom: 3rem;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.inputfield {
+    height: 70px;
+    font-size: 1.5rem;
+    background-color: #D9D9D9;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.textinput {
+    height: 15rem;
+    font-size: 1.5rem;
+    background-color: #D9D9D9;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.trail {
+    margin: 1.5rem;
+    font-size: 1.5rem;
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+}
+
+.recent-section p {
+    font-size: 1.7rem;
+}
+
+.recent-card {
+    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);  
+}
+
+.friend-section img {
+    max-width: 90px;
+    border-radius: 50%;
+    margin: 1.5rem;
+}
+
+.friend-body p {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.friend-body img {
+    max-width: 40px;
+    margin: 0;
+}
+
+.main-card {
+    background-color: #D9D9D9;
+    border-radius: 1.5rem;
+    overflow: scroll;
+    height: 600px;
+}
+
+.user-card {
+    background-color: #955A32;
+    margin: 2rem 1.5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+/* trail page */
+
+/* shop page */
+
+
+/* media */
+@media (min-width:992px) {
+    .main-card {
+        height: 249px;
+    }
+
+    .recent-section p {
+        font-size: 1rem;
+    }
+
+    .friend-section img {
+        max-width: 40px;
+    }
+
+    .friend-body img {
+        max-width: 20px;
+    }
+
+    .friend-body p {
+        font-size: 1.2rem;
+        margin-top: 1.4rem;
+    }
+
+    .side-navigation .card {
+        margin: 32px 5px;
+    }
+
+    .user-section img {
+        max-width: 150px;
+    }
+
+    .inputfield {
+        font-size: 1rem;
+        height: 50px;
+    }
+
+    .textinput {
+        font-size: 1rem;
+        height: 10rem;
+    }
+
+
+    .side-navigation .card{
+        background-color: #706F43;
+        margin: 0;
+        padding-bottom: 39vh;
+    }
+
+    .side-navigation {
+        text-align: center;
+    }
+
+    .side-navigation img {
+        border-radius: 50%;
+        max-width: 100px;
+        margin: 20px auto;
+    }
+
+    .side-navigation button {
+        background-color: #706F43;
+        border-color: black;
+        color: black;
+        margin: auto 1.5rem;
+    }
+}

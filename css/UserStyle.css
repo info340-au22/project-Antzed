@@ -59,6 +59,8 @@ main {
 .main-card {
     background-color: #D9D9D9;
     border-radius: 1.5rem;
+    overflow: scroll;
+    height: 600px;
 }
 
 .trail {
@@ -89,14 +91,6 @@ main {
 .friend-body img {
     max-width: 40px;
     margin: 0;
-}
-
-.main-card {
-    overflow: scroll;
-}
-
-.main-card {
-    height: 600px;
 }
 /* .side-navigation {
     background-color: #706F43;

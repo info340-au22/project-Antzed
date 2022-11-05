@@ -9,11 +9,11 @@
   <title>My Page Title</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/UserStyle.css">
+  <link rel="stylesheet" href="../css/index.css">
 </head>
 
 <body>
-  <header>
+  <header class="user-header">
     <section>
       <nav class="navbar navbar-expand-lg bg-primary shadow-sm rounded">
         <div class="container-fluid">
@@ -44,15 +44,15 @@
   </header>
 
   <main>
-    
+    <div class="container-fluid">
       <div class="row" style="margin: auto">
         <div class="col-lg-3 d-lg-block d-none pe-0">
         <section class="side-navigation">
-          <div class="card">
+          <div class="card user-card">
             <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
             <p class="mb-1 mt-3 h3 font-weight-bold">Cody Tu</p> 
             <p>Address</p>
-            <button type="button" class="btn btn-primary btn-lg mb-2 mt-5">Profile</button>
+            <button type="button" class="btn btn-primary btn-lg mb-2 mt-5 width-50">Profile</button>
             <button type="button" class="btn btn-primary btn-lg mb-2">Saved Trails</button>
             <button type="button" class="btn btn-primary btn-lg mb-2">Hike History</button>
           </div>
@@ -61,7 +61,7 @@
 <!-- user profile -->
         <div class="col-lg-5 col-sm-12 no-gutters limit pe-0">
         <section class="user-section">
-          <div class="card">
+          <div class="card user-card">
             <img src="../img/blank-profile-picture.jpg" alt="user profile picture">
             <div class="input-group mb-4">
               <input type="first-name" class="form-control form-control-lg inputfield" id="firstNameInput"
@@ -89,7 +89,7 @@
 <!-- recent -->
         <div class="col-lg-4 col-sm-12 no-gutters limit ps-0 pe-0"> 
         <section class="recent-section">
-          <div class="card mb-3 ms-3">
+          <div class="card user-card mb-3 ms-3">
             <h1 class="text-light mb-4">Recent Activity</h1>
             <div class="main-card">
               <div class="trail">
@@ -113,7 +113,7 @@
         </section>
 <!-- friend -->
         <section class="friend-section">
-          <div class="card mt-1 ms-3 me-4">
+          <div class="card user-card mt-1 ms-3 me-4">
             <h1 class="text-light mb-4">Friends</h1>
             <div class="main-card">
               <div class="row">
@@ -151,7 +151,6 @@
       </div>
     </div>     
     </div>
-    </section>
   </main>
 
   <footer class="text-center text-lg-start">
