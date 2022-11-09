@@ -155,6 +155,21 @@ a:hover {
 
 /* shop page */
 
+* { 
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+  }
+
+header .shoppage{
+    margin-bottom: 10px;
+}
+
+#navbarSupportedContent{
+    font-family: 'Roboto Condensed','Helvetica', sans-serif;
+}
+
+
 
 /* media */
 @media (min-width:992px) {
@@ -221,3 +236,4 @@ a:hover {
         margin: auto 1.5rem;
     }
 }
+
