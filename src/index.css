@@ -1,3 +1,13 @@
 .bg-primary {
     background-color: #8CD9BD !important;
 }
+
+
+footer {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
