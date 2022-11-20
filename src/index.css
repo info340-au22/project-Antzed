@@ -3,11 +3,12 @@
 }
 
 footer {
-    display: "block";
-    background-color: "rgba(0, 0, 0, 0.2)";
-    bottom: "0";
-    left: "0";
-    width: "100%";
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    right: 0;
+    
 }
 
 .position-fixed {
@@ -20,6 +21,10 @@ footer {
 
 .position-relative {
     position: relative;
+}
+
+.position-center {
+    position: center;
 }
 
 .background-center {
