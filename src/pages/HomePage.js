@@ -3,30 +3,103 @@ import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 
 export default function HomePage(props) {
-    var myStyle= {
-        backgroundImage: "url('./img/hiking-banner.jpg')",
-        height: "100%`",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        height: "100vh",
-    }
+    
     return (
         <div>
-            <NavBar pageName = "Home"/>
-            <section style={myStyle}>
-                <h1>Home Page</h1>
-                <p>
-                    some stuff
-                    asdfasdf
-                    asdfasdfdfas \n
-                    f
-                    asdfasdfasdf
-                    asdfasdfdfasds
-                    fdineh@uwasd
-                    f
-                </p>
-            </section>
+            <SectionA />
+            <SectionB />    
             <Footer isInherit={true}/>
         </div>
     )
 }
+
+function SearchBar(props){
+    const searchBarStyle= "position-relative home-searchBar";
+    return (
+        <div className={searchBarStyle}>
+          <div className="align-item-center justify-content-center px-5">
+            <div className="input-group rounded">
+              <input type="search" className="form-control rounded" placeholder="Search for a Trail or Item" aria-label="Search" aria-describedby="search-addon" />
+              <span className="input-group-text border-0" id="search-addon">
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </span>
+            </div>
+          </div>
+        </div>
+    )
+}
+
+function SectionA(props){
+    let sectionAStyle = "home-background height-100vh background-no-repeat background-center";
+    return (
+        <div>
+            <section className={sectionAStyle}>
+                <NavBar pageName = "Home"/>
+                
+                <SearchBar />
+            </section>
+        </div>
+    )
+}
+
+
+
+function SectionB(props){
+    return(
+        <div>
+            <section className="review-background pattern-diagonal-lines-sm home-section">
+                <div className="container">
+                    <div className="row">
+                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
+                        <div className="col-auto ">
+                        <div className="card shadow-lg bg-secondary ml-5">
+                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
+                            <div className="card-body">
+                            <h5 className="card-title">Hiking Trail 1</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
+                        <div className="col-auto">
+                        <div className="card shadow-lg bg-secondary">
+                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
+                            <div className="card-body">
+                            <h5 className="card-title">Hiking Trail 2</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
+                        <div className="col-auto">
+                        <div className="card shadow-lg bg-secondary">
+                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
+                            <div className="card-body">
+                            <h5 className="card-title">Hiking Trail 3</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+      
+    </section>
+
+        </div>
+        
+    )
+
+}
+
+function cards(props){
+    
+}
+
