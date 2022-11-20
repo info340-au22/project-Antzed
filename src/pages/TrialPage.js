@@ -7,7 +7,7 @@ export default function TrailPage(props) {
         <div>
             <NavBar pageName = "Trail"/>
             <h1>Trail Page</h1>
-            <Footer />
+            <Footer isInherit={true}/>
         </div>
     )
 }

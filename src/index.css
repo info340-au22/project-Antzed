@@ -46,3 +46,17 @@ footer {
 .home-background {
     background-image: url('../public/img/hiking-banner.jpg');
 }
+
+.home-searchBar {
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right:15%;
+}
+
+.home-sectionB {
+    background-color: #aecfc3
+}
+
+.home-cards {
+    margin-top: 20%;
+}
