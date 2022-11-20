@@ -1,8 +1,21 @@
 import React from "react";
 
 export default function Footer(props) {
+    const isInherit = props.isInherit;
+
+    const positionValue = isInherit ? "inherit" : "fixed";
+    console.log(positionValue);
+    let footerStyle = {
+        display: "block",
+        backgroundColor: "rgba(0, 0, 0, 0.2)",
+        position: {positionValue},
+        bottom: "0",
+        left: "0",
+        width: "100%"
+    }
+
     return (
-        <div>
+        <div style={footerStyle}>
             <footer className="text-center text-lg-start">
                 <div className="text-center p-3">
                 <p>© 2022 Copyright</p>
