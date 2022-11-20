@@ -1,13 +1,24 @@
 import React from "react";
 import Footer from "../component/Footer";
 import NavBar from "../component/NavBar";
+import Filtershop from "../component/Filtershop";
+import Cardshop from "../component/Cardshop";
+import "../index.css"
 
 export default function ShopPage(props) {
     return (
-        <div>
+        <div className="ShopPage">
+        <main>
             <NavBar pageName = "Shop"/>
-            <h1>Shop Page</h1>
-            <Footer />
+            <Filtershop />
+        <section className="product_buy">
+            <Cardshop />
+        </section>
+        </main>
+
+        {/* <footer> */}
+            <Footer isInherit={true} />
+        {/* </footer> */}
         </div>
     )
 }

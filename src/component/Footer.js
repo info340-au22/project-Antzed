@@ -18,6 +18,6 @@ export default function Footer(props) {
                 </address>
                 </div>
             </footer>
-        </div>
+        // </div>
     )
 }
