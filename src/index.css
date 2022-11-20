@@ -60,3 +60,9 @@ footer {
 .home-cards {
     margin-top: 20%;
 }
+
+.popup {
+    position: center;
+    justify-content: center;
+   
+}

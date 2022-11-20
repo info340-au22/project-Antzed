@@ -1,6 +1,11 @@
 import React from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
+import Popup from "../component/Popup";
+
+// Todo: pop up
+// Todo: fix ratio in diffeernt screen
+
 
 export default function HomePage(props) {
     
@@ -69,21 +74,35 @@ function SectionB(props){
 }
 
 function Card(props){
+    const [showPopup, setShowPopup] = React.useState(false);
+
+    function togglePopup(){
+        setShowPopup(!showPopup);
+    }
 
     return (
+        
+            
         <div className="d-flex col-3 col-xl-3 rounded mx-auto cards home-cards">
+            {showPopup ? <Popup text='Close Me' closePopup={togglePopup} /> : null}
             <div className="col-12 position-center">
                 <div className="card shadow-lg bg-secondary">
                     <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
                     <div className="card-body">
                     <h5 className="card-title">Hiking Trail 3</h5>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <button id="blog" href="#" class="btn btn-primary" onClick={togglePopup}>Go somewhere</button>
+                    
                     </div>
                 </div>
             </div>
         </div>
+
+        
+        
     )
 
 }
+
+
 

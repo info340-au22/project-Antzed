@@ -1,4 +1,5 @@
 import React from "react";
+// fix hamburger menu
 
 export default function NavBar(props) {
     
