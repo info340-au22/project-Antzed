@@ -71,8 +71,8 @@ function SectionB(props){
 function Card(props){
 
     return (
-        <div className="d-flex col-3 col-xl-3 rounded mx-auto cards">
-            <div className="col-12">
+        <div className="d-flex col-3 col-xl-3 rounded mx-auto cards home-cards">
+            <div className="col-12 position-center">
                 <div className="card shadow-lg bg-secondary">
                     <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
                     <div className="card-body">
