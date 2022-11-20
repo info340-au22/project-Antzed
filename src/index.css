@@ -17,3 +17,27 @@ footer {
 .position-inherit {
     position: inherit;
 }
+
+.position-relative {
+    position: relative;
+}
+
+.background-center {
+    background-position: center;
+}
+
+.background-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.height-100vh {
+    height: 100vh;
+}
+
+.height-100-percent {
+    height: 100%;
+}
+
+.home-background {
+    background-image: url('../public/img/hiking-banner.jpg');
+}
