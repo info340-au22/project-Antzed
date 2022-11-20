@@ -2,18 +2,47 @@
     background-color: #8CD9BD !important;
 }
 
-
 footer {
     display: block;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     bottom: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    
 }
 
-* { 
-    box-sizing: border-box; 
-    margin:0;
-    padding:0;
-  }
+.position-fixed {
+    position: fixed;
+}
 
+.position-inherit {
+    position: inherit;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-center {
+    position: center;
+}
+
+.background-center {
+    background-position: center;
+}
+
+.background-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.height-100vh {
+    height: 100vh;
+}
+
+.height-100-percent {
+    height: 100%;
+}
+
+.home-background {
+    background-image: url('../public/img/hiking-banner.jpg');
+}

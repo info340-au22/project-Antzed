@@ -1,9 +1,16 @@
 import React from "react";
 
 export default function Footer(props) {
+    const isInherit = props.isInherit;
+
+    const positionValue = isInherit ? "position-inherit" : "position-fixed";
+    let footerClassName = "text-center text-lg-start " + positionValue;
+    console.log(footerClassName);
+    
+
     return (
-        // <div>
-            <footer className="Footer text-center text-lg-start">
+        <div>
+            <footer className={footerClassName}>
                 <div className="text-center p-3">
                 <p>© 2022 Copyright</p>
                 <address>

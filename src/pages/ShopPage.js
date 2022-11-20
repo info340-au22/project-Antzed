@@ -17,7 +17,7 @@ export default function ShopPage(props) {
         </main>
 
         {/* <footer> */}
-            <Footer />
+            <Footer isInherit={true} />
         {/* </footer> */}
         </div>
     )
