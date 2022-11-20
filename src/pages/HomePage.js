@@ -45,53 +45,22 @@ function SectionA(props){
 
 
 function SectionB(props){
+    // review-background pattern-diagonal-lines-sm 
+    let sectionBStyle = "home-sectionB height-100vh review-background pattern-diagonal-lines-sm";
     return(
-        <div>
-            <section className="review-background pattern-diagonal-lines-sm home-section">
+        <div >
+            <section className={sectionBStyle}>
                 <div className="container">
                     <div className="row">
-                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
-                        <div className="col-auto ">
-                        <div className="card shadow-lg bg-secondary ml-5">
-                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
-                            <div className="card-body">
-                            <h5 className="card-title">Hiking Trail 1</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
-                        <div className="col-auto">
-                        <div className="card shadow-lg bg-secondary">
-                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
-                            <div className="card-body">
-                            <h5 className="card-title">Hiking Trail 2</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <div className="d-flex col-auto col-xl-3 rounded mx-auto cards">
-                        <div className="col-auto">
-                        <div className="card shadow-lg bg-secondary">
-                            <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
-                            <div className="card-body">
-                            <h5 className="card-title">Hiking Trail 3</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                        <Card />
+                        <Card />
+                        <Card />
+
+
                     </div>
                 </div>
       
-    </section>
+            </section>
 
         </div>
         
@@ -99,7 +68,22 @@ function SectionB(props){
 
 }
 
-function cards(props){
-    
+function Card(props){
+
+    return (
+        <div className="d-flex col-3 col-xl-3 rounded mx-auto cards">
+            <div className="col-12">
+                <div className="card shadow-lg bg-secondary">
+                    <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
+                    <div className="card-body">
+                    <h5 className="card-title">Hiking Trail 3</h5>
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+
 }
 
