@@ -46,3 +46,9 @@ footer {
 .home-background {
     background-image: url('../public/img/hiking-banner.jpg');
 }
+
+
+.product_buy {
+    margin: auto;
+    max-width: 1300px;
+}
