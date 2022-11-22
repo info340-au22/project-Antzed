@@ -1,4 +1,5 @@
 import React from "react";
+// fix hamburger menu
 
 export default function NavBar(props) {
     
@@ -22,8 +23,8 @@ export default function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <Link pageName = "Trail" isActive={pageName === "Trail"}/>
-                    <Link pageName = "User" isActive={pageName === "User"}/>
                     <Link pageName = "Shop" isActive={pageName === "Shop"}/>
+                    <Link pageName = "User" isActive={pageName === "User"}/>
                     
                 </ul>
             </div>
