@@ -58,7 +58,8 @@ footer {
 }
 
 .home-cards {
-    margin-top: 20%;
+    margin-top: 10%;
+    margin-bottom: 5%;
 }
 
 .popup {
@@ -99,4 +100,17 @@ footer {
 
 .relative-max-height {
     max-height:relative;
+}
+
+.uni-direct-scrolling {
+    overflow-x: scroll;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .home-cards {
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+    
 }

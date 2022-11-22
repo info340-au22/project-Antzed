@@ -77,14 +77,14 @@ function SectionB(props){
 
     
     // review-background pattern-diagonal-lines-sm 
-    let sectionBStyle = "home-sectionB height-100vh review-background pattern-diagonal-lines-sm";
+    let sectionBStyle = "home-sectionB height-100vh review-background pattern-diagonal-lines-sm overflow-auto";
 
 
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
 
     
     const cardList = [];
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i < 8; i++){
         cardList.push(<Card showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />);
     }
 
@@ -94,6 +94,8 @@ function SectionB(props){
                 <div className="container">
                     <div className="row">
                         {cardList}
+                        
+                        
                     </div>
                 </div>
       
@@ -108,7 +110,7 @@ function SectionB(props){
 function Card(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
     return (     
-        <div className="d-flex col-3 col-xl-3 rounded mx-auto cards home-cards">
+        <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards home-cards">
             <div className="col-12 position-center">
                 <div className="card shadow-lg bg-secondary">
                     <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
