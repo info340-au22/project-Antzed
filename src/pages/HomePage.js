@@ -3,8 +3,9 @@ import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import Popup from "../component/Popup";
 
-// Todo: pop up
-// Todo: fix ratio in diffeernt screen
+// Todo: search bar search implement
+// Todo: search bar hid in small screens
+// Todo: hamburger menu
 function PopUpContent(props){
     return (
         <div className="d-flex rounded mt-4 cards relative-max-height ">
@@ -84,7 +85,7 @@ function SectionB(props){
 
     
     const cardList = [];
-    for (let i = 0; i < 8; i++){
+    for (let i = 0; i < 16; i++){
         cardList.push(<Card showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />);
     }
 
