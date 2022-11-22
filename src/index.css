@@ -11,6 +11,11 @@ footer {
     
 }
 
+.product_buy {
+    margin: auto;
+    max-width: 1300px;
+}
+
 .position-fixed {
     position: fixed;
 }
