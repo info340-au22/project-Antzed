@@ -121,11 +121,12 @@ export default function ShopPage(props) {
             <Filtershop  
                 filterSet={handleFilter}
             />
-            <Cardshop  
+            <Cardshop
                 cards={cards.filter((card => 
                     filter 
                     ? card.category === filter
-                    : true))} 
+                    : true
+                    ))} 
                 />
         </section>
         </main>

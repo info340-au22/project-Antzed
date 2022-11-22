@@ -10,7 +10,8 @@ export default function Cardshop(props){
 
         { cards.map(card => (
             <CardItem 
-              {...card}
+             {...card}
+             key={card.title}
             />
         ))}
 
