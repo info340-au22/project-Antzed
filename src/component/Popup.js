@@ -1,13 +1,12 @@
 import React from "react";
 
 export default function Popup(props){
-    let isVisable = props.isVisable
-    return (
+    return (props.trigger) ? (
         <div className="popup">
-                <div className="popup_inner">
-                    <h1>pop up</h1>
-                    {/* <button onClick={props.closePopup}>close me</button> */}
+                <div className="popup-inner">
+                <button className="close-btn" onClick={() =>props.setTrigger(false)}>close me</button>
+                    <h1>{props.content}</h1>
                 </div>
         </div>
-    );
+    ):"";
 }
