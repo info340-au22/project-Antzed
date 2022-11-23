@@ -3,7 +3,7 @@ import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import { TrailCards } from "../component/Trailcards.js";
 import { CardSelect } from "../component/Trailfilter.js";
-import MODAL_DATA from "../data/trailSeeMoreData.json.js";
+import MODAL_DATA from "../data/trailSeeMoreData.json";
 
 export default function TrailPage(props) {
     const [displayedCards, setDisplayedCards] = useState(props.trailData)
