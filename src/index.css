@@ -111,6 +111,10 @@ footer {
     max-height: 500px;
 }
 
+.blog-card-img{
+    height: 200px;
+}
+
 .relative-max-height {
     max-height:relative;
 }
