@@ -50,10 +50,11 @@ footer {
 
 .home-background {
     background-image: url('../public/img/hiking-banner.jpg');
+    background-size: cover;
 }
 
 .home-searchBar {
-    margin-top: 15%;
+    margin-top: 20%;
     margin-left: 15%;
     margin-right:15%;
 }
@@ -65,6 +66,13 @@ footer {
 .home-cards {
     margin-top: 10%;
     margin-bottom: 5%;
+    height: 460px;
+}
+
+.home-cards button {
+   position: absolute;
+   bottom: 2%;
+   right: 2%;
 }
 
 .popup {
