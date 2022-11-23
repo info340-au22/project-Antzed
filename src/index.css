@@ -199,7 +199,7 @@ footer {
 
 .user-card {
     background-color: #955A32;
-    margin: 2rem 1.5rem;
+    margin: 1rem 1rem;
     padding: 2rem;
     border-radius: 1.5rem;
 }
@@ -251,7 +251,7 @@ footer {
     .side-navigation .card{
         background-color: #706F43;
         margin: 0;
-        margin-top: 32px;
+        margin-top: 1rem;
         height: 92vh;
     }
 
