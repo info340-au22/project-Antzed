@@ -36,11 +36,11 @@ function PopUpContent(props){
     console.log(blog);
     
     return (
-        <div className="d-flex rounded mt-4 cards relative-max-height ">
-            <div className="col-12 ">
-                <div className="card shadow-lg">
-                    <img className="image relative-max-height" src={blog.img}></img>
-                    <h1>{blog.title}</h1>
+        <div className="d-flex rounded mt-4 cards" >
+            <div className="col-12 bg-transparent">
+                <div className="card shadow-lg  popup-words overflow-auto">
+                    <img className="image" src={blog.img}></img>
+                    <h2>{blog.title}</h2>
                     <p>
                         {blog.content}
                     </p>
