@@ -11,9 +11,10 @@ const handleChange = (e) => {
 
 
 const filterSet = props.filterSet;
-const filterList = () => {
-    filterSet(inputText)
-}
+const filterList = (e) => { e.preventDefault();
+  props.filterSet(inputText)
+ }
+ 
     
 return(
     <div className="FilterShop container">
