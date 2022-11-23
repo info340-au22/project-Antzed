@@ -7,37 +7,46 @@ import blogData from "../data/hiking-blog.json";
 // Todo: search bar search implement
 // Todo: search bar hid in small screens
 // Todo: hamburger menu
-function PopUpContent(props){
-    return (
-        <div className="d-flex rounded mt-4 cards relative-max-height ">
-            <div className="col-12 ">
-                <div className="card shadow-lg">
-                    <img className="image relative-max-height" src="img/hiking-trail-1.jpg"></img>
-                    <h1>hello</h1>
-                    <p>
-                        He watched as the young man tried to impress everyone in the room with his intelligence. There was no doubt that he was smart. The fact that he was more intelligent than anyone else in the room could have been easily deduced, but nobody was really paying any attention due to the fact that it was also obvious that the young man only cared about his intelligence.
-                    </p>
-                </div>
-            </div>
-            
-        </div>
-    )
-}
+
+// Todo: fix popup
+let title;
 
 export default function HomePage(props) {
 
     const [showPopup, setShowPopup] = React.useState(false);
-    const handlePopup = () => {
-        setShowPopup(!showPopup);
+    function handlePopup(key){
+        setShowPopup(true);
+        title = key;
     }
 
 
     return (
         <div>
             <SectionA />
-            <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup}/>  
-            <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent/>}/> 
+            <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />  
+            <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title}/>}/> 
             <Footer isInherit={true}/>
+        </div>
+    )
+}
+
+function PopUpContent(props){
+    const title = props.title;
+    let blog = blogData.find((blog) => blog.title === title);
+    console.log(blog);
+    
+    return (
+        <div className="d-flex rounded mt-4 cards relative-max-height ">
+            <div className="col-12 ">
+                <div className="card shadow-lg">
+                    <img className="image relative-max-height" src={blog.img}></img>
+                    <h1>{blog.title}</h1>
+                    <p>
+                        {blog.content}
+                    </p>
+                </div>
+            </div>
+            
         </div>
     )
 }
@@ -76,6 +85,7 @@ function SectionA(props){
 
 
 function SectionB(props){
+    
 
     // pattern-diagonal-lines-sm 
     // review-background pattern-diagonal-lines-sm 
@@ -89,7 +99,7 @@ function SectionB(props){
 
     // map the blogData to cardList using Card component
     blogData.map((blog) => {
-        cardList.push(<Card key={blog.title} blog={blog} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
+        cardList.push(<Card key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
 
     return(
@@ -119,7 +129,7 @@ function Card(props){
                     <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.description}</p>
-                    <button id="blog" href="#" className="btn btn-primary" onClick={() => setShowPopup(true)}>Go see blog</button>
+                    <button id={props.title} href="#" className="btn btn-primary" onClick={() => handlePopup(props.title)}>Go see blog</button>
                     
                     </div>
                 </div>
