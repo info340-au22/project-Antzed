@@ -80,7 +80,7 @@ function Brand(props){
   let isActive =  props.isActive;
   const width = "5%";
 
-  let brandClassList = "nav-link";
+  let brandClassList = "nav-link navbar-brand";
   if (isActive){
     brandClassList+=" active";
   }

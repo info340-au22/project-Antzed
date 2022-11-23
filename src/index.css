@@ -200,6 +200,7 @@ footer {
 .user-card {
     background-color: #955A32;
     margin: 1rem 1rem;
+    margin-bottom: 0;
     padding: 2rem;
     border-radius: 1.5rem;
 }
