@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import Popup from "../component/Popup";
+import blogData from "../data/hiking-blog.json";
 
 // Todo: search bar search implement
 // Todo: search bar hid in small screens
@@ -85,9 +86,11 @@ function SectionB(props){
 
     
     const cardList = [];
-    for (let i = 0; i < 16; i++){
-        cardList.push(<Card showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />);
-    }
+
+    // map the blogData to cardList using Card component
+    blogData.map((blog) => {
+        cardList.push(<Card key={blog.id} blog={blog} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}/>);
+    })
 
     return(
         <div >
@@ -110,15 +113,17 @@ function SectionB(props){
 
 function Card(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
+
+    
     return (     
-        <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards home-cards">
+        <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
-                <div className="card shadow-lg bg-secondary">
+                <div className="card shadow-lg bg-secondary  home-cards">
                     <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
                     <div className="card-body">
-                    <h5 className="card-title">Hiking Trail 3</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button id="blog" href="#" class="btn btn-primary" onClick={() => setShowPopup(true)}>Go somewhere</button>
+                    <h5 className="card-title">{props.title}</h5>
+                    <p className="card-text">{props.description}</p>
+                    <button id="blog" href="#" class="btn btn-primary" onClick={() => setShowPopup(true)}>Go see blog</button>
                     
                     </div>
                 </div>
