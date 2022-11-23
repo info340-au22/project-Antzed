@@ -86,8 +86,9 @@ function Brand(props){
   }
   return(
       <>
+      <div className="text-lg-start text-center">
         <a className={brandClassList} id="logo" href="/"><img src="img/walking.png" alt="a logo of a man walking" width={width}></img>Get To The Trail</a>
-        
+      </div>
       </>
   )
 }

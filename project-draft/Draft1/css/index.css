@@ -151,6 +151,10 @@ a:hover {
     border-radius: 1.5rem;
 }
 
+.user-row {
+    margin: auto;
+}
+
 /* trail page */
 .card img {
     border-radius: 0.375rem 0.375rem 0 0;
