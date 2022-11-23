@@ -1,4 +1,7 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 export default function NavBar(props) {
     
@@ -8,27 +11,46 @@ export default function NavBar(props) {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-primary shadow-sm rounded border border-dark">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-auto">
+            <Navbar collapseOnSelect bg="primary" shadow='sm' expand="lg" rounded={true} border="dark" >
+              <Container fluid>
                 <Brand isActive={pageName==="Home"}/>
-              </div>
-            </div>
-            
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <Link pageName = "Trail" isActive={pageName === "Trail"}/>
-                    <Link pageName = "User" isActive={pageName === "User"}/>
-                    <Link pageName = "Shop" isActive={pageName === "Shop"}/>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <Link pageName = "Trail" isActive={pageName === "Trail"}/>
+                        <Link pageName = "Shop" isActive={pageName === "Shop"}/>
+                        <Link pageName = "User" isActive={pageName === "User"}/>
+                        
+                    </ul>
+                </Navbar.Collapse>
+
+              </Container>
+             
+
+            </Navbar>
+            {/* <nav className="navbar navbar-expand-lg bg-primary shadow-sm rounded border border-dark">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-auto">
                     
-                </ul>
-            </div>
-          </div>
-        </nav>
+                  </div>
+                </div>
+                
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <Link pageName = "Trail" isActive={pageName === "Trail"}/>
+                        <Link pageName = "Shop" isActive={pageName === "Shop"}/>
+                        <Link pageName = "User" isActive={pageName === "User"}/>
+                        
+                    </ul>
+                </div>
+              
+              </div>
+            </nav> */}
         </div>
         
         
@@ -63,8 +85,9 @@ function Brand(props){
     brandClassList+=" active";
   }
   return(
-    <div>
+      <>
         <a className={brandClassList} id="logo" href="/"><img src="img/walking.png" alt="a logo of a man walking" width={width}></img>Get To The Trail</a>
-      </div>
+        
+      </>
   )
 }
