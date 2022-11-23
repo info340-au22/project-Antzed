@@ -1,44 +1,52 @@
 [{
     
     "title": "Discovery Park and Lighthouse Loop Trail",
+    "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNTA0OTI3MjcvNTM5ZTQ0ODMwZmIwODU4YWQ4MGUzYjdhMTA1ODA3Y2UuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 4.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 1 h 45 min to complete.",
     "content":"Really beautiful trail, not that many people on it in the morning but it was 30 degrees so there might be more people when it’s warmer. Highly recommend bringing sunglasses because the sun reflects off the water after the lighthouse so it is hard to see and you definitely don’t want to miss those beautiful sights"
     
 },
 {
     "title":"Green Lake Trail",
+    "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTE2MDYyMzYvZjc2YWYzMWVlY2E1NjM1YzZhMjkzMTk1M2ZkZWE2NTguanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 2.9-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 51 min to complete.",
     "content":"Went to Seattle, stopped by Green Lake. A very nice walk in the morning. This is a busy park, parking at the designated trailhead is limited. I parked at nearby street. The trail is flat, paved, and good for everyone. Short video: https://youtu.be/jkbwvwV5o_s"
 },
 {
     "title":"The Washington Park Arboretum",
+    "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTQ0MTUwODUvNjUxNTllMWE3NWViZDI5Yjg3NzE0OTA5YzZlYjJhZjMuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 1.5-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 30 min to complete.",
     "content":"Trail from Shelby/Hamlin to Foster Island is still OK but getting damp. Will be muddy after more rain. Very pretty through Marsh Island now! Connection to Arboretum is open currently. Trail under the Montlake bridge is an interesting add on. Arboretum is fascinating, even in the late fall!"
 
 },
 {
     "title":"Seward Park Perimeter Trail",
+    "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNDM1MDQzNjIvYjRiNDlkZmU2OWYxYWI5MzIwY2FjMDEwMzFmMmUzZGMuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Head out on this 2.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 43 min to complete.",
     "content":"This is a great trail for a quick walk or run. It’s paved and flat, so it’s easy to get a good workout in. The trail is well maintained and there are plenty of benches along the way to rest. There are also a few places to get water along the way. The trail is also dog friendly, so you can bring your pup along for the walk. I would recommend this trail for anyone looking for a quick walk or run."
 
 },
 {
     "title": "Loop Trail via West Emerson Street",
+    "img": "https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTk3MDgzNDAvMzhjZWJkYTA0ZWZhZWM5ZDNjYmU0NzViNTZhNTJjMDYuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 1.5-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 30 min to complete.",
     "content":"This is a great trail for a quick walk or run. It’s paved and flat, so it’s easy to get a good workout in. The trail is well maintained and there are plenty of benches along the way to rest. There are also a few places to get water along the way. The trail is also dog friendly, so you can bring your pup along for the walk. I would recommend this trail for anyone looking for a quick walk or run."
 },
 {
     "title":"Lake Union Loop Trail",
+    "img": "https://www.alltrails.com/api/alltrails/trails/10493407/profile_photo?show_placeholder=no&show_static_map=yes&size=larger_wide&key=3p0t5s6b5g4g0e8k3c1j3w7y5c3m4t8i",
     "description":"Enjoy this 6.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 2h 3min to complete.",
     "content":"This is a great trail for a quick walk or run. It’s paved and flat, so it’s easy to get a good workout in. The trail is well maintained and there are plenty of benches along the way to rest. There are also a few places to get water along the way. The trail is also dog friendly, so you can bring your pup along for the walk. I would recommend this trail for anyone looking for a quick walk or run."
 },
 {
     "title":"Cable Lin Trail to West Tiger Mountain",
+    "img":"https://www.alltrails.com/api/alltrails/trails/10282298/profile_photo?show_placeholder=no&show_static_map=yes&size=larger_wide&key=3p0t5s6b5g4g0e8k3c1j3w7y5c3m4t8i",
     "description":"Enjoy this 3.0-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 2h 58 min to complete.",
     "content":"This is a great trail for a quick walk or run. It’s paved and flat, so it’s easy to get a good workout in. The trail is well maintained and there are plenty of benches along the way to rest. There are also a few places to get water along the way. The trail is also dog friendly, so you can bring your pup along for the walk. I would recommend this trail for anyone looking for a quick walk or run."
 },
 {
     "title":"Lake Washington Boulevard Trail",
+    "img":"https://preview.redd.it/z1hhszjkpbq91.png?width=1092&format=png&auto=webp&s=15b739bd379f7d41e7a1405f58d93ec9ea80a2d8",
     "description":"Enjoy this 2.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 43 min to complete.",
     "content":"This is a great trail for a quick walk or run. It’s paved and flat, so it’s easy to get a good workout in. The trail is well maintained and there are plenty of benches along the way to rest. There are also a few places to get water along the way. The trail is also dog friendly, so you can bring your pup along for the walk. I would recommend this trail for anyone looking for a quick walk or run."
 }
