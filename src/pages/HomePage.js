@@ -77,9 +77,9 @@ function SectionA(props){
 
 function SectionB(props){
 
-    
+    // pattern-diagonal-lines-sm 
     // review-background pattern-diagonal-lines-sm 
-    let sectionBStyle = "home-sectionB height-100vh review-background pattern-diagonal-lines-sm overflow-auto";
+    let sectionBStyle = "home-sectionB height-100vh review-background  pattern-diagonal-lines-sm  overflow-auto ";
 
 
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
@@ -89,7 +89,7 @@ function SectionB(props){
 
     // map the blogData to cardList using Card component
     blogData.map((blog) => {
-        cardList.push(<Card key={blog.id} blog={blog} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}/>);
+        cardList.push(<Card key={blog.title} blog={blog} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
 
     return(
@@ -98,13 +98,9 @@ function SectionB(props){
                 <div className="container">
                     <div className="row">
                         {cardList}
-                        
-                        
                     </div>
                 </div>
-      
             </section>
-
         </div>
         
     )
@@ -119,11 +115,11 @@ function Card(props){
         <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
                 <div className="card shadow-lg bg-secondary  home-cards">
-                    <img className="card-img-top" src="img/hiking-trail-1.jpg" alt="Card image cap"></img>
+                    <img className="card-img-top blog-card-img" src={props.img} alt="Card image cap"></img>
                     <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.description}</p>
-                    <button id="blog" href="#" class="btn btn-primary" onClick={() => setShowPopup(true)}>Go see blog</button>
+                    <button id="blog" href="#" className="btn btn-primary" onClick={() => setShowPopup(true)}>Go see blog</button>
                     
                     </div>
                 </div>

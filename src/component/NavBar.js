@@ -11,7 +11,7 @@ export default function NavBar(props) {
 
     return (
         <div>
-            <Navbar collapseOnSelect bg="primary" shadow='sm' expand="lg" rounded={true} border="dark" >
+            <Navbar collapseOnSelect bg="primary" shadow='sm' expand="lg">
               <Container fluid>
                 <Brand isActive={pageName==="Home"}/>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
