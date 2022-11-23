@@ -3,6 +3,7 @@ import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import Popup from "../component/Popup";
 import blogData from "../data/hiking-blog.json";
+import { useNavigate } from "react-router-dom";
 
 // Todo: search bar search implement
 // Todo: search bar hid in small screens
@@ -10,6 +11,7 @@ import blogData from "../data/hiking-blog.json";
 
 // Todo: fix popup
 let title;
+let searchResult;
 
 export default function HomePage(props) {
 
@@ -20,9 +22,31 @@ export default function HomePage(props) {
     }
 
 
+    const [query, setQuery] = React.useState("");
+    function handleSearch(event){
+        event.preventDefault();
+        searchResult = event.target.value
+        // console.log(searchResult);
+    }
+    console.log(query);
+    
+    const navigate = useNavigate();
+    // navigate to trail page is query equals to "trail"
+    if(query === "trail"){
+        navigate("/trail");
+    }
+    // navigate to shop page is query equals to "shop"
+    if(query === "shop"){
+        navigate("/shop");
+    }
+    // navigate to user page if query equals to "user"
+    if(query === "user"){
+        navigate("/user");
+    }
+
     return (
         <div>
-            <SectionA />
+            <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
             <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />  
             <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title}/>}/> 
             <Footer isInherit={true}/>
@@ -52,14 +76,16 @@ function PopUpContent(props){
 }
 
 function SearchBar(props){
+    let setQuery = props.setQuery; 
+    let handleSearch = props.handleSearch;
     const searchBarStyle= "position-relative home-searchBar";
     return (
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a Trail or Item" aria-label="Search" aria-describedby="search-addon" />
+              <input type="search" className="form-control rounded" placeholder="Search for a page" aria-label="Search" aria-describedby="search-addon" onChange={handleSearch}/>
               <span className="input-group-text border-0" id="search-addon">
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
             </div>
           </div>
@@ -68,13 +94,15 @@ function SearchBar(props){
 }
 
 function SectionA(props){
+    let setQuery = props.setQuery;
+    let handleSearch = props.handleSearch;
     let sectionAStyle = "home-background height-100vh background-no-repeat background-center";
     return (
         <div>
             <section className={sectionAStyle}>
                 <NavBar pageName = "Home"/>
                 
-                <SearchBar />
+                <SearchBar setQuery = {setQuery} handleSearch={handleSearch}/>
             </section>
         </div>
     )
