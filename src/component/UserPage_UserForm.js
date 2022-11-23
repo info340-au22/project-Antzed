@@ -3,7 +3,7 @@ import React, {useState} from "react";
 export function UserForm(props) {
 
     const [userObj, setUserObj] = useState(props.userInfo)
-    
+
 
     function onClick(event) {
         props.userInfoCallback(userObj);
@@ -21,7 +21,7 @@ export function UserForm(props) {
 
     return (
         <div className="card user-card">
-            <img src="../img/blank-profile-picture.jpg" alt="user profile picture"></img>
+            <img src={userObj.pfp}alt={userObj.firstName}></img>
             <div className="input-group mb-4">
                 <UserInput type="firstName" id="firstNameInput" placeholder="First Name" value={userObj.firstName} onChangeValue={handleChange} />
                 <UserInput type="lastName" id="lastNameInput" placeholder="Last Name" value={userObj.lastName} onChangeValue={handleChange} />

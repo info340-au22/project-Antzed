@@ -3,12 +3,13 @@ import React from "react";
 export function UserProfile(props) {
     return (
         <div className="card user-card">
-            <img src="../img/blank-profile-picture.jpg" alt="user profile picture"></img>
-            <p className="mb-1 mt-3 h3 font-weight-bold">Cody Tu</p> 
-            <p>Address</p>
-            <button type="button" className="btn btn-primary btn-lg mb-2 mt-5 width-50">Profile</button>
-            <button type="button" className="btn btn-primary btn-lg mb-2">Saved Trails</button>
-            <button type="button" className="btn btn-primary btn-lg mb-2">Hike History</button>
+            <img src={props.userInfo.pfp} alt={props.userInfo.firstName}></img>
+            <p className="mb-1 mt-3 h3 font-weight-bold">{props.userInfo.firstName} {props.userInfo.lastName}</p> 
+            <p>{props.userInfo.address}</p>
+            <p className="mb-1">Email: <a href={props.userInfo.email}>{props.userInfo.email}</a></p>
+            <p>Hiking Level: {props.userInfo.hikingLevel}</p>
+            <p className="mt-3 h5 font-weight-bold">About Me</p>
+            <p>{props.userInfo.bio}</p>
           </div>
     )
 }
