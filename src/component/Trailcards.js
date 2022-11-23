@@ -21,7 +21,7 @@ function SingleCard(props) {
 }
 
 function SeeMoreButton(props) {
-
+    
 }
 export function TrailCards(props) {
     const cardsData = props.cards
