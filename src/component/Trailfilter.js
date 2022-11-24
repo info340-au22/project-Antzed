@@ -17,7 +17,7 @@ export function CardSelect(props) {
         return <option key={diff} value={diff}>{diff}</option>
     });
     return (
-        <div className="row align-items-center mb-3">
+        <div className="row align-items-center my-3">
             <div className="col-auto">
                 <select id="teamSelect" className="form-select" value={selectedCards} onChange={handleSelect}>
                 <option value={selectedCards}>Show all Difficulties</option>

@@ -2,7 +2,7 @@
     {
         "title": "Mailbox Peak",
         "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
-        "img": "./public/img/trails_img/mb-peak-img.jpeg",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
         "difficulty": "Hard",
         "inSeason": ["spring", "summer"],
         "popularity": "Most popular"
@@ -10,8 +10,16 @@
     {
         "title": "Mount Si",
         "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
-        "img": "./public/img/trails_img/mb-peak-img.jpeg",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
         "difficulty": "Easy",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular"
+    },
+    {
+        "title": "Poo Poo Point",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
         "inSeason": ["spring","summer", "fall"],
         "popularity": "Most popular"
     }

@@ -3,7 +3,7 @@ import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import { TrailCards } from "../component/Trailcards.js";
 import { CardSelect } from "../component/Trailfilter.js";
-import MODAL_DATA from "../data/trailSeeMoreData.json.js";
+import MODAL_DATA from "../data/trailSeeMoreData.json";
 
 export default function TrailPage(props) {
     const [displayedCards, setDisplayedCards] = useState(props.trailData)
@@ -15,20 +15,21 @@ export default function TrailPage(props) {
             const difficulty = props.trailData.filter((element) => {
               return element.difficulty === diff
             });
+            console.log(difficulty)
             setDisplayedCards(difficulty)
         }
     }
     const uniqueHikeDiff = [...new Set(props.trailData.reduce((all, current) => {
         return all.concat([current.difficulty]);
       }, []))].sort();
-    console.log(uniqueHikeDiff)
     return (
         <div>
             <NavBar pageName = "Trail"/>
             <main>
-                <h1>Trail Page</h1>
-                <CardSelect hikeOptions={uniqueHikeDiff} applyCallBackFilter={applyFilter}/>
-                <TrailCards cards={displayedCards} />
+                <div className="border-bottom my-2">
+                    <CardSelect hikeOptions={uniqueHikeDiff} applyFilterCallBack={applyFilter}/>
+                </div>
+                <TrailCards cards={displayedCards} modalData={MODAL_DATA}/>
             </main>
 
             <Footer isInherit={true}/>
