@@ -14,8 +14,7 @@ export default function TrailPage(props) {
           }else {
             const difficulty = props.trailData.filter((element) => {
               return element.difficulty === diff
-            });
-            console.log(difficulty)
+            })
             setDisplayedCards(difficulty)
         }
     }

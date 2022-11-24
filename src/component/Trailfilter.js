@@ -9,6 +9,9 @@ export function CardSelect(props) {
           setSelectedCards(selectValue)
         }
       }
+    const handleReset = (event) => {
+        props.applyFilterCallBack('')
+    }
     const handleClick = (event) => {
         props.applyFilterCallBack(selectedCards)
     }
@@ -19,13 +22,16 @@ export function CardSelect(props) {
     return (
         <div className="row align-items-center my-3">
             <div className="col-auto">
-                <select id="teamSelect" className="form-select" value={selectedCards} onChange={handleSelect}>
-                <option value={selectedCards}>Show all Difficulties</option>
-                {optionElems}
+                <select id="hikeSelect" className="form-select" value={selectedCards} onChange={handleSelect}>
+                    <option value={selectedCards}>Show all difficulties</option>
+                    {optionElems}
                 </select>
             </div>
             <div className="col-auto">
                 <button id="submitButton" type="submit" className="btn btn-warning" onClick={handleClick}>Apply Filter</button>
+            </div>
+            <div className="col-auto">
+                <button id="resetButton" className="btn" onClick={handleReset}>Reset Filter</button>
             </div>
         </div>
     )
