@@ -25,24 +25,26 @@ export default function HomePage(props) {
     const [query, setQuery] = React.useState("");
     function handleSearch(event){
         event.preventDefault();
-        searchResult = event.target.value
+        searchResult = event.target.value.toLowerCase();
+
         // console.log(searchResult);
     }
     console.log(query);
     
     const navigate = useNavigate();
+
     // navigate to trail page is query equals to "trail"
     if(query === "trail"){
         navigate("/trail");
     }
-    // navigate to shop page is query equals to "shop"
-    if(query === "shop"){
+    if (query === "shop"){
         navigate("/shop");
     }
     // navigate to user page if query equals to "user"
     if(query === "user"){
         navigate("/user");
     }
+
 
     return (
         <div>

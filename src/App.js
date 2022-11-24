@@ -17,7 +17,7 @@ export default function App() {
           <Route path="trail" element={<TrailPage trailData={TRAILPAGE_CARD_DATA} />} />
           <Route path="shop" element={<ShopPage />} />
           <Route path="user" element={<UserPage />} />
-          <Route path="*" elemnt={<NoPage />}/>
+          <Route path="noPage" elemnt={<NoPage />}/>
       </Routes>
     </Router>
     
