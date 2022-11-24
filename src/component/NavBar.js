@@ -14,16 +14,14 @@ export default function NavBar(props) {
             <Navbar collapseOnSelect className="main-color" shadow='sm' expand="lg" variant="light">
               <Container fluid>
                 <Brand isActive={pageName==="Home"}/>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                  <Nav className="ml-auto">
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <Link pageName = "Trail" isActive={pageName === "Trail"}/>
                         <Link pageName = "Shop" isActive={pageName === "Shop"}/>
                         <Link pageName = "User" isActive={pageName === "User"}/>
                         
                     </ul>
-                  </Nav>
                 </Navbar.Collapse>
 
               </Container>
