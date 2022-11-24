@@ -92,9 +92,10 @@ footer {
 .popup-inner {
     position: relative;
     padding: 32px;
-    width: 100%;
+    width: inherit;
     height: relative;
-    max-width: 80%;
+    max-width: 70%;
+    max-height: 80%;
     background-color: #fff;
     z-index: 29;
 }
@@ -107,12 +108,18 @@ footer {
 }
 
 .image {
-    max-width: relative;
-    max-height: 500px;
+    margin-left: 15%;
+    position: relative;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.popup-words {
+    font-size: x-large;;
 }
 
 .blog-card-img{
-    height: 200px;
+    height: relative;
 }
 
 .relative-max-height {
@@ -278,9 +285,28 @@ footer {
         margin: auto 1.5rem;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .home-cards {
         margin-top: 15%;
         margin-bottom: 10%;
     }
+}
+
+@media screen and (max-width: 991px) {
+    .popup-inner {
+        position: relative;
+        padding: 32px;
+        width: 100%;
+        height: relative;
+        max-height: 100%;
+        background-color: #fff;
+        z-index: 29;
+    }
+
+    .image {
+        max-width: relative;
+        max-height: 100%;
+    }
+    
 }
