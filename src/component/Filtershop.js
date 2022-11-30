@@ -54,7 +54,7 @@ return(
                 onChange={handleChange}
               />
 
-              <button className="btn btn-outline-dark" type="submit" onClick={filterList}>Search</button>
+              <button className="btn btn-outline-dark" type="submit"  aria-label="Submit" onClick={filterList}>Search</button>
             </form>
 
           </div>
