@@ -1,0 +1,98 @@
+[
+    {
+        "title": "BackPack",
+        "description": "Mountainsmith Clear Creek 15",
+        "price": "$44.73",
+        "imageName": "Backpack.jpeg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/rei-garage/product/197156/mountainsmith-clear-creek-15-pack"
+    },
+    {
+        "title": "Compass",
+        "description": "Suunto M-3 D Leader",
+        "price": "$73.00",
+        "imageName": "compass.jpg",
+        "category": "Navigation",
+        "store": "https://www.rei.com/product/890930/suunto-m-3-d-leader-compass"
+    },
+    {
+        "title": "First Aid Kit",
+        "description": "Hart Outdoor Day Hike",
+        "price": "$13.95",
+        "imageName": "First_aid.jpeg",
+        "category": "First Aid & Health",
+        "store": "https://www.rei.com/product/132219/hart-outdoor-day-hike-first-aid-kit"
+    },
+    {
+        "title": "Water Filter",
+        "description": "Sawyer Mini Water Filter",
+        "price": "$22.95",
+        "imageName": "Water.jpeg",
+        "category": "Water filter",
+        "store": "https://www.rei.com/product/890900/sawyer-mini-water-filter?sku=8909000004&"
+    },
+    {
+        "title": "Satellite",
+        "description": "Garmin inReach Mini 2",
+        "price": "$400",
+        "imageName": "satellite.jpeg",
+        "category": "Navigation",
+        "store": "https://www.rei.com/product/208257/garmin-inreach-mini-2?sku=2082570001&"
+    },
+    {
+        "title": "Pass",
+        "description": "America the Beautiful Pass",
+        "price": "$79.99",
+        "imageName": "pass.jpeg",
+        "category": "Pass",
+        "store": "https://www.rei.com/product/208992/america-the-beautiful-pass-20222023?sku=2089920001&"
+    },
+    {
+        "title": "Trekking Poles",
+        "description": "Black Diamond Alpine Carbon Cork",
+        "price": "$199.95",
+        "imageName": "trekking_poles.jpg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/product/147512/black-diamond-alpine-carbon-cork-trekking-poles-pair"
+    },
+    {
+        "title": "Sunscreen Spray",
+        "description": "Sun Bum Mineral SPF 30 6 FL OZ",
+        "price": "$20.50",
+        "imageName": "spray.jpeg",
+        "category": "First Aid & Health",
+        "store": "https://www.rei.com/product/162346/sun-bum-mineral-spf-30-sunscreen-spray-6-fl-oz?sku=1623460001&"
+    },
+    {
+        "title": "Rain Pants",
+        "description": "REI Co-op Essential",
+        "price": "$59.95",
+        "imageName": "rain.jpeg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/product/137186/rei-co-op-essential-rain-pants-mens?CAWELAID=120217890005068767&CAGPSPN=pla&CAAGID=110211446054&CATCI=aud-830183485327:pla-816894788782&cm_mmc=PLA_Google%7C21700000001700551_1371860002%7C92700065450320177%7CPB%7C71700000074410539&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mFqmpYtHYK2fswzwADZZNoGrOp0tjrHWhC12DOC-9B3Ni6EOW3K7kaAiZ3EALw_wcB&gclsrc=aw.ds"
+    },
+    {
+        "title": "Convertible Pants",
+        "description": "REI Co-op Sahara",
+        "price": "$79.95",
+        "imageName": "convert.jpeg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/product/202030/rei-co-op-sahara-convertible-pants-mens?CAWELAID=120217890013184168&CAGPSPN=pla&CAAGID=110211446134&CATCI=aud-830183485327:pla-823542237008&cm_mmc=PLA_Google%7C21700000001700551_2020300013%7C92700065450320189%7CPB%7C71700000074410539&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mlqadd8Sriyjs6ifYBWdvsn1pBNQkGQRhWcV0aSbmYBBeglGULKpYaAsVIEALw_wcB&gclsrc=aw.ds"
+    },
+    {
+        "title": "Vuori Uluwatu",
+        "description": "2.0 Water Long-Sleeve T-Shirt",
+        "price": "$46.00",
+        "imageName": "shirt.jpeg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/product/186042/vuori-uluwatu-20-water-long-sleeve-t-shirt-mens"
+    },
+    {
+        "title": "Hiking Boots",
+        "description": "Merrell Moab 2 Mid Waterproof",
+        "price": "$145.00",
+        "imageName": "boot.jpeg",
+        "category": "Clothing & Accessories",
+        "store": "https://www.rei.com/used/p/merrell-moab-2-mid-waterproof-hiking-boots-mens/113822?color=Beluga&condition=Moderately%20worn&CAWELAID=120217890003651123&cm_mmc=PLA_UsedGear_Google%7C21700000001700551_1138220009U%7C92700051033099821%7Cnone%7C71700000061979557&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9nXgwJZhIHn-9qX-wa87JhGeIdK7uLF-TI4nr6d277xXv1XU7DOpt4aApHZEALw_wcB&gclsrc=aw.ds"
+    }
+]
