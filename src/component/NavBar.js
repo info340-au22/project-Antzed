@@ -16,7 +16,7 @@ export default function NavBar(props) {
                 <Brand isActive={pageName==="Home"}/>
                 <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <Link pageName = "Trail" isActive={pageName === "Trail"}/>
                         <Link pageName = "Shop" isActive={pageName === "Shop"}/>
                         <Link pageName = "User" isActive={pageName === "User"}/>
