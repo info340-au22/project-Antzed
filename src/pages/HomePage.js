@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../component/NavBar";
-import Footer from "../component/Footer";
 import Popup from "../component/Popup";
 import blogData from "../data/hiking-blog.json";
 import { useNavigate } from "react-router-dom";
@@ -105,9 +103,6 @@ function SectionA(props){
         </div>
     )
 }
-
-
-
 
 
 function SectionB(props){

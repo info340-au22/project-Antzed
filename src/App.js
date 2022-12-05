@@ -22,14 +22,8 @@ export default function App() {
   pathname = pathname.charAt(0).toUpperCase() + pathname.slice(1);
   console.log(pathname + "new");
 
-
-
-
-
   return (
     <div>
-     
-      
         <header>
           <NavBar pageName={pathname}/>
         </header>
@@ -43,18 +37,11 @@ export default function App() {
               <Route path="user" element={<UserPage />} />
               <Route path="*" element={<NoPage />}/>
           </Routes>
-
         </body>
-        
 
         <footer>
           <Footer isInherit={true}/>
         </footer>
-        
-      
-
     </div>
-    
-    
-     );
+  );
 }
