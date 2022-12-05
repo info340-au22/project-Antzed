@@ -16,20 +16,12 @@ export default function App() {
   // re-render the navbar when the page changes using useLocation hook
   let pathname = useLocation().pathname;
   console.log(pathname);
-  // get ride of the first slash
   pathname = pathname.substring(1);
-  //make first letter uppercase
   pathname = pathname.charAt(0).toUpperCase() + pathname.slice(1);
   console.log(pathname + "new");
 
-
-
-
-
   return (
     <div>
-     
-      
         <header>
           <NavBar pageName={pathname}/>
         </header>
@@ -43,18 +35,11 @@ export default function App() {
               <Route path="user" element={<UserPage />} />
               <Route path="*" element={<NoPage />}/>
           </Routes>
-
         </body>
-        
 
         <footer>
           <Footer isInherit={true}/>
         </footer>
-        
-      
-
     </div>
-    
-    
-     );
+  );
 }
