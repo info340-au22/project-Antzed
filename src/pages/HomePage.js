@@ -20,21 +20,18 @@ export default function HomePage(props) {
     function handleSearch(event){
         event.preventDefault();
         searchResult = event.target.value.toLowerCase();
-
-        // console.log(searchResult);
     }
     console.log(query);
     
     const navigate = useNavigate();
 
-    // navigate to trail page is query equals to "trail"
+
     if(query === "trail"){
         navigate("/trail");
     }
     if (query === "shop"){
         navigate("/shop");
     }
-    // navigate to user page if query equals to "user"
     if(query === "user"){
         navigate("/user");
     }
@@ -45,7 +42,7 @@ export default function HomePage(props) {
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
             <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />  
             <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title}/>}/> 
-            {/* <Footer isInherit={true}/> */}
+            {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
     )
 }
@@ -79,9 +76,9 @@ function SearchBar(props){
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a page" aria-label="Search" aria-describedby="search-addon" onChange={handleSearch}/>
+              <input type="search" className="form-control rounded" placeholder="Search for a page" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch}/>
               <span className="input-group-text border-0" id="search-addon">
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={() => setQuery(searchResult)}>Search</button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that initiate search" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
             </div>
           </div>
@@ -96,7 +93,7 @@ function SectionA(props){
     return (
         <div>
             <section className={sectionAStyle}>
-                {/* <NavBar pageName = "Home"/> */}
+                {/* <NavBar pageName = "Home"/> */} {/* NavBar is not needed in this page */}
                 &nbsp;
                 <SearchBar setQuery = {setQuery} handleSearch={handleSearch}/>
             </section>
@@ -107,18 +104,10 @@ function SectionA(props){
 
 function SectionB(props){
     
-
-    // pattern-diagonal-lines-sm 
-    // review-background pattern-diagonal-lines-sm 
     let sectionBStyle = "home-sectionB height-100vh review-background  pattern-diagonal-lines-sm  overflow-auto ";
-
-
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
-
-    
     const cardList = [];
 
-    // map the blogData to cardList using Card component
     blogData.map((blog) => {
         cardList.push(<Card key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
@@ -135,31 +124,24 @@ function SectionB(props){
         </div>
         
     )
-
 }
 
 function Card(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
 
-    
     return (     
         <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
                 <div className="card shadow-lg bg-secondary  home-cards">
                     <img className="card-img-top blog-card-img" src={props.img} alt="Card image cap"></img>
                     <div className="card-body">
-                    <h5 className="card-title">{props.title}</h5>
-                    <p className="card-text">{props.description}</p>
-                    <button id={props.title} href="#" className="btn btn-primary" onClick={() => handlePopup(props.title)}>Go see blog</button>
-                    
+                        <h5 className="card-title">{props.title}</h5>
+                        <p className="card-text">{props.description}</p>
+                        <button id={props.title} href="#" className="btn btn-primary" aria-label="a button that leads to a pop up" onClick={() => handlePopup(props.title)}>Go see blog</button>
                     </div>
                 </div>
             </div>
-        </div>
-
-        
-        
+        </div>  
     )
-
 }
 
