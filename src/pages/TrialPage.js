@@ -23,7 +23,6 @@ export default function TrailPage(props) {
       }, []))].sort();
     return (
         <div>
-            <NavBar pageName = "Trail"/>
             <main>
                 <div className="border-bottom my-2">
                     <CardSelect hikeOptions={uniqueHikeDiff} applyFilterCallBack={applyFilter}/>
@@ -31,7 +30,6 @@ export default function TrailPage(props) {
                 <TrailCards cards={displayedCards} modalData={MODAL_DATA}/>
             </main>
 
-            <Footer isInherit={true}/>
         </div>
     )
 }

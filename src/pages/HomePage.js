@@ -5,11 +5,7 @@ import Popup from "../component/Popup";
 import blogData from "../data/hiking-blog.json";
 import { useNavigate } from "react-router-dom";
 
-// Todo: search bar search implement
-// Todo: search bar hid in small screens
-// Todo: hamburger menu
 
-// Todo: fix popup
 let title;
 let searchResult;
 
@@ -51,7 +47,7 @@ export default function HomePage(props) {
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
             <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />  
             <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title}/>}/> 
-            <Footer isInherit={true}/>
+            {/* <Footer isInherit={true}/> */}
         </div>
     )
 }
@@ -102,8 +98,8 @@ function SectionA(props){
     return (
         <div>
             <section className={sectionAStyle}>
-                <NavBar pageName = "Home"/>
-                
+                {/* <NavBar pageName = "Home"/> */}
+                &nbsp;
                 <SearchBar setQuery = {setQuery} handleSearch={handleSearch}/>
             </section>
         </div>
