@@ -19,7 +19,6 @@ export default function ShopPage(props) {
     return (
         <div className="ShopPage">
         <main>
-            <NavBar pageName = "Shop"/>
         <section className="ShopPage_products">
             <Filtershop  
                 filterSet={handleFilter}
@@ -32,7 +31,6 @@ export default function ShopPage(props) {
                 />
         </section>
         </main>
-            <Footer isInherit={true} />
         </div>
     )
 }

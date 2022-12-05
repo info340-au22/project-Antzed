@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3dba00c3.css",
+    "main.js": "/static/js/main.ffc8971b.js",
+    "static/media/hiking-banner.jpg": "/static/media/hiking-banner.e019ca5714d319a77ac3.jpg",
+    "index.html": "/index.html",
+    "main.3dba00c3.css.map": "/static/css/main.3dba00c3.css.map",
+    "main.ffc8971b.js.map": "/static/js/main.ffc8971b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dba00c3.css",
+    "static/js/main.ffc8971b.js"
+  ]
+}

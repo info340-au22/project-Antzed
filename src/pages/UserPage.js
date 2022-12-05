@@ -18,7 +18,6 @@ export default function UserPage(props) {
 
     return (
     <div>
-    <NavBar pageName = "User"/>
     <main>
     <div className="container-fluid">
       <div className="row user-row">
@@ -46,7 +45,6 @@ export default function UserPage(props) {
     </div>     
     </div>
   </main>
-    <Footer isInherit={true}/>
     </div>
     )
 }
