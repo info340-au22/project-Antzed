@@ -4,9 +4,11 @@ import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Bookmark } from 'react-bootstrap-icons';
 
 
 function SingleCard(props) {
+    const [isBooked, setIsBooked] = useState(false)
     const cardData = props.cardObjData
     const modalData = props.modalData
     const singleModalObj = modalData.map((modObj) => {
@@ -16,12 +18,20 @@ function SingleCard(props) {
             )
         }
     })
+    const handleClick = (event) => {
+        setIsBooked(!isBooked)
+    }
+    let bmColor = "grey";
+    if(isBooked) {
+        bmColor = "gold"
+    }
     return (
         <Col md={6} xl={3} className="d-flex col-auto rounded mt-4" >
             <div className="card">
                 <img src={cardData.img} className=".card-img-top" alt={cardData.title} />
                 <div className="card-body">
-                    <h2>{cardData.title}</h2>
+                    <Bookmark color={bmColor} onClick={handleClick} size={25} className=""/>
+                    <h2 className="card-title">{cardData.title}</h2>
                     <p>{cardData.description}</p>
                     {singleModalObj}
                 </div>

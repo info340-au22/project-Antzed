@@ -5,7 +5,8 @@
         "img": "../img/trails_img/mb-peak-2.jpeg",
         "difficulty": "Hard",
         "inSeason": ["spring", "summer"],
-        "popularity": "Most popular"
+        "popularity": "Most popular",
+        "status": "Clear"
     },
     {
         "title": "Mount Si",
@@ -13,7 +14,8 @@
         "img": "../img/trails_img/mb-peak-2.jpeg",
         "difficulty": "Easy",
         "inSeason": ["spring","summer", "fall"],
-        "popularity": "Most popular"
+        "popularity": "Most popular",
+        "status": "Clear"
     },
     {
         "title": "Poo Poo Point",
@@ -21,6 +23,7 @@
         "img": "../img/trails_img/mb-peak-2.jpeg",
         "difficulty": "Medium",
         "inSeason": ["spring","summer", "fall"],
-        "popularity": "Most popular"
+        "popularity": "Most popular",
+        "status": "Clear"
     }
 ]
