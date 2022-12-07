@@ -1,13 +1,34 @@
 import React from "react";
 import Popup from "../component/Popup";
-import blogData from "../data/hiking-blog.json";
+//  import blogData from "../data/hiking-blog.json";
 import { useNavigate } from "react-router-dom";
+
+import { get, getDatabase, ref, set, onValue, query, child} from 'firebase/database';
 
 
 let title;
 let searchResult;
 
 export default function HomePage(props) {
+    
+    const [blogData, setBlogData] = React.useState([]);
+
+    const db = getDatabase();
+    let blogRef = ref(db, 'blogs');
+
+    let blogData_firebase = get(blogRef).then((snapshot) => {
+
+        let blogData_temp = snapshot.val();
+
+        return blogData_temp;
+    }).catch((error) => {
+        console.error(error);
+    });
+
+    blogData_firebase.then((value) => {
+        setBlogData(value);
+    })
+
 
     const [showPopup, setShowPopup] = React.useState(false);
     function handlePopup(key){
@@ -36,12 +57,13 @@ export default function HomePage(props) {
         navigate("/user");
     }
 
+    let titleText2 = "Discover the world with us";
 
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} />  
-            <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title}/>}/> 
+            <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+            <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title} blogData={blogData}/>} /> 
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
     )
@@ -49,8 +71,9 @@ export default function HomePage(props) {
 
 function PopUpContent(props){
     const title = props.title;
+    const blogData = props.blogData;
+    // let blogData = props.blogData;
     let blog = blogData.find((blog) => blog.title === title);
-    console.log(blog);
     
     return (
         <div className="d-flex rounded mt-4 cards" >
@@ -108,6 +131,11 @@ function SectionB(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
     const cardList = [];
 
+    let [exmapletext, setExampleText] = React.useState("");
+
+    
+    let blogData = props.blogData;
+
     blogData.map((blog) => {
         cardList.push(<Card key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
@@ -117,7 +145,11 @@ function SectionB(props){
             <section className={sectionBStyle}>
                 <div className="container">
                     <div className="row">
-                        {cardList}
+                        <td>
+                            {cardList}
+                        </td>
+                        
+                        
                     </div>
                 </div>
             </section>
