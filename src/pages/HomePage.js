@@ -71,13 +71,13 @@ export default function HomePage(props) {
 
 
     
-    if(query === "trail"){
+    if(query === "/trail"){
         navigate("/trail");
     }
-    if (query === "shop"){
+    if (query === "/shop"){
         navigate("/shop");
     }
-    if(query === "user"){
+    if(query === "/user"){
         navigate("/user");
     }
     if(query === "blog"){
@@ -107,9 +107,10 @@ export default function HomePage(props) {
         setQuery("");
         
     }
-    if(query === "reset"){
-        setBlogData(FullBlogData);
+    function handleReset(fullData){
+        setBlogData(fullData);
     }
+
 
     // console.log("full blog data", FullBlogData);
 
@@ -126,7 +127,7 @@ export default function HomePage(props) {
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+            <SectionB handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
             <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title} blogData={blogData}/>} /> 
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
@@ -159,11 +160,18 @@ function SearchBar(props){
     let setQuery = props.setQuery; 
     let handleSearch = props.handleSearch;
     const searchBarStyle= "position-relative home-searchBar";
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          setQuery(searchResult);
+        }
+    }
+
     return (
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a page, a blog, type reset to reset blog" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch}/>
+              <input type="search" className="form-control rounded" placeholder="Search for a blog, or a page by /(page name)" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch} onKeyDown={handleKeyDown}/>
               <span className="input-group-text border-0" id="search-addon">
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that initiate search" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
@@ -199,6 +207,7 @@ function SectionB(props){
     let blogSection = props.blogSection;
     
     let blogData = props.blogData;
+    let handleReset = props.handleReset;
 
     blogData.map((blog) => {
         cardList.push(<Card key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
@@ -211,7 +220,8 @@ function SectionB(props){
                     <div className="row">
                         {cardList}
                         
-                        
+                        {/* button that reset the search */}
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that rest search" onClick={() => handleReset(FullBlogData)}>Reset</button>
                         
                     </div>
                 </div>
