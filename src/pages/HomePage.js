@@ -41,12 +41,13 @@ export default function HomePage(props) {
     }, []);
 
 
-    //popup in section b
-    const [showPopup, setShowPopup] = useState(false);
-    function handlePopup(key){
-        setShowPopup(true);
-        title = key;
-    }
+   
+
+    
+    
+    
+   
+    // console.log(returnedPopup.tosString());
 
 
     //search bar in section a
@@ -112,29 +113,74 @@ export default function HomePage(props) {
     }
 
 
-    // console.log("full blog data", FullBlogData);
+    //popup in section b
+    const [showPopup, setShowPopup] = useState(false);
+    function handlePopup(key){
+        setShowPopup(true);
+        title = key;
+    }
 
+
+    const [sectionBPopup, setSectionBPopup] = useState(false);
+    const [uploadFormPopup, setUploadFormPopup] = useState(false);
+    const popupConditions = [setSectionBPopup, setUploadFormPopup]
+    const [returnedPopup, setReturnedPopup] = useState();
+    console.log(sectionBPopup, uploadFormPopup);
+
+    // if (uploadFormPopup){
+    //     console.log(uploadFormPopup);
+    //     setReturnedPopup(<Popup trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm/>}/>)
+        
+    // }
+
+    
+    let blogStatus = "hide";
+    let formStatus = "hide";
+    if(showPopup && uploadFormPopup){
+        formStatus = "show";
+    }
+    if(showPopup && sectionBPopup){
+        blogStatus = "show";
+    }
+    
+    // when the popup is closed, the popup will be hidden
+    if(!showPopup){
+        blogStatus = "hide";
+        formStatus = "hide";
+        if(sectionBPopup || uploadFormPopup){
+            setSectionBPopup(false);
+            setUploadFormPopup(false);
+        }
+    }
 
 
     
-
    
-    
-    
 
+  
 
-
+    // console.log("full blog data", FullBlogData);
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
-            <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title} blogData={blogData}/>} /> 
+            <SectionB popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+               
+            <div className={blogStatus}>
+                <Popup setToFalse={setBlogData} trigger={showPopup} setTrigger={setShowPopup} content={<SectionBPopUpContent title={title} blogData={blogData}/>}/>
+            </div>
+
+            <div className={formStatus}>
+                <Popup setToFalse={setUploadFormPopup} trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm/>}/>
+            </div>
+            
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
     )
 }
 
-function PopUpContent(props){
+
+
+function SectionBPopUpContent(props){
     const title = props.title;
     const blogData = props.blogData;
     // let blogData = props.blogData;
@@ -208,20 +254,28 @@ function SectionB(props){
     
     let blogData = props.blogData;
     let handleReset = props.handleReset;
+    const [setSectionBPopup, setUploadFormPopup]  = props.popupConditions;
 
     blogData.map((blog) => {
-        cardList.push(<Card key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
+        cardList.push(<Card setSectionBPopup={setSectionBPopup} key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
+
+    function set(){
+        setUploadFormPopup(true);
+    }
 
     return(
         <div >
             <section ref={blogSection} className={sectionBStyle}>
                 <div className="container">
                     <div className="row">
+                        &nbsp;
+                        {/* button that add blogs with 2 margin */}
+                        <button className="btn btn-success me-3 my-2 my-sm-0" type="submit" aria-label="a button that add blogs" onClick={() =>{setShowPopup("here"); set()}}>Add your own blog</button>
                         {cardList}
                         
                         {/* button that reset the search */}
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that rest search" onClick={() => handleReset(FullBlogData)}>Reset</button>
+                        <button className="btn btn-outline-dark my-2 my-sm-0" type="submit" aria-label="a button that rest search" onClick={() => handleReset(FullBlogData)}>Reset</button>
                         
                     </div>
                 </div>
@@ -232,7 +286,12 @@ function SectionB(props){
 }
 
 function Card(props){
-    const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
+    const [showPopup, setShowPopup, handlePopup, setSectionBPopup] = [props.showPopup, props.setShowPopup, props.handlePopup, props.setSectionBPopup];
+
+    function set(){
+        setSectionBPopup(true);
+        
+    }
     return (     
         <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
@@ -241,11 +300,23 @@ function Card(props){
                     <div className="card-body">
                         <h5 className="card-title">{props.title}</h5>
                         <p className="card-text">{props.description}</p>
-                        <button id={props.title} href="#" className="btn btn-primary" aria-label="a button that leads to a pop up" onClick={() => handlePopup(props.title)}>Go see blog</button>
+                        <button id={props.title} href="#" className="btn btn-primary" aria-label="a button that leads to a pop up" onClick={() => {handlePopup(props.title); set();}}>Go see blog</button>
                     </div>
                 </div>
             </div>
         </div>  
+    )
+}
+
+function UploadForm(props){
+    return(
+        <form>
+            <label>
+                Name:
+                <input type="text" name="name" />
+            </label>
+            <input type="submit" value="Submit" />
+        </form>
     )
 }
 
