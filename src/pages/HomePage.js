@@ -1,43 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Popup from "../component/Popup";
 //  import blogData from "../data/hiking-blog.json";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import { useState } from "react";
 
 import { get, getDatabase, ref, set, onValue, query, child} from 'firebase/database';
 
 
+// Todo: universal search
 let title;
 let searchResult;
+const searchSuggestions = ["trail", "shop", "user", "blog"];
+let FullBlogData;
 
 export default function HomePage(props) {
-    
-    const [blogData, setBlogData] = React.useState([]);
+    //blog data on firebase in section b
+    const [blogData, setBlogData] = useState([]);
 
-    const db = getDatabase();
-    let blogRef = ref(db, 'blogs');
+    useEffect(() => {
+        const db = getDatabase();
+        let blogRef = ref(db, 'blogs/blogs');
 
-    let blogData_firebase = get(blogRef).then((snapshot) => {
+        const offFunction = onValue(blogRef, (snapshot) => {
+            const valueObj = snapshot.val();
+            const objKeys = Object.keys(valueObj);
+            const objArray = objKeys.map((keystring) => {
+                const blogObj = valueObj[keystring];
+                blogObj.key = keystring;
+                return blogObj;
+            });
+            setBlogData(objArray);
+            FullBlogData = objArray;
+        });
 
-        let blogData_temp = snapshot.val();
-
-        return blogData_temp;
-    }).catch((error) => {
-        console.error(error);
-    });
-
-    blogData_firebase.then((value) => {
-        setBlogData(value);
-    })
+        function cleanup(){
+            offFunction();
+        }
+        return cleanup;
+    }, []);
 
 
-    const [showPopup, setShowPopup] = React.useState(false);
+    //popup in section b
+    const [showPopup, setShowPopup] = useState(false);
     function handlePopup(key){
         setShowPopup(true);
         title = key;
     }
 
 
-    const [query, setQuery] = React.useState("");
+    //search bar in section a
+    const [query, setQuery] = useState("");
     function handleSearch(event){
         event.preventDefault();
         searchResult = event.target.value.toLowerCase();
@@ -46,7 +59,18 @@ export default function HomePage(props) {
     
     const navigate = useNavigate();
 
+    const blogSection = useRef(null);
+    const post = useRef(null);
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+            top: elementRef.current.offsetTop,
+            behavior: "smooth"
+        });
+    }
 
+
+
+    
     if(query === "trail"){
         navigate("/trail");
     }
@@ -56,13 +80,53 @@ export default function HomePage(props) {
     if(query === "user"){
         navigate("/user");
     }
+    if(query === "blog"){
+        scrollToSection(blogSection)
+    }
+    // only the cards in section b that contains the search result will be shown
+    // loop through the blogData array and check if the title contains the search result
 
-    let titleText2 = "Discover the world with us";
+    if(query != ""){
+        let result = blogData.some((blog) => {
+            return blog.title.toLowerCase().includes(query.toLowerCase());
+        });
+        
+        console.log("result" + result);
+
+        if(result){
+            let filteredBlogData = blogData.filter((blog) => {
+                return blog.title.toLowerCase().includes(query.toLowerCase());
+            });
+            console.log(filteredBlogData);
+    
+            setBlogData(filteredBlogData);
+            scrollToSection(blogSection);
+        
+        }
+
+        setQuery("");
+        
+    }
+    if(query === "reset"){
+        setBlogData(FullBlogData);
+    }
+
+    // console.log("full blog data", FullBlogData);
+
+
+
+    
+
+   
+    
+    
+
+
 
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+            <SectionB blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
             <Popup trigger={showPopup} setTrigger={setShowPopup} content={<PopUpContent title={title} blogData={blogData}/>} /> 
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
@@ -99,7 +163,7 @@ function SearchBar(props){
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a page" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch}/>
+              <input type="search" className="form-control rounded" placeholder="Search for a page, a blog, type reset to reset blog" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch}/>
               <span className="input-group-text border-0" id="search-addon">
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that initiate search" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
@@ -132,7 +196,7 @@ function SectionB(props){
     const cardList = [];
 
     let [exmapletext, setExampleText] = React.useState("");
-
+    let blogSection = props.blogSection;
     
     let blogData = props.blogData;
 
@@ -142,12 +206,11 @@ function SectionB(props){
 
     return(
         <div >
-            <section className={sectionBStyle}>
+            <section ref={blogSection} className={sectionBStyle}>
                 <div className="container">
                     <div className="row">
-                        <td>
-                            {cardList}
-                        </td>
+                        {cardList}
+                        
                         
                         
                     </div>
@@ -160,7 +223,6 @@ function SectionB(props){
 
 function Card(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
-
     return (     
         <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
