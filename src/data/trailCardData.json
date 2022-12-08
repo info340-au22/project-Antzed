@@ -25,5 +25,61 @@
         "inSeason": ["spring","summer", "fall"],
         "popularity": "Most popular",
         "status": "Clear"
+    },
+    {
+        "title": "Discovery Park and Lighthouse Loop Trail",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Green Lake Trail",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "The Washington Park Arboretum",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Seward Park Perimeter Trail",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Cable Lin Trail to West Tiger Mountain",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Loop Trail via West Emerson Street",
+        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "Most popular",
+        "status": "Clear"
     }
+
+
 ]

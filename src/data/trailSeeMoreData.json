@@ -34,5 +34,77 @@
         "headingThree": "Trail Info",
         "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
         "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "Discovery Park and Lighthouse Loop Trail",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "Green Lake Trail",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "The Washington Park Arboretum",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "Seward Park Perimeter Trail",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "Cable Lin Trail to West Tiger Mountain",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
+    },
+    {
+        "title": "About Mount Si",
+        "id": "Loop Trail via West Emerson Street",
+        "caroselImgOne": "./public/trails_img/mb-peak-img.jpeg",
+        "caroselImgTwo": "./public/trails_img/mb-peak-2.jpeg",
+        "caroselImgThree": "./public/trails_img/mbp-map.png",
+        "headingTwo": "Key Details",
+        "keyDetails": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
+        "headingThree": "Trail Info",
+        "trailInfo": "Mailbox Peak was the stuff of legend. It inspired potential Rainier climbers, challenged adventurous day hikers, and occasionally Mother Nature used the trail to bite back. The number of injuries and rescues on the old trail, as well as terrible erosion caused by the masses of daily visitors, prompted the Department of Natural Resources to create a new trail to the top. While still relatively steep, this new route, built in part by WTA volunteers, offers a safer way for folks to attain the summit of this formidable peak. Your trip begins along the Middle Fork Road. The hike is wildly popular--on a typical weekend, the trailhead can have upward of 50 cars at any given hour. The new trail also came with a new upper parking lot, but even so, don't expect to get a spot in the parking lot unless you arrive very early.",
+        "headingFour": "Trail Status"
     }
 ]
