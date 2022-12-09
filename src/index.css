@@ -69,6 +69,11 @@ footer {
     height: 450px;
 }
 
+.popup-cards {
+    max-height: 50rem;
+    background-color: rgba(144, 238, 144, 0.2);;
+}
+
 .home-cards button {
    position: absolute;
    bottom: 2%;
@@ -95,7 +100,7 @@ footer {
     width: inherit;
     height: relative;
     max-width: 70%;
-    max-height: 80%;
+    max-height: 90%;
     background-color: #fff;
     z-index: 29;
 }
@@ -118,6 +123,12 @@ footer {
     font-size: x-large;;
 }
 
+.popup-img{
+    position: center;
+    /* cover */
+    width: 100%;
+    height: 80%
+}
 .blog-card-img{
     height: 200px;
 }

@@ -197,8 +197,8 @@ function SectionBPopUpContent(props){
     return (
         <div className="d-flex rounded mt-4 cards" >
             <div className="col-12 bg-transparent">
-                <div className="card shadow-lg  popup-words overflow-auto">
-                    <img className="image" src={blog.img}></img>
+                <div className="popup-cards  popup-words overflow-auto">
+                    <img className="popup-img" src={blog.img}></img>
                     <h2>{blog.title}</h2>
                     <p>
                         {blog.content}
