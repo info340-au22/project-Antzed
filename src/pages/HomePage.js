@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useState } from "react";
 
 import { get, getDatabase, ref, set, onValue, query, child} from 'firebase/database';
-
+import { useForm } from "react-hook-form";
 
 // Todo: universal search
 let title;
@@ -40,12 +40,6 @@ export default function HomePage(props) {
         return cleanup;
     }, []);
 
-
-   
-
-    
-    
-    
    
     // console.log(returnedPopup.tosString());
 
@@ -121,57 +115,71 @@ export default function HomePage(props) {
     }
 
 
+    //handle form submit in section b and make the use input into an object with "content", "description", "img",  and "title" as the keys
+    // function handleBlogFormSubmit(event){
+    //     console.log("form submitted");
+    //     event.preventDefault();
+    //     const form = event.target;
+    //     console.log("form" +form);
+    //     const formData = new FormData(form);
+    //     const data = Object.fromEntries(formData);
+    //     console.log(data);
+    //     // const db = getDatabase();
+    //     // const blogRef = ref(db, 'blogs/blogs');
+    //     // set(blogRef, data);
+    //     // form.reset();
+    // }
+    const { register, handleSubmit } = useForm();
+    const onSubmit = (data) => {
+    //    turn data into an object and console log the object
+        console.log(data);
+        const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
+        const newKey = currentLastindex + 1;
+        //upload this data to firebase
+        const db = getDatabase();
+        //take element of blogdata and console log it
+        
+        const blogRef = ref(db, 'blogs/blogs/'+ newKey);
+        set(blogRef, data);
+
+    }
+    let submitStuff = [register, handleSubmit, onSubmit];
+    
+
+
+
     const [sectionBPopup, setSectionBPopup] = useState(false);
     const [uploadFormPopup, setUploadFormPopup] = useState(false);
     const popupConditions = [setSectionBPopup, setUploadFormPopup]
-    const [returnedPopup, setReturnedPopup] = useState();
-    console.log(sectionBPopup, uploadFormPopup);
+    console.log("sectionB " + sectionBPopup, "upload " + uploadFormPopup);
 
-    // if (uploadFormPopup){
-    //     console.log(uploadFormPopup);
-    //     setReturnedPopup(<Popup trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm/>}/>)
-        
-    // }
-
-    
-    let blogStatus = "hide";
-    let formStatus = "hide";
-    if(showPopup && uploadFormPopup){
-        formStatus = "show";
-    }
-    if(showPopup && sectionBPopup){
-        blogStatus = "show";
-    }
-    
     // when the popup is closed, the popup will be hidden
     if(!showPopup){
-        blogStatus = "hide";
-        formStatus = "hide";
         if(sectionBPopup || uploadFormPopup){
             setSectionBPopup(false);
             setUploadFormPopup(false);
         }
     }
 
+    function ReturnPopup(){
+        if (sectionBPopup){
+            return <Popup setToFalse={setBlogData} trigger={showPopup} setTrigger={setShowPopup} content={<SectionBPopUpContent title={title} blogData={blogData}/>}/>
+        }
+        if(uploadFormPopup){
+            return <Popup  setToFalse={setUploadFormPopup} trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm submitStuff={submitStuff}/>}/>
+        }
+    }
 
-    
-   
-
-  
 
     // console.log("full blog data", FullBlogData);
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
-               
-            <div className={blogStatus}>
-                <Popup setToFalse={setBlogData} trigger={showPopup} setTrigger={setShowPopup} content={<SectionBPopUpContent title={title} blogData={blogData}/>}/>
-            </div>
+            <SectionB  popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
 
-            <div className={formStatus}>
-                <Popup setToFalse={setUploadFormPopup} trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm/>}/>
-            </div>
+            <ReturnPopup/>
+
+           
             
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
@@ -309,14 +317,29 @@ function Card(props){
 }
 
 function UploadForm(props){
+    let [register, handleSubmit, onSubmit] = props.submitStuff;
     return(
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                Name:
-                <input type="text" name="name" />
+                Title:
+                <input {...register("title")} type="text" name="title" />
+            </label>
+            
+            <label>
+                Image link:
+                <input {...register("img")} type="text" name="img" />
+            </label>
+            <label>
+                Description of image:
+                <input {...register("description")} type="text" name="description" />
+            </label>
+            <label>
+                Content:
+                <input {...register("content")} type="text" name="content" />
             </label>
             <input type="submit" value="Submit" />
         </form>
+       
     )
 }
 

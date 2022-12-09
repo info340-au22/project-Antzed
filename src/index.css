@@ -130,6 +130,14 @@ footer {
     overflow-x: scroll;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* user page */
 
 .user-header {
