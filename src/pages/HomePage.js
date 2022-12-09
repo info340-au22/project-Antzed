@@ -63,9 +63,6 @@ export default function HomePage(props) {
         });
     }
 
-
-
-    
     if(query === "/trail"){
         navigate("/trail");
     }
@@ -115,22 +112,11 @@ export default function HomePage(props) {
     }
 
 
-    //handle form submit in section b and make the use input into an object with "content", "description", "img",  and "title" as the keys
-    // function handleBlogFormSubmit(event){
-    //     console.log("form submitted");
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     console.log("form" +form);
-    //     const formData = new FormData(form);
-    //     const data = Object.fromEntries(formData);
-    //     console.log(data);
-    //     // const db = getDatabase();
-    //     // const blogRef = ref(db, 'blogs/blogs');
-    //     // set(blogRef, data);
-    //     // form.reset();
-    // }
-    const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {
+   
+    const { register, handleSubmit, reset } = useForm();
+
+
+    const onSubmit = (data, event) => {
     //    turn data into an object and console log the object
         console.log(data);
         const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
@@ -142,9 +128,13 @@ export default function HomePage(props) {
         const blogRef = ref(db, 'blogs/blogs/'+ newKey);
         set(blogRef, data);
 
+        reset();
+        
     }
-    let submitStuff = [register, handleSubmit, onSubmit];
     
+    let submitStuff = [register, handleSubmit, onSubmit];
+
+
 
 
 
@@ -318,8 +308,12 @@ function Card(props){
 
 function UploadForm(props){
     let [register, handleSubmit, onSubmit] = props.submitStuff;
+
+    
+    
+    
     return(
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form id="uploadForm" onSubmit={handleSubmit(onSubmit)}>
             <label>
                 Title:
                 <input {...register("title")} type="text" name="title" />

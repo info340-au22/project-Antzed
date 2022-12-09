@@ -1,4 +1,5 @@
 import React from "react";
+import { SendX } from "react-bootstrap-icons";
 
 export default function Popup(props){
     let popupClass = "popup"
@@ -7,6 +8,9 @@ export default function Popup(props){
     function set(){
         setToFalse(false)
     }
+
+    // clear form with id "uploadForm"
+ 
 
     
     return (props.trigger) ? (
