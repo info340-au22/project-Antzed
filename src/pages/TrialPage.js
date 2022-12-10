@@ -21,6 +21,7 @@ export default function TrailPage(props) {
     const uniqueHikeDiff = [...new Set(props.trailData.reduce((all, current) => {
         return all.concat([current.difficulty]);
       }, []))].sort();
+    const popular = [props.trailData.popularity]
     return (
         <div>
             <main>
