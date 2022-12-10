@@ -19,10 +19,14 @@ function SingleCard(props) {
             )
         }
     })
+
     const handleClick = (event) => {
         setIsBooked(!isBooked)
 
         const db = getDatabase()
+        const savedRef = ref(db, "trail/trail cards/"+cardData.key+"/isSaved")
+
+        firebaseSet(savedRef, !isBooked)
 
     }
     let bmColor = "grey";
@@ -78,7 +82,6 @@ function SeeMoreButton(props) {
 }
 export function TrailCards(props) {
     const cardsData = props.cards
-    console.log(cardsData)
     const modalDataOrigin = props.modalData
     const singleCardObj = cardsData.map((cardObj) => {
         return (

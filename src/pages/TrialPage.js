@@ -1,12 +1,40 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import { TrailCards } from "../component/Trailcards.js";
 import { CardSelect } from "../component/Trailfilter.js";
 import MODAL_DATA from "../data/trailSeeMoreData.json";
+import { getDatabase, ref, set as firebaseSet, onValue, push as firebasePush } from 'firebase/database' 
 
 export default function TrailPage(props) {
-    const [displayedCards, setDisplayedCards] = useState(props.trailData)
+    const [displayedCards, setDisplayedCards] = useState([])
+
+    useEffect(() => {
+        const db = getDatabase()
+        const trailCardsRef = ref(db, "trail/trail cards") 
+
+        const offFunction = onValue(trailCardsRef, (snapshot) => {
+            const cardObj = snapshot.val();
+
+            const cardKeys = Object.keys(cardObj);
+
+            const cardArray = cardKeys.map((keys) => {
+                const theCardContents = cardObj[keys];
+                theCardContents.key = keys
+                return theCardContents
+            })
+
+            setDisplayedCards(cardArray)
+
+        })
+
+        function cleanup() {
+            offFunction();
+        }
+
+        return cleanup
+
+    }, [])
 
     const applyFilter = (diff) => {
         if (diff == '') {
@@ -21,7 +49,6 @@ export default function TrailPage(props) {
     const uniqueHikeDiff = [...new Set(props.trailData.reduce((all, current) => {
         return all.concat([current.difficulty]);
       }, []))].sort();
-    const popular = [props.trailData.popularity]
     return (
         <div>
             <main>
