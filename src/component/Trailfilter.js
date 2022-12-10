@@ -1,10 +1,11 @@
 import React, {useState} from "react";
+import Form from 'react-bootstrap/Form';
 
 export function CardSelect(props) {
-    const [selectedCards, setSelectedCards] = useState("")
+    const [selectedDiffCards, setSelectedCards] = useState("")
 
-    const handleSelect = (event) => {
-        if (event.target.value !== selectedCards) {
+    const handleSelectDiff = (event) => {
+        if (event.target.value !== selectedDiffCards) {
           const selectValue = event.target.value
           setSelectedCards(selectValue)
         }
@@ -13,19 +14,18 @@ export function CardSelect(props) {
         props.applyFilterCallBack('')
     }
     const handleClick = (event) => {
-        props.applyFilterCallBack(selectedCards)
+        props.applyFilterCallBack(selectedDiffCards)
     }
-
     const optionElems = props.hikeOptions.map((diff) => {
         return <option key={diff} value={diff}>{diff}</option>
     });
     return (
         <div className="row align-items-center my-3">
             <div className="col-auto">
-                <select id="hikeSelect" className="form-select" value={selectedCards} onChange={handleSelect}>
-                    <option value={selectedCards}>Show all difficulties</option>
+                <Form.Select id="hikeSelect" className="form-select" value={selectedDiffCards} onChange={handleSelectDiff}>
+                    <option value={selectedDiffCards}>All difficulties</option>
                     {optionElems}
-                </select>
+                </Form.Select>
             </div>
             <div className="col-auto">
                 <button id="submitButton" type="submit" className="btn btn-warning" onClick={handleClick}>Apply Filter</button>

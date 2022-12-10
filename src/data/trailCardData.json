@@ -2,7 +2,7 @@
     {
         "title": "Mailbox Peak",
         "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
-        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "img": "../img/trails_img/mbPeak/mb-peak-2.jpeg",
         "difficulty": "Hard",
         "inSeason": ["spring", "summer"],
         "popularity": "Most popular",
@@ -10,20 +10,76 @@
     },
     {
         "title": "Mount Si",
-        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
-        "img": "../img/trails_img/mb-peak-2.jpeg",
-        "difficulty": "Easy",
+        "description": "A moderate/strenuous 8-mile round trip day hike with 3,200 feet of elevation gain. This is a popular trail in the foothills that offers a good workout and views of Puget Sound and the Upper Snoqualmie Valley.",
+        "img": "../img/trails_img/mtSi/mtSi-Cover.webp",
+        "difficulty": "Hard",
         "inSeason": ["spring","summer", "fall"],
         "popularity": "Most popular",
         "status": "Clear"
     },
     {
         "title": "Poo Poo Point",
-        "description": "A strenuous day hike with 4,100 feet of elevation gain. The original path heads straight up the ridge through the forest to the rocky summit for a 6-miles round trip. The new trail switchbacks to the summit for 11.2 miles round trip.",
-        "img": "../img/trails_img/mb-peak-2.jpeg",
+        "description": "More appealing than the name may lead you to believe, the trail up to Poo Poo Point on the shoulder of Issaquahs Tiger Mountain makes for a nice day hike thats right outside Seattle. The traditional trail is 7.2 miles round-trip with 1,858 feet of elevation gain.",
+        "img": "../img/trails_img/poo/cover.jpeg",
+        "difficulty": "Hard",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "",
+        "status": "Clear"
+    },
+    {
+        "title": "Discovery Park and Lighthouse Loop Trail",
+        "description": "The Discovery Park Loop Trail is a designated National Recreation Trail, 2.8 miles long with an elevation change of just 140 feet. It passes through both forest and open meadows, offers extensive views, good prospects for bird watchers, and can be hiked or jogged year-round.",
+        "img": "../img/trails_img/Disco/cover.jpeg",
+        "difficulty": "Easy",
+        "inSeason": ["spring", "summer", "fall", "winter"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Green Lake Trail",
+        "description": "The Green Lake trail is relatively short (1.9 miles), but climbs relentlessly to the lake. The falls were worth seeing and the overlook is only a short distance from the trail. The lake is beautiful and a perfect place for a long break prior to heading back.",
+        "img": "../img/trails_img/Green/cover2.jpeg",
         "difficulty": "Medium",
         "inSeason": ["spring","summer", "fall"],
         "popularity": "Most popular",
         "status": "Clear"
+    },
+    {
+        "title": "The Washington Park Arboretum",
+        "description": "Discover this 2.3-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 48 min to complete. This is a very popular area for running and walking, so you'll likely encounter other people while exploring. The trail is open year-round and is beautiful to visit anytime.",
+        "img": "../img/trails_img/arb/cover.jpeg",
+        "difficulty": "Easy",
+        "inSeason": ["spring","summer", "fall", "winter"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Seward Park Perimeter Trail",
+        "description": "Head out on this 2.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 43 min to complete. This is a very popular area for birding, road biking, and running, so you'll likely encounter other people while exploring.",
+        "img": "../img/trails_img/seward/cover.jpeg",
+        "difficulty": "Easy",
+        "inSeason": ["spring","summer", "fall", "winter"],
+        "popularity": "Most popular",
+        "status": "Clear"
+    },
+    {
+        "title": "Cable Lin Trail to West Tiger Mountain",
+        "description": "The Cable Line Trail on Tiger Mountain is not for the weak of heart, nor the weak of knees. A steep, slippery incline awaits you here, climbing over 2,000 feet in just 1.5 miles to the summit of West Tiger 3. True to its name, an old cable line is occasionally visible in ground as hikers trudge to the top.",
+        "img": "../img/trails_img/line/cover.jpeg",
+        "difficulty": "Hard",
+        "inSeason": ["spring","summer", "fall"],
+        "popularity": "",
+        "status": "Clear"
+    },
+    {
+        "title": "Loop Trail via West Emerson Street",
+        "description": "Head out on this 2.8-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 1 h 1 min to complete. This is a very popular area for hiking and running, so you'll likely encounter other people while exploring. Dogs are welcome, but must be on a leash.",
+        "img": "../img/trails_img/emerson/cover2.jpeg",
+        "difficulty": "Medium",
+        "inSeason": ["spring","summer", "fall", "winter"],
+        "popularity": "Most popular",
+        "status": "Clear"
     }
+
+
 ]

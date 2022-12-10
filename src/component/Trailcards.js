@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Bookmark } from 'react-bootstrap-icons';
+import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 
 function SingleCard(props) {
@@ -18,8 +19,15 @@ function SingleCard(props) {
             )
         }
     })
+
     const handleClick = (event) => {
         setIsBooked(!isBooked)
+
+        const db = getDatabase()
+        const savedRef = ref(db, "trail/trail cards/"+cardData.key+"/isSaved")
+
+        firebaseSet(savedRef, !isBooked)
+
     }
     let bmColor = "grey";
     if(isBooked) {
@@ -68,14 +76,6 @@ function SeeMoreButton(props) {
                         <h2>{modalContent.headingFour}</h2>
                     </div>
                 </Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-                </Modal.Footer>
             </Modal>
         </div>
     )
