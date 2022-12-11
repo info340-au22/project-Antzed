@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Bookmark } from 'react-bootstrap-icons';
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 function SingleCard(props) {
@@ -61,17 +63,31 @@ function SeeMoreButton(props) {
     const modalContent = props.modalCard
     const cardsData = props.cardsData
     const isSaved = cardsData.isSaved
+    const cardStatus = cardsData.status
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-    const handleClick = (event) => {
+    const handleBookClick = (event) => {
 
         const db = getDatabase()
         const savedRef = ref(db, "trail/trail cards/"+cardsData.key+"/isSaved")
 
         firebaseSet(savedRef, !isSaved)
 
+    }
+    const handleStatusClick = (event) => {
+
+        const db = getDatabase()
+        const statusRef = ref(db, "trail/trail cards/"+cardsData.key+"/status")
+        console.log(event.target.value)
+        if (event.target.value === "Clear") {
+            firebaseSet(statusRef, "Clear")
+        } else if (event.target.value === "Use Caution") {
+            firebaseSet(statusRef, "Use Caution")
+        } else {
+            firebaseSet(statusRef, "Closed")
+        }
     }
     let bmColor = "grey";
     if(isSaved) {
@@ -84,7 +100,7 @@ function SeeMoreButton(props) {
             </Button>
             <Modal size="lg" show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
-                <Bookmark color={bmColor} onClick={handleClick} size={25} className="bookmark-modal"/>
+                <Bookmark color={bmColor} onClick={handleBookClick} size={25} className="bookmark-modal"/>
                 <Modal.Title>{modalContent.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -98,6 +114,11 @@ function SeeMoreButton(props) {
                     </div>
                     <div>
                         <h2>{modalContent.headingFour}</h2>
+                        <DropdownButton id="dropdown-basic-button" title="Dropdown button" onChange={handleStatusClick} >
+                            <Dropdown.Item value={cardStatus}>Clear</Dropdown.Item>
+                            <Dropdown.Item >Use Caution</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Closed</Dropdown.Item>
+                        </DropdownButton>
                     </div>
                 </Modal.Body>
             </Modal>
