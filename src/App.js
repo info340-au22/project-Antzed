@@ -26,7 +26,7 @@ export default function App() {
           <NavBar pageName={pathname}/>
         </header>
         
-        <body>
+        <main>
           <Routes>
             <Route path="/" />
               <Route index element={<HomePage />} />
@@ -35,7 +35,7 @@ export default function App() {
               <Route path="user" element={<UserPage />} />
               <Route path="*" element={<NoPage />}/>
           </Routes>
-        </body>
+        </main>
 
         <footer>
           <Footer isInherit={true}/>

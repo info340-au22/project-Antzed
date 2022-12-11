@@ -11,8 +11,9 @@ const handleChange = (e) => {
 
 
 const filterSet = props.filterSet;
-const filterList = (e) => { e.preventDefault();
-  props.filterSet(inputText)
+const filterList = (e) => {
+   e.preventDefault();
+  props.filterSet(inputText);
  }
  
     
