@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {getDatabase, ref, set as firebaseSet, onValue} from "firebase/database";
 
 export function UserForm(props) {
 
     const [userObj, setUserObj] = useState(props.userInfo)
+
+    console.log(userObj)
 
 
     function onClick(event) {
@@ -16,12 +19,12 @@ export function UserForm(props) {
             [event.target.name]: value
         });
     }
-
     
+
 
     return (
         <div className="card user-card">
-            <img src={userObj.pfp}alt={userObj.firstName}></img>
+            <img src={userObj.pfp} alt={userObj.firstName}></img>
             <div className="input-group mb-4">
                 <UserInput type="firstName" id="firstNameInput" placeholder="First Name" value={userObj.firstName} onChangeValue={handleChange} />
                 <UserInput type="lastName" id="lastNameInput" placeholder="Last Name" value={userObj.lastName} onChangeValue={handleChange} />
@@ -36,7 +39,7 @@ export function UserForm(props) {
                 <UserInput type="hikingLevel" id="hikingInput" placeholder="Hiking Level" value={userObj.hikingLevel} onChangeValue={handleChange} />
             </div>
             <div className="form-group mb-4">
-              <textarea name="bio" className="form-control form-control-lg textinput" placeholder="About Me" value={userObj.bio} onChange={handleChange}></textarea>
+                <textarea name="bio" className="form-control form-control-lg textinput" placeholder="About Me" value={userObj.bio} onChange={handleChange}></textarea>
             </div>
             <button className="button" onClick={onClick} >Change</button>
         </div>
