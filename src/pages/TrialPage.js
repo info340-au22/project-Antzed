@@ -93,7 +93,7 @@ export default function TrailPage(props) {
     return (
         <div>
             <main>
-                <div className="border-bottom my-2">
+                <div className="border-bottom m-2">
                     <CardSelect hikeOptions={uniqueHikeDiff} applyFilterCallBack={applyFilter}/>
                 </div>
                 <TrailCards cards={displayedCards} modalData={MODAL_DATA}/>
