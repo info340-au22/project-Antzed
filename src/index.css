@@ -217,7 +217,34 @@ footer {
 }
 /* Trail page */
 
-
+.card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    border-top: none;
+}
+.card-text {
+    margin-bottom: 50px;
+}
+.card-title {
+    margin-bottom: 10px;
+}
+.bookmark {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.bookmark-modal {
+    position: absolute;
+    left: 240px;
+}
+.status {
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+    font-size: 13pt;
+}
 
 @media (min-width:992px) {
     .main-card {

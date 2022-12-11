@@ -12,35 +12,44 @@ function SingleCard(props) {
     const [isBooked, setIsBooked] = useState(false)
     const cardData = props.cardObjData
     const modalData = props.modalData
+    const isSaved = cardData.isSaved
     const singleModalObj = modalData.map((modObj) => {
         if (cardData.title == modObj.id) {
             return (
-                <SeeMoreButton modalCard={modObj} key={modObj.id} />
+                <SeeMoreButton cardsData={cardData} modalCard={modObj} key={modObj.id} />
             )
         }
     })
-
+    
     const handleClick = (event) => {
-        setIsBooked(!isBooked)
 
         const db = getDatabase()
         const savedRef = ref(db, "trail/trail cards/"+cardData.key+"/isSaved")
 
-        firebaseSet(savedRef, !isBooked)
+        firebaseSet(savedRef, !isSaved)
 
     }
-    let bmColor = "grey";
-    if(isBooked) {
+    let bmColor = "white";
+    if(isSaved) {
         bmColor = "gold"
+    }
+    let classList = ""
+    if(cardData.status === "Clear") {
+        classList = "status text-success"
+    } else if (cardData.status === "Use Caution") {
+        classList = "status text-warning"
+    } else {
+        classList = "status text-danger"
     }
     return (
         <Col md={6} xl={3} className="d-flex col-auto rounded mt-4" >
             <div className="card">
                 <img src={cardData.img} className=".card-img-top" alt={cardData.title} />
                 <div className="card-body">
-                    <Bookmark color={bmColor} onClick={handleClick} size={25} className=""/>
+                    <Bookmark color={bmColor} onClick={handleClick} size={25} className="bookmark"/>
                     <h2 className="card-title">{cardData.title}</h2>
-                    <p>{cardData.description}</p>
+                    <p className="card-text">{cardData.description}</p>
+                    <p className={classList}>Status: {cardData.status}</p>
                     {singleModalObj}
                 </div>
             </div>
@@ -50,17 +59,32 @@ function SingleCard(props) {
 
 function SeeMoreButton(props) {
     const modalContent = props.modalCard
+    const cardsData = props.cardsData
+    const isSaved = cardsData.isSaved
     const [show, setShow] = useState(false)
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
+    const handleClick = (event) => {
+
+        const db = getDatabase()
+        const savedRef = ref(db, "trail/trail cards/"+cardsData.key+"/isSaved")
+
+        firebaseSet(savedRef, !isSaved)
+
+    }
+    let bmColor = "grey";
+    if(isSaved) {
+        bmColor = "gold"
+    }
     return (
-        <div>
+        <div className="card-footer">
             <Button variant="primary" onClick={handleShow}>
                 See More
             </Button>
-            <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal size="lg" show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
+                <Bookmark color={bmColor} onClick={handleClick} size={25} className="bookmark-modal"/>
                 <Modal.Title>{modalContent.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

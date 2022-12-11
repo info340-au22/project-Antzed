@@ -28,7 +28,7 @@ export function CardSelect(props) {
                 </Form.Select>
             </div>
             <div className="col-auto">
-                <button id="submitButton" type="submit" className="btn btn-warning" onClick={handleClick}>Apply Filter</button>
+                <button id="submitButton" type="submit" className="btn btn-success" onClick={handleClick}>Apply Filter</button>
             </div>
             <div className="col-auto">
                 <button id="resetButton" className="btn" onClick={handleReset}>Reset Filter</button>
