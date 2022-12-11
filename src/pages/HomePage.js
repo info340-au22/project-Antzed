@@ -40,10 +40,6 @@ export default function HomePage(props) {
         return cleanup;
     }, []);
 
-   
-    // console.log(returnedPopup.tosString());
-
-
     //search bar in section a
     const [query, setQuery] = useState("");
     function handleSearch(event){
@@ -68,7 +64,7 @@ export default function HomePage(props) {
     // then set the access the data with reference /HomeTrailBridge/searchterm in firebase and set that data into the variable otherPageSearchTerm
 
     if (query.includes("/trail ") && query.length > 7){
-        let otherPageSearchTerm = query.slice(6);
+        let otherPageSearchTerm = query.slice(7);
         console.log(otherPageSearchTerm);
         const db = getDatabase();
         let searchTermRef = ref(db, 'HomeTrailBridge/searchterm');
@@ -228,7 +224,7 @@ function SearchBar(props){
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a blog, or a page by /(page name)" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch} onKeyDown={handleKeyDown}/>
+              <input type="search" className="form-control rounded" placeholder="Try search 'lake' or '/trail poo poo point'" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch} onKeyDown={handleKeyDown}/>
               <span className="input-group-text border-0" id="search-addon">
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that initiate search" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
