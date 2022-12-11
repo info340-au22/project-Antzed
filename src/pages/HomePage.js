@@ -63,6 +63,21 @@ export default function HomePage(props) {
         });
     }
 
+
+    // if query include "/trail", take the string after "/trail" and make it into a variable named otherPageSearchTerm
+    // then set the access the data with reference /HomeTrailBridge/searchterm in firebase and set that data into the variable otherPageSearchTerm
+
+    if (query.includes("/trail ") && query.length > 7){
+        let otherPageSearchTerm = query.slice(6);
+        console.log(otherPageSearchTerm);
+        const db = getDatabase();
+        let searchTermRef = ref(db, 'HomeTrailBridge/searchterm');
+        let isActiveRef = ref(db, 'HomeTrailBridge/isActive');
+        set(searchTermRef, otherPageSearchTerm);
+        set(isActiveRef, true);
+        navigate("/trail");
+    }
+
     if(query === "/trail"){
         navigate("/trail");
     }
@@ -169,8 +184,6 @@ export default function HomePage(props) {
 
             <ReturnPopup/>
 
-           
-            
             {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
     )
@@ -309,28 +322,35 @@ function Card(props){
 function UploadForm(props){
     let [register, handleSubmit, onSubmit] = props.submitStuff;
 
+    const [textAreaWidth, settextAreaWidth] = useState(Math.round(window.innerWidth/28));
+
+    console.log(window.innerWidth)
+    
+
+    console.log(textAreaWidth)
+
     
     
     
     return(
         <form id="uploadForm" onSubmit={handleSubmit(onSubmit)}>
-            <label>
-                Title:
-                <input {...register("title")} type="text" name="title" />
-            </label>
+            <label >
+                Title:<br/>
+                <input {...register("title")} type="text" name="title" className="text-area-width"/>
+            </label> <br/>
             
             <label>
-                Image link:
+                Image link:<br/>
                 <input {...register("img")} type="text" name="img" />
-            </label>
+            </label><br/>
             <label>
-                Description of image:
+                Description of image:<br/>
                 <input {...register("description")} type="text" name="description" />
-            </label>
+            </label><br/>
             <label>
-                Content:
-                <input {...register("content")} type="text" name="content" />
-            </label>
+                Content:<br/>
+                <textarea className="overflow-auto" {...register("content")} type="text" name="content" />
+            </label><br/>
             <input type="submit" value="Submit" />
         </form>
        

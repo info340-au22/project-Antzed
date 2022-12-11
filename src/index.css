@@ -133,6 +133,11 @@ footer {
     height: 200px;
 }
 
+.text-area-width {
+    width: 200%;
+    
+}
+
 .relative-max-height {
     max-height:relative;
 }
