@@ -12,6 +12,7 @@ export default function TrailPage(props) {
     useEffect(() => {
         const db = getDatabase()
         const trailCardsRef = ref(db, "trail/trail cards") 
+        let cardArrayOutside;
 
         const offFunction = onValue(trailCardsRef, (snapshot) => {
             const cardObj = snapshot.val();
@@ -24,17 +25,57 @@ export default function TrailPage(props) {
                 return theCardContents
             })
 
+            cardArrayOutside = cardArray
+
             setDisplayedCards(cardArray)
 
         })
 
+        //enable cross page search
+        const bridge = ref(db, "HomeTrailBridge")
+        const searchtermRef = ref(db, "HomeTrailBridge/searchterm")
+        const isActiveRef = ref(db, "HomeTrailBridge/isActive")
+        const offFunction1 = onValue(bridge, (snapshot) => {
+    
+            const bridgeObj = snapshot.val()
+            const searchTerm = bridgeObj.searchterm
+            const isActive = bridgeObj.isActive
+
+            console.log("searchterm" + searchTerm)
+            console.log("isActive" + isActive)
+
+            // put displayCards in new temp array
+            let tempArray = cardArrayOutside
+            console.log("old" + tempArray)
+            //if search term is not empty
+            if (searchTerm !== "" && isActive == true){
+                //filter temp array with search term
+                console.log("here")
+                tempArray = tempArray.filter((element) => {
+
+                    return element.title.toLowerCase().includes(searchTerm.toLowerCase())
+                })
+                console.log(tempArray)
+                setDisplayedCards(tempArray)
+            }
+
+            firebaseSet(searchtermRef, "")
+            firebaseSet(isActiveRef, false)
+        })
+
         function cleanup() {
             offFunction();
+            offFunction1();
         }
 
         return cleanup
 
     }, [])
+    console.log(displayedCards)
+
+
+        
+
 
     const applyFilter = (diff) => {
         if (diff == '') {
