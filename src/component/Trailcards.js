@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import { Bookmark } from 'react-bootstrap-icons';
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 import Form from 'react-bootstrap/Form';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 function SingleCard(props) {
@@ -67,14 +68,6 @@ function SeeMoreButton(props) {
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
-    const handleBookClick = (event) => {
-
-        const db = getDatabase()
-        const savedRef = ref(db, "trail/trail cards/"+cardsData.key+"/isSaved")
-
-        firebaseSet(savedRef, !isSaved)
-
-    }
     const handleStatusClick = (event) => {
 
         const db = getDatabase()
@@ -88,10 +81,6 @@ function SeeMoreButton(props) {
             firebaseSet(statusRef, "Closed")
         }
     }
-    let bmColor = "grey";
-    if(isSaved) {
-        bmColor = "gold"
-    }
     return (
         <div className="card-footer">
             <Button variant="primary" onClick={handleShow}>
@@ -99,10 +88,32 @@ function SeeMoreButton(props) {
             </Button>
             <Modal size="lg" show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
-                <Bookmark color={bmColor} onClick={handleBookClick} size={25} className="bookmark-modal"/>
                 <Modal.Title>{modalContent.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                <Carousel className="carousel">
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100 carousel-img"
+                        src={modalContent.caroselImgOne}
+                        alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        src={modalContent.caroselImgTwo}
+                        alt="Second slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        src={modalContent.caroselImgThree}
+                        alt="Third slide"
+                        />
+                    </Carousel.Item>
+                </Carousel>
                     <div>
                         <h2>{modalContent.headingTwo}</h2>
                         <p className="lead">{modalContent.keyDetails}</p>
