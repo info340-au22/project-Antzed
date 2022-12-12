@@ -94,7 +94,7 @@ function SeeMoreButton(props) {
                 <Carousel className="carousel">
                     <Carousel.Item>
                         <img
-                        className="d-block w-100 carousel-img"
+                        className="d-block w-100"
                         src={modalContent.caroselImgOne}
                         alt="First slide"
                         />
