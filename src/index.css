@@ -269,7 +269,9 @@ footer {
     right: 30px;
     font-size: 13pt;
 }
-
+.carousel {
+    margin-bottom: 20px;
+}
 @media (min-width:992px) {
     .main-card {
         height: 29.5vh;
