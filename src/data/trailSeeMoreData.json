@@ -14,9 +14,9 @@
     {
         "title": "About Mount Si",
         "id": "Mount Si",
-        "caroselImgOne": "../img/trails_img/mtSi-Cover/mtSi-Cover.webp",
-        "caroselImgTwo": "../img/trails_img/mtSi-Cover/car2.jpeg",
-        "caroselImgThree": "../img/trails_img/mtSi-Cover/map.png",
+        "caroselImgOne": "../img/trails_img/mtSi/mtSi-Cover.webp",
+        "caroselImgTwo": "../img/trails_img/mtSi/car2.jpeg",
+        "caroselImgThree": "../img/trails_img/mtSi/map.png",
         "headingTwo": "Key Details",
         "keyDetails": "A moderate/strenuous 8-mile round trip day hike with 3,200 feet of elevation gain. This is a popular trail in the foothills that offers a good workout and views of Puget Sound and the Upper Snoqualmie Valley.",
         "headingThree": "Trail Info",
