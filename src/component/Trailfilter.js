@@ -22,7 +22,7 @@ export function CardSelect(props) {
     return (
         <div className="row align-items-center my-3">
             <div className="col-auto">
-                <Form.Select id="hikeSelect" className="form-select" value={selectedDiffCards} onChange={handleSelectDiff}>
+                <Form.Select id="hikeSelect" value={selectedDiffCards} onChange={handleSelectDiff}>
                     <option value={selectedDiffCards}>All difficulties</option>
                     {optionElems}
                 </Form.Select>
