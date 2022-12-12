@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 
-import { get, getDatabase, ref, set, onValue, query, child} from 'firebase/database';
+import { get, getDatabase, ref, set, onValue} from 'firebase/database';
 import { useForm } from "react-hook-form";
+import Form from "react-bootstrap/Form";
+import { FormControl } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 // Todo: universal search
 let title;
@@ -196,9 +199,9 @@ function SectionBPopUpContent(props){
     return (
         <div className="d-flex rounded mt-4 cards" >
             <div className="col-12 bg-transparent">
-                <div className="popup-cards  popup-words overflow-auto">
+                <div className="popup-cards popup-words overflow-auto">
                     <img className="popup-img" src={blog.img}></img>
-                    <h2>{blog.title}</h2>
+                    <h2 className="blog-title">{blog.title}</h2>
                     <p>
                         {blog.content}
                     </p>
@@ -256,7 +259,6 @@ function SectionB(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
     const cardList = [];
 
-    let [exmapletext, setExampleText] = React.useState("");
     let blogSection = props.blogSection;
     
     let blogData = props.blogData;
@@ -302,7 +304,7 @@ function Card(props){
     return (     
         <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
             <div className="col-12 position-center">
-                <div className="card shadow-lg bg-secondary  home-cards">
+                <div className="card shadow-lg bg-light  home-cards">
                     <img className="card-img-top blog-card-img" src={props.img} alt="Card image cap"></img>
                     <div className="card-body">
                         <h5 className="card-title">{props.title}</h5>
@@ -327,27 +329,32 @@ function UploadForm(props){
 
     
     
-    
     return(
         <form id="uploadForm" onSubmit={handleSubmit(onSubmit)}>
-            <label >
-                Title:<br/>
-                <input {...register("title")} type="text" name="title" className="text-area-width"/>
-            </label> <br/>
+            <Form.Label>Title:</Form.Label>
+            <FormControl {...register("title")} type="text" name="title" ></FormControl>
+            <Form.Text>     
+            </Form.Text>
+
+            <Form.Label>Image link:</Form.Label>
+            <FormControl {...register("img")} type="text" name="img" ></FormControl>
+            <Form.Text>
+            </Form.Text>
+
+            <Form.Label>Description of image:</Form.Label>
+            <FormControl {...register("description")} type="text" name="description" ></FormControl>
+            <Form.Text>
+            </Form.Text>
+
+            <Form.Label>Content:</Form.Label>
+            <FormControl {...register("content")} type="text" name="content" as="textarea" rows={5}></FormControl>
+            <Form.Text>
+            </Form.Text>
+
+            <div className="d-grid gap-2 my-3">
+                <Button variant="secondary" type="submit" size="large">Submit</Button>
+            </div>
             
-            <label>
-                Image link:<br/>
-                <input {...register("img")} type="text" name="img" />
-            </label><br/>
-            <label>
-                Description of image:<br/>
-                <input {...register("description")} type="text" name="description" />
-            </label><br/>
-            <label>
-                Content:<br/>
-                <textarea className="overflow-auto" {...register("content")} type="text" name="content" />
-            </label><br/>
-            <input type="submit" value="Submit" />
         </form>
        
     )

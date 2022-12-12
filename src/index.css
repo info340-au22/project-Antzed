@@ -103,6 +103,7 @@ footer {
     max-height: 90%;
     background-color: #fff;
     z-index: 29;
+    border-radius: 1rem;
 }
 
 .popup-inner .close-btn {
@@ -121,16 +122,24 @@ footer {
 
 .popup-words {
     font-size: x-large;;
+    border-radius: 1rem;
 }
 
 .popup-img{
     position: center;
     /* cover */
     width: 100%;
-    height: 80%
+    height: 80%;
 }
 .blog-card-img{
     height: 200px;
+}
+
+.blog-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .text-area-width {
