@@ -10,11 +10,11 @@ import { useForm } from "react-hook-form";
 // import { SearchBar } from "../component/Home_search_bar";
 import { UploadForm } from "../component/Home_uploadForm";
 import { Card } from "../component/Home_card";
+import { SectionBPopUpContent } from "../component/Home_sectionBPopUpContent";
 
 // Todo: universal search
 let title;
 let searchResult;
-const searchSuggestions = ["trail", "shop", "user", "blog"];
 let FullBlogData;
 
 export default function HomePage(props) {
@@ -125,14 +125,14 @@ export default function HomePage(props) {
         title = key;
     }
 
+    const { register, handleSubmit, reset, formState: {errors}} = useForm();
 
-   
-    const { register, handleSubmit, reset } = useForm();
-
-
-    const onSubmit = (data, event) => {
-    //    turn data into an object and console log the object
+    const onSubmit = (data) => {
         console.log(data);
+        // if (data.title === "" || data.content === "" || data.title === "" || data.content === ""){
+        //     error("Please fill in all the fields");
+        //     return;
+        // }
         const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
         const newKey = currentLastindex + 1;
         //upload this data to firebase
@@ -146,7 +146,7 @@ export default function HomePage(props) {
         
     }
     
-    let submitStuff = [register, handleSubmit, onSubmit];
+    let submitStuff = [register, handleSubmit, onSubmit, errors];
 
     const [sectionBPopup, setSectionBPopup] = useState(false);
     const [uploadFormPopup, setUploadFormPopup] = useState(false);
@@ -170,37 +170,11 @@ export default function HomePage(props) {
         }
     }
 
-
-    // console.log("full blog data", FullBlogData);
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
             <SectionB  popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
             <ReturnPopup/>
-        </div>
-    )
-}
-
-
-
-function SectionBPopUpContent(props){
-    const title = props.title;
-    const blogData = props.blogData;
-    // let blogData = props.blogData;
-    let blog = blogData.find((blog) => blog.title === title);
-    
-    return (
-        <div className="d-flex rounded mt-4 cards" >
-            <div className="col-12 bg-transparent">
-                <div className="popup-cards popup-words overflow-auto">
-                    <img className="popup-img" src={blog.img}></img>
-                    <h2 className="blog-title">{blog.title}</h2>
-                    <p>
-                        {blog.content}
-                    </p>
-                </div>
-            </div>
-            
         </div>
     )
 }
@@ -237,7 +211,6 @@ function SectionA(props){
     return (
         <div>
             <section className={sectionAStyle}>
-                {/* <NavBar pageName = "Home"/> */} {/* NavBar is not needed in this page */}
                 &nbsp;
                 <SearchBar setQuery = {setQuery} handleSearch={handleSearch}/>
             </section>
