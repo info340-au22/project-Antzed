@@ -1,16 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Form from "react-bootstrap/Form";
-import { FormControl, FormText } from "react-bootstrap";
+import { FormControl} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
 
 export function UploadForm(props){
     let [register, handleSubmit, onSubmit, errors] = props.submitStuff;
     let currentUserName = props.currentUserName;
-
-    console.log("name" + currentUserName);
-    console.log("name length" + currentUserName.length);
-
 
     return(
         <form id="uploadForm" onSubmit={handleSubmit(onSubmit)}>

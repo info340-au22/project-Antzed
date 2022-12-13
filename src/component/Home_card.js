@@ -2,7 +2,6 @@ import React from "react";
 
 export function Card(props){
     const [handlePopup, setSectionBPopup] = [props.handlePopup, props.setSectionBPopup];
-    const [currentUserName] = [props.currentUserName];
     
 
     function set(){

@@ -1,18 +1,14 @@
 import React, { useEffect } from "react";
 import Popup from "../component/Popup";
-//  import blogData from "../data/hiking-blog.json";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 
-import { get, getDatabase, ref, set, onValue} from 'firebase/database';
+import {getDatabase, ref, set, onValue} from 'firebase/database';
 import { useForm } from "react-hook-form";
-// import { SearchBar } from "../component/Home_search_bar";
 import { UploadForm } from "../component/Home_uploadForm";
 import { Card } from "../component/Home_card";
 import { SectionBPopUpContent } from "../component/Home_sectionBPopUpContent";
-
-// Todo: universal search
 let title;
 let searchResult;
 let FullBlogData;
@@ -134,10 +130,7 @@ export default function HomePage(props) {
         console.log(data);
         const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
         const newKey = currentLastindex + 1;
-        //upload this data to firebase
         const db = getDatabase();
-        //take element of blogdata and console log it
-        
         const blogRef = ref(db, 'blogs/blogs/'+ newKey);
         set(blogRef, data);
 
@@ -172,7 +165,7 @@ export default function HomePage(props) {
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB currentUserName={currentUserName} popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+            <SectionB popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
             <ReturnPopup/>
         </div>
     )
@@ -230,7 +223,6 @@ function SectionB(props){
     let handleReset = props.handleReset;
     const [setSectionBPopup, setUploadFormPopup]  = props.popupConditions;
 
-    let currentUserName = props.currentUserName;
 
     blogData.map((blog) => {
         cardList.push(<Card author={blog.author} setSectionBPopup={setSectionBPopup} key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
@@ -246,7 +238,7 @@ function SectionB(props){
                 <div className="container">
                     <div className="row">
                         &nbsp;
-                        {/* button that add blogs with 2 margin */}
+                        {/* button that add blogs */}
                         <button className="btn btn-success me-3 my-2 my-sm-0" type="submit" aria-label="a button that add blogs" onClick={() =>{setShowPopup("here"); set()}}>Add your own blog</button>
                         {cardList}
                         

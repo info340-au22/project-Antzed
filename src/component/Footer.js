@@ -5,9 +5,7 @@ export default function Footer(props) {
 
     const positionValue = isInherit ? "position-inherit" : "position-fixed";
     let footerClassName = "text-center text-lg-start " + positionValue;
-    console.log(footerClassName);
     
-
     return (
         <div>
             <footer className={footerClassName}>
