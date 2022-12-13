@@ -7,16 +7,22 @@ import { getAuth, signOut } from 'firebase/auth';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 export default function NavBar(props) {
-    
+    const [errorOccured, setErrorOccured] = useState(null);
     const pageName = props.pageName;
 
     function handleSignOut() {
       const auth = getAuth();
 
       signOut(auth)
-        .catch(err => console.log(err));
+        .catch((err) => {
+          setErrorOccured(err);
+    });
     }
-
+    if (errorOccured) {
+      return (
+        <div>Error Occured</div>
+      );
+    }
     // if(props.currentUser.userId) {
     //   return <Navigate to="/" />
     // }
