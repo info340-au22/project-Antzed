@@ -62,7 +62,7 @@ export default function UserPage(props) {
             {/* <!-- recent --> */}
             <div className="col-lg-4 col-sm-12 no-gutters limit ps-0 pe-0">
               <section className="recent-section">
-                <RecentActivity />
+                <RecentActivity userInfo={userInput} />
               </section>
               {/* <!-- friend --> */}
               {/* <section className="friend-section">

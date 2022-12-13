@@ -31,8 +31,6 @@ export function RecentActivity(props) {
         }
         return cleanup;
     }, [])
-    
-    console.log(savedTrails)
 
     const recentTrails = savedTrails.map((trail, index) => {
         trail.id = "Trails_" + index + 1;

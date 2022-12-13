@@ -25,7 +25,6 @@ export default function TrailPage(props) {
                 theCardContents.key = keys
                 return theCardContents
             })
-
             cardArrayOutside = cardArray
 
             setDisplayedCards(cardArray)
@@ -107,7 +106,7 @@ export default function TrailPage(props) {
                 <div className="border-bottom m-2">
                     <CardSelect hikeOptions={uniqueHikeDiff} applyFilterCallBack={applyFilter}/>
                 </div>
-                <TrailCards cards={displayedCards} modalData={MODAL_DATA}/>
+                <TrailCards cards={displayedCards} modalData={MODAL_DATA} currentUser={props.currentUser} />
             </main>
 
         </div>
