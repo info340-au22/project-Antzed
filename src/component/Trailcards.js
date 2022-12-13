@@ -30,17 +30,6 @@ function SingleCard(props) {
                 firebaseSet(savedTrailRef, false);
             }
         })
-        // const offFunction = onValue(trails, (snapshot) => {
-        //     const trailObj = snapshot.val();
-        //     const objKeys = Object.keys(trailObj);
-        //     const trailArray = objKeys.map((keyString) => {
-        //         return trailObj[keyString];
-        //     });
-        //     const isSavedArray = trailArray.filter((trail) => {
-        //         return trail.isSaved == true;
-        //     })
-        //     setSavedTrails(isSavedArray);
-        // })
 
         function cleanup(){
             offFunction();
