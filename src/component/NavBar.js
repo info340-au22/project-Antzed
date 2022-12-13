@@ -1,10 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import { getAuth, signOut } from 'firebase/auth';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function NavBar(props) {
     const [errorOccured, setErrorOccured] = useState(null);

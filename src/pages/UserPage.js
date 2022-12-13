@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 
-import {FriendList} from "../component/UserPage_Friend";
+// import {FriendList} from "../component/UserPage_Friend";
 import {RecentActivity} from "../component/UserPage_Recent";
 import {UserForm} from "../component/UserPage_UserForm";
 import {UserProfile} from "../component/UserPage_UserProfile";
