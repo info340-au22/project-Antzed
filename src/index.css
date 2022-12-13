@@ -138,7 +138,7 @@ footer {
     height: 80%;
 }
 .blog-card-img{
-    height: 175px;
+    height: 200px;
 }
 
 .blog-title {
@@ -146,6 +146,10 @@ footer {
     font-size: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.upload-form-error{
+    font-size: small;
 }
 
 .text-area-width {
