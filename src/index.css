@@ -303,11 +303,11 @@ footer {
 }
 @media (min-width:992px) {
     .main-card {
-        height: 145vh;
+        height: 100vh;
     }
 
     .user-card {
-        height: 145vh;
+        height: 95vh;
     }
 
     .recent-section p {

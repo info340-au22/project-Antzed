@@ -30,11 +30,11 @@ export default function UserPage(props) {
     return cleanup;
   }, []);
 
-  function userInfoCallback(userObj) {
+  function userInfoCallback(userObj, userImg) {
     setUserInput(userObj);
     const db = getDatabase();
     const users = ref(db, "user/allUsers/" + props.currentUser.userId);
-    firebaseSet(users, userObj);
+    firebaseSet(users, {...userObj, img: userImg});
   }
 
   console.log(userInput)

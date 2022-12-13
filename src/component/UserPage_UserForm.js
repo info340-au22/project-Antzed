@@ -1,8 +1,13 @@
 import React, {useState, useEffect} from "react";
 import {getDatabase, ref, set as firebaseSet, onValue} from "firebase/database";
+import {getDownloadURL, getStorage, ref as storageRef, uploadBytes} from 'firebase/storage';
 
 export function UserForm(props) {
     const [userObj, setUserObj] = useState(props.userInfo);
+    const [imageFile, setImageFile] = useState(undefined);
+    let initialURL = userObj.img;
+    const [imageURL, setImageURL] = useState(initialURL);
+
     
     useEffect(() => {
     const db = getDatabase();
@@ -19,10 +24,24 @@ export function UserForm(props) {
     return cleanup;
   }, []);
 
-    function onClick(event) {
-        props.userInfoCallback(userObj);
+    const onClick = async (event) => {
+
+        const storage = getStorage();
+        const imageRef = storageRef(storage, "user/userImages/" + userObj.userId);
+        await uploadBytes(imageRef, imageFile);
+        const downloadUrlString = await getDownloadURL(imageRef);
+
+        props.userInfoCallback(userObj, downloadUrlString);
+
     }
 
+    function handleImgChange(event) {
+        if(event.target.files.length > 0 && event.target.files[0]) {
+            const imageFile = event.target.files[0];
+            setImageFile(imageFile);
+            setImageURL(URL.createObjectURL(imageFile));
+        }
+    }
 
     function handleChange(event) {
         const value = event.target.value;
@@ -37,8 +56,9 @@ export function UserForm(props) {
     return (
         <div className="card user-card">
             <div className="user-upload">
-                <img src={userObj.img} alt={userObj.firstName}></img>
-                <button className="btn btn-sm btn-secondary me-2">Choose Image</button>
+                <img src={imageURL} alt={userObj.firstName}></img>
+                <label htmlFor="imageUploadInput" className="btn btn-sm btn-secondary mt-3 mb-3">Choose Image</label>
+                <input type="file" name="img" id="imageUploadInput" className="d-none" onChange={handleImgChange} />
             </div>
 
             <div className="input-group mb-4">
