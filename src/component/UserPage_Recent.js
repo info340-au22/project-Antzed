@@ -1,21 +1,47 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {getDatabase, onValue, ref, set as firebaseSet, push as firebasePush} from "firebase/database";
 
 export function RecentActivity(props) {
-    const sampleTrails = [
-        {id: "", trailName: "Mailbox Peak", difficulty: "Hard", address: "Mailbox Peak Trail, Washington 98045"},
-        {id: "", trailName: "Poo Poo Point", difficulty: "Moderate/Hard", address: "Poo Poo Point Trail, Washington 98027"},
-        {id: "", trailName: "Rattlesnake Ledge", difficulty: "Moderate", address: "Rattlesnake Ridge, Washington 98045"},
-        {id: "", trailName: "Margaret Lake", difficulty: "Moderate/Hard", address: "Margaret Lake, Washington 98068"}
-    ]
+    // const sampleTrails = [
+    //     {id: "", trailName: "Mailbox Peak", difficulty: "Hard", address: "Mailbox Peak Trail, Washington 98045"},
+    //     {id: "", trailName: "Poo Poo Point", difficulty: "Moderate/Hard", address: "Poo Poo Point Trail, Washington 98027"},
+    //     {id: "", trailName: "Rattlesnake Ledge", difficulty: "Moderate", address: "Rattlesnake Ridge, Washington 98045"},
+    //     {id: "", trailName: "Margaret Lake", difficulty: "Moderate/Hard", address: "Margaret Lake, Washington 98068"}
+    // ]
+    const [savedTrails, setSavedTrails] = useState([]);
 
-    const recentTrails = sampleTrails.map((trail, index) => {
+    useEffect(() => {
+        const db = getDatabase();
+        const trails = ref(db, "trail/trail cards")
+
+        const offFunction = onValue(trails, (snapshot) => {
+            const trailObj = snapshot.val();
+            const objKeys = Object.keys(trailObj);
+            const trailArray = objKeys.map((keyString) => {
+                return trailObj[keyString];
+            });
+            const isSavedArray = trailArray.filter((trail) => {
+                return trail.isSaved == true;
+            })
+            setSavedTrails(isSavedArray);
+        })
+
+        function cleanup(){
+            offFunction();
+        }
+        return cleanup;
+    }, [])
+    
+    console.log(savedTrails)
+
+    const recentTrails = savedTrails.map((trail, index) => {
         trail.id = "Trails_" + index + 1;
         return <RecentRow key={trail.id} trailInfo={trail} />
     })
     
     return (
         <div className="card user-card mb-3 ms-3">
-            <h1 className="text-light mb-4">Recent Activity</h1>
+            <h1 className="text-light mb-4">Saved Trails</h1>
             <div className="main-card">
                 {recentTrails}
             </div>
@@ -26,8 +52,10 @@ export function RecentActivity(props) {
 function RecentRow(props) {
     return (
         <div className="trail">
-            <p className="mb-2 h4">{props.trailInfo.trailName}</p>
-            <p className="mx-5">{props.trailInfo.difficulty} | {props.trailInfo.address}</p>
+            <p className="mb-1 h3 trail-header">{props.trailInfo.title}:</p>
+            <p className="ms-5 mb-0"> Difficulty: {props.trailInfo.difficulty}</p>
+            <p className="ms-5 mb-0"> Popularity: {props.trailInfo.popularity}</p>
+            <p className="ms-5 mb-1"> Status: {props.trailInfo.status}</p>
         </div>
     )
 }

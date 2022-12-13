@@ -2,6 +2,12 @@
     background-color: #8CD9BD;
 }
 
+.nav_img {
+    border-radius: 50%;
+    max-height: 35px;
+    max-width: 35px;
+}
+
 footer {
     display: block;
     width: 100%;
@@ -204,7 +210,11 @@ footer {
 .trail {
     margin: 1.5rem;
     font-size: 1.5rem;
-    box-shadow: 1px 5px 2px rgba(36, 36, 36, 0.4);
+    border-bottom: solid 1px black;
+}
+
+.recent-section .trail-header p {
+    font-size: 2rem;
 }
 
 .recent-section p {
@@ -249,6 +259,16 @@ footer {
     border-radius: 1.5rem;
 }
 
+.user-upload img {
+    display: block;
+    margin-bottom: 0;
+}
+
+.user-upload button {
+    margin-top: 1rem;
+    margin-bottom: 1.3rem;
+}
+
 .user-row {
     margin: auto;
 }
@@ -287,12 +307,20 @@ footer {
 }
 @media (min-width:992px) {
     .main-card {
-        height: 29.5vh;
+        height: 100vh;
+    }
+
+    .user-card {
+        height: 95vh;
     }
 
     .recent-section p {
         font-size: 1rem;
     }
+
+    .trail .trail-header {
+    font-size: 1.5rem;
+}
 
     .friend-section img {
         max-width: 40px;
@@ -329,7 +357,6 @@ footer {
         background-color: #706F43;
         margin: 0;
         margin-top: 1rem;
-        height: 92vh;
     }
 
     .side-navigation a {

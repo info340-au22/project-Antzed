@@ -28,7 +28,7 @@ function SingleCard(props) {
         const db = getDatabase()
         const savedRef = ref(db, "trail/trail cards/"+cardData.key+"/isSaved")
 
-        firebaseSet(savedRef, !isSaved)
+        firebaseSet(savedRef, !isSaved);
 
     }
     let bmColor = "white";
