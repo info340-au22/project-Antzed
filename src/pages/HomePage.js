@@ -15,7 +15,6 @@ let FullBlogData;
 
 export default function HomePage(props) {
     let currentUser = props.currentUser;
-    console.log("current user in home page: ", currentUser.userName, currentUser.email, currentUser.firstName, currentUser.lastName);
     let currentUserName = [currentUser.firstName, currentUser.lastName].join(" ");
     //blog data on firebase in section b
     const [blogData, setBlogData] = useState([]);
@@ -48,7 +47,6 @@ export default function HomePage(props) {
         event.preventDefault();
         searchResult = event.target.value.toLowerCase();
     }
-    console.log(query);
     
     const navigate = useNavigate();
 
@@ -67,7 +65,6 @@ export default function HomePage(props) {
 
     if (query.includes("/trail ") && query.length > 7){
         let otherPageSearchTerm = query.slice(7);
-        console.log(otherPageSearchTerm);
         const db = getDatabase();
         let searchTermRef = ref(db, 'HomeTrailBridge/searchterm');
         let isActiveRef = ref(db, 'HomeTrailBridge/isActive');
@@ -96,14 +93,12 @@ export default function HomePage(props) {
             return blog.title.toLowerCase().includes(query.toLowerCase());
         });
         
-        console.log("result" + result);
 
         if(result){
             let filteredBlogData = blogData.filter((blog) => {
                 return blog.title.toLowerCase().includes(query.toLowerCase());
             });
-            console.log(filteredBlogData);
-    
+
             setBlogData(filteredBlogData);
             scrollToSection(blogSection);
         
@@ -127,7 +122,6 @@ export default function HomePage(props) {
     const { register, handleSubmit, reset, formState: {errors}} = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
         const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
         const newKey = currentLastindex + 1;
         const db = getDatabase();
@@ -142,8 +136,7 @@ export default function HomePage(props) {
 
     const [sectionBPopup, setSectionBPopup] = useState(false);
     const [uploadFormPopup, setUploadFormPopup] = useState(false);
-    const popupConditions = [setSectionBPopup, setUploadFormPopup]
-    console.log("sectionB " + sectionBPopup, "upload " + uploadFormPopup);
+    const popupConditions = [setSectionBPopup, setUploadFormPopup];
 
     // when the popup is closed, the popup will be hidden
     if(!showPopup){

@@ -43,13 +43,12 @@ export default function TrailPage(props) {
             const isActive = bridgeObj.isActive
 
 
-            // put displayCards in new temp array
             let tempArray = cardArrayOutside
             //if search term is not empty
             if (searchTerm !== "" && isActive == true){
                 //filter temp array with search term
-                tempArray = tempArray.filter((element) => {
 
+                tempArray = tempArray.filter((element) => {
                     return element.title.toLowerCase().includes(searchTerm.toLowerCase())
                 })
 
@@ -73,10 +72,6 @@ export default function TrailPage(props) {
         return cleanup
 
     }, [])
-
-
-        
-
 
     const applyFilter = (diff) => {
         if (diff == '') {
