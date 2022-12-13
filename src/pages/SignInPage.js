@@ -29,7 +29,6 @@ export default function SignInPage(props) {
     }
 
     if(props.currentUser.userId) {
-        //console.log(props.currentUser);
         const userInfo = {userId: props.currentUser.userId, firstName: props.currentUser.firstName, lastName: props.currentUser.lastName, address: props.currentUser.address, email: props.currentUser.email, hikingLevel: props.currentUser.hikingLevel, bio: props.currentUser.bio, img: props.currentUser.img, trails: props.currentUser.trails}
         const db = getDatabase();
         const user = ref(db,"user/allUsers/" + props.currentUser.userId);
@@ -38,15 +37,6 @@ export default function SignInPage(props) {
         return <Navigate to="/" />
     }
     
-
-    // function addData() {
-    //     const db = getDatabase();
-    //     // const user = ref(db, "user/users/0");
-    //     //firebaseSet(user, userObj);
-    
-    //     const allUsers = ref(db, "user/allUsers");
-    //     firebasePush(allUsers, userObj)
-    // }
 
     return (
     <div className='container mb-4'>

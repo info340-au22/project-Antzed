@@ -42,22 +42,12 @@ export default function TrailPage(props) {
             const searchTerm = bridgeObj.searchterm
             const isActive = bridgeObj.isActive
 
-            // console.log("searchterm" + searchTerm)
-            // console.log("isActive" + isActive)
 
-            // put displayCards in new temp array
             let tempArray = cardArrayOutside
-            // console.log("old" + tempArray)
-            //if search term is not empty
-            if (searchTerm !== "" && isActive == true){
-                //filter temp array with search term
-                // console.log("here")
-                tempArray = tempArray.filter((element) => {
-                    //console.log("element" + element.title.toLowerCase())
-                    // console.log("searchterm" + searchTerm)
-                    // console.log(element.title.toLowerCase().includes(searchTerm.toLowerCase()))
-                    //.include seem to have some problem with searching. It wont search words in words.
 
+            if (searchTerm !== "" && isActive == true){
+
+                tempArray = tempArray.filter((element) => {
                     return element.title.toLowerCase().includes(searchTerm.toLowerCase())
                 })
 
@@ -66,7 +56,6 @@ export default function TrailPage(props) {
                     alert("No results found")
                 }
 
-                //console.log(tempArray)
                 setDisplayedCards(tempArray)
             }
             
@@ -82,10 +71,6 @@ export default function TrailPage(props) {
         return cleanup
 
     }, [])
-
-
-        
-
 
     const applyFilter = (diff) => {
         if (diff == '') {
