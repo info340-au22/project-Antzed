@@ -18,6 +18,9 @@ let searchResult;
 let FullBlogData;
 
 export default function HomePage(props) {
+    let currentUser = props.currentUser;
+    console.log("current user in home page: ", currentUser.userName, currentUser.email, currentUser.firstName, currentUser.lastName);
+    let currentUserName = [currentUser.firstName, currentUser.lastName].join(" ");
     //blog data on firebase in section b
     const [blogData, setBlogData] = useState([]);
 
@@ -129,10 +132,6 @@ export default function HomePage(props) {
 
     const onSubmit = (data) => {
         console.log(data);
-        // if (data.title === "" || data.content === "" || data.title === "" || data.content === ""){
-        //     error("Please fill in all the fields");
-        //     return;
-        // }
         const currentLastindex = blogData.indexOf(blogData[blogData.length - 1])
         const newKey = currentLastindex + 1;
         //upload this data to firebase
@@ -166,14 +165,14 @@ export default function HomePage(props) {
             return <Popup setToFalse={setBlogData} trigger={showPopup} setTrigger={setShowPopup} content={<SectionBPopUpContent title={title} blogData={blogData}/>}/>
         }
         if(uploadFormPopup){
-            return <Popup  setToFalse={setUploadFormPopup} trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm submitStuff={submitStuff}/>}/>
+            return <Popup setToFalse={setUploadFormPopup} trigger={showPopup} setTrigger={setShowPopup} content={<UploadForm   currentUserName={currentUserName} submitStuff={submitStuff}/>}/>
         }
     }
 
     return (
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
-            <SectionB  popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
+            <SectionB currentUserName={currentUserName} popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
             <ReturnPopup/>
         </div>
     )
@@ -231,8 +230,10 @@ function SectionB(props){
     let handleReset = props.handleReset;
     const [setSectionBPopup, setUploadFormPopup]  = props.popupConditions;
 
+    let currentUserName = props.currentUserName;
+
     blogData.map((blog) => {
-        cardList.push(<Card setSectionBPopup={setSectionBPopup} key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
+        cardList.push(<Card author={blog.author} setSectionBPopup={setSectionBPopup} key={blog.title} showPopup={showPopup} setShowPopup={setShowPopup} handlePopup={handlePopup} title={blog.title} description={blog.description}  img={blog.img}/>);
     })
 
     function set(){
@@ -259,7 +260,6 @@ function SectionB(props){
         
     )
 }
-
 
 
 

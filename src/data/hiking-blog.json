@@ -1,4 +1,5 @@
 [{
+    "author": "host",
     "title": "Discovery Park and Lighthouse Loop Trail",
     "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNTA0OTI3MjcvNTM5ZTQ0ODMwZmIwODU4YWQ4MGUzYjdhMTA1ODA3Y2UuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 4.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 1 h 45 min to complete.",
@@ -6,12 +7,14 @@
     
 },
 {
+    "author": "host",
     "title":"Green Lake Trail",
     "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTE2MDYyMzYvZjc2YWYzMWVlY2E1NjM1YzZhMjkzMTk1M2ZkZWE2NTguanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 2.9-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 51 min to complete.",
     "content":"Went to Seattle, stopped by Green Lake. A very nice walk in the morning. This is a busy park, parking at the designated trailhead is limited. I parked at nearby street. The trail is flat, paved, and good for everyone. Short video: https://youtu.be/jkbwvwV5o_s"
 },
 {
+    "author": "host",
     "title":"The Washington Park Arboretum",
     "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTQ0MTUwODUvNjUxNTllMWE3NWViZDI5Yjg3NzE0OTA5YzZlYjJhZjMuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 1.5-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 30 min to complete.",
@@ -19,6 +22,7 @@
 
 },
 {
+    "author": "host",
     "title":"Seward Park Perimeter Trail",
     "img":"https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNDM1MDQzNjIvYjRiNDlkZmU2OWYxYWI5MzIwY2FjMDEwMzFmMmUzZGMuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Head out on this 2.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 43 min to complete.",
@@ -26,24 +30,28 @@
 
 },
 {
+    "author": "host",
     "title": "Loop Trail via West Emerson Street",
     "img": "https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTk3MDgzNDAvMzhjZWJkYTA0ZWZhZWM5ZDNjYmU0NzViNTZhNTJjMDYuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJ3ZWJwIiwicmVzaXplIjp7IndpZHRoIjoxMDgwLCJoZWlnaHQiOjcwMCwiZml0IjoiY292ZXIifSwicm90YXRlIjpudWxsfX0=",
     "description":"Enjoy this 1.5-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 30 min to complete.",
     "content":"Well maintained trail. Very easy to complete the whole thing! There are plenty of signs along the trail so it’s easy to find the right route (there are multiple intersections and it tends to confuse me because I’m not very good at directions)."
 },
 {
+    "author": "host",
     "title":"Lake Union Loop Trail",
     "img": "https://www.alltrails.com/api/alltrails/trails/10493407/profile_photo?show_placeholder=no&show_static_map=yes&size=larger_wide&key=3p0t5s6b5g4g0e8k3c1j3w7y5c3m4t8i",
     "description":"Enjoy this 6.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 2h 3min to complete.",
     "content":"Mostly flat. There are good views of the lake and city along the way. It is also fun to check Gasworks park. Parts of the trail go past alleyways and homeless camps. Would recommend doing this loop during sunlight."
 },
 {
+    "author": "host",
     "title":"Cable Lin Trail to West Tiger Mountain",
     "img":"https://www.alltrails.com/api/alltrails/trails/10282298/profile_photo?show_placeholder=no&show_static_map=yes&size=larger_wide&key=3p0t5s6b5g4g0e8k3c1j3w7y5c3m4t8i",
     "description":"Enjoy this 3.0-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 2h 58 min to complete.",
     "content":"Parking wasn’t a problem at all. Beginning of the trail was in the shade and the ground was frosty, not slippery though. Snow was on the ground near the top, after the West Tiger #3 sign. We had micro spikes but didn’t need them. Trekking poles are highly recommended for descent as these loose rocks and wet wood pieces are slippery."
 },
 {
+    "author": "host",
     "title":"Lake Washington Boulevard Trail",
     "img":"https://preview.redd.it/z1hhszjkpbq91.png?width=1092&format=png&auto=webp&s=15b739bd379f7d41e7a1405f58d93ec9ea80a2d8",
     "description":"Enjoy this 2.4-mile loop trail near Seattle, Washington. Generally considered an easy route, it takes an average of 43 min to complete.",
