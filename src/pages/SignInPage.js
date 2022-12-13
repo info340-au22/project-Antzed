@@ -2,10 +2,9 @@ import React, {useState, useEffect} from 'react';
 
 import {Navigate} from 'react-router-dom';
 
-import {getAuth, EmailAuthProvider, GoogleAuthProvider, onAuthStateChanged, updateCurrentUser} from 'firebase/auth';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import {StyledFirebaseAuth} from 'react-firebaseui';
-import {CurrencyBitcoin} from 'react-bootstrap-icons';
-import {getDatabase, onValue, ref, set as firebaseSet, push as firebasePush} from "firebase/database";
+import {getDatabase, ref, set as firebaseSet, push as firebasePush} from "firebase/database";
 
 
 export default function SignInPage(props) {

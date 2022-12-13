@@ -1,7 +1,6 @@
 import React from "react";
 
 export function UserProfile(props) {
-    //console.log(props.userInfo);
     return (
         <div className="card user-card">
             <img src={props.userInfo.img} alt={props.userInfo.firstName}></img>
