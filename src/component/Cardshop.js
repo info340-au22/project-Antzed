@@ -19,8 +19,6 @@ export default function Cardshop(props){
     )
  }
 
-
-
  export const CardItem = (props) => {
      const { title, description, price, imageName, store } = props;
      return (

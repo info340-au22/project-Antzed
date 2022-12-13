@@ -3,7 +3,6 @@ import React from 'react';
 export function SectionBPopUpContent(props){
     const title = props.title;
     const blogData = props.blogData;
-    // let blogData = props.blogData;
     let blog = blogData.find((blog) => blog.title === title);
     
     return (
