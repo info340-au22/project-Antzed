@@ -2,15 +2,27 @@ import React, {useState, useEffect} from "react";
 import {getDatabase, ref, set as firebaseSet, onValue} from "firebase/database";
 
 export function UserForm(props) {
+    const [userObj, setUserObj] = useState(props.userInfo);
+    
+    useEffect(() => {
+    const db = getDatabase();
+    const user = ref(db, "user/allUsers/" + userObj.userId);
 
-    const [userObj, setUserObj] = useState(props.userInfo)
+    const offFunction = onValue(user, (snapshot) => {
+      const userData = snapshot.val();
+      setUserObj(userData)
+    })
 
-    console.log(userObj)
-
+    function cleanup() {
+      offFunction();
+    }
+    return cleanup;
+  }, []);
 
     function onClick(event) {
         props.userInfoCallback(userObj);
     }
+
 
     function handleChange(event) {
         const value = event.target.value;
@@ -24,7 +36,11 @@ export function UserForm(props) {
 
     return (
         <div className="card user-card">
-            <img src={userObj.pfp} alt={userObj.firstName}></img>
+            <div className="user-upload">
+                <img src={userObj.img} alt={userObj.firstName}></img>
+                <button className="btn btn-sm btn-secondary me-2">Choose Image</button>
+            </div>
+
             <div className="input-group mb-4">
                 <UserInput type="firstName" id="firstNameInput" placeholder="First Name" value={userObj.firstName} onChangeValue={handleChange} />
                 <UserInput type="lastName" id="lastNameInput" placeholder="Last Name" value={userObj.lastName} onChangeValue={handleChange} />
@@ -41,7 +57,7 @@ export function UserForm(props) {
             <div className="form-group mb-4">
                 <textarea name="bio" className="form-control form-control-lg textinput" placeholder="About Me" value={userObj.bio} onChange={handleChange}></textarea>
             </div>
-            <button className="button" onClick={onClick} >Change</button>
+            <button className="button" onClick={onClick} >Save to Profile</button>
         </div>
     )
 }

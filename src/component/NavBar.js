@@ -2,12 +2,24 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
+import { getAuth, signOut } from 'firebase/auth';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 export default function NavBar(props) {
     
     const pageName = props.pageName;
 
+    function handleSignOut() {
+      const auth = getAuth();
 
+      signOut(auth)
+        .catch(err => console.log(err));
+    }
+
+    // if(props.currentUser.userId) {
+    //   return <Navigate to="/" />
+    // }
 
     return (
         <div>
@@ -19,8 +31,23 @@ export default function NavBar(props) {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <Link pageName = "Trail" isActive={pageName === "Trail"}/>
                         <Link pageName = "Shop" isActive={pageName === "Shop"}/>
-                        <Link pageName = "User" isActive={pageName === "User"}/>
-                        
+                        {props.currentUser.userId && 
+                          <>
+                            <li className="nav-item">
+                              <NavLink to="/user" className="nav-link">User</NavLink>
+                            </li>
+                            <li className="nav-item">
+                              <button className="btn btn-secondary text-nowrap" onClick={handleSignOut}>Sign Out</button>
+                            </li>
+                          </>
+                        }
+                        {!props.currentUser.userId && 
+                          <li className="nav-item">
+                            <NavLink className="nav-link" to="/login">
+                              <img className="nav_img" src={props.currentUser.img} alt={props.currentUser.userName + "avatar"} />
+                            </NavLink>
+                          </li>
+                        }
                     </ul>
                 </Navbar.Collapse>
 

@@ -6,35 +6,43 @@ import {FriendList} from "../component/UserPage_Friend";
 import {RecentActivity} from "../component/UserPage_Recent";
 import {UserForm} from "../component/UserPage_UserForm";
 import {UserProfile} from "../component/UserPage_UserProfile";
-import {getDatabase, onValue, ref, set as firebaseSet} from "firebase/database";
+import {Navigate} from 'react-router-dom';  
+import {getDatabase, onValue, ref, set as firebaseSet, push as firebasePush, set} from "firebase/database";
+import {getAuth, EmailAuthProvider, GoogleAuthProvider, onAuthStateChanged, updateProfile} from 'firebase/auth';
+import {StyledFirebaseAuth} from 'react-firebaseui';
 
-const sampleUser = {userId: 0, firstName: "Cody", lastName: "Tu", address: "711-2880 Nulla St. Mankato Mississippi 96522", email: "sample@gmail.com", hikingLevel: "Beginner", bio: "Mitchell Morrison is an upcoming video producer and editor who believes in the art of visual organization. He is a recent graduate from the University of Washington and focused on post-production during his time studying there. He was introduced to the magical world of visual art production by watching his father work on editing commercials growing up and has been working towards his dream of becoming a video editor ever since.", pfp: "../img/hamster-profile.jpg"}
+//const sampleUser = {userId: 0, firstName: "Cody", lastName: "Tu", address: "711-2880 Nulla St. Mankato Mississippi 96522", email: "sample@gmail.com", hikingLevel: "Beginner", bio: "Mitchell Morrison is an upcoming video producer and editor who believes in the art of visual organization. He is a recent graduate from the University of Washington and focused on post-production during his time studying there. He was introduced to the magical world of visual art production by watching his father work on editing commercials growing up and has been working towards his dream of becoming a video editor ever since.", pfp: "../img/hamster-profile.jpg"}
 
 export default function UserPage(props) {
-  const [userInput, setUserInput] = useState(sampleUser);
-
+  const [userInput, setUserInput] = useState({userId: props.currentUser.userId, firstName: props.currentUser.firstName, lastName: props.currentUser.lastName, address: props.currentUser.address, email: props.currentUser.email, hikingLevel: props.currentUser.hikingLevel, bio: props.currentUser.bio, img: props.currentUser.img}); 
   useEffect(() => {
     const db = getDatabase();
-    const user = ref(db, "user/users/0");
+    const user = ref(db, "user/allUsers/" + props.currentUser.userId);
 
     const offFunction = onValue(user, (snapshot) => {
-      const userUpdate = snapshot.val();
-      setUserInput(userUpdate)
+      const userData = snapshot.val();
+      setUserInput(userData)
     })
 
     function cleanup() {
       offFunction();
     }
     return cleanup;
-  });
+  }, []);
 
   function userInfoCallback(userObj) {
     setUserInput(userObj);
     const db = getDatabase();
-    const user = ref(db, "user/users/0");
-    firebaseSet(user, userObj);
+    const users = ref(db, "user/allUsers/" + props.currentUser.userId);
+    firebaseSet(users, userObj);
   }
 
+  console.log(userInput)
+  // users
+  if (!props.currentUser.userId) {
+    return <Navigate to="/" />
+  }
+  
   return (
     <div>
       <main>
@@ -57,9 +65,9 @@ export default function UserPage(props) {
                 <RecentActivity />
               </section>
               {/* <!-- friend --> */}
-              <section className="friend-section">
+              {/* <section className="friend-section">
                 <FriendList />
-              </section>
+              </section> */}
             </div>
           </div>
         </div>
