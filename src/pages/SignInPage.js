@@ -29,7 +29,7 @@ export default function SignInPage(props) {
     }
 
     if(props.currentUser.userId) {
-        console.log(props.currentUser);
+        //console.log(props.currentUser);
         const userInfo = {userId: props.currentUser.userId, firstName: props.currentUser.firstName, lastName: props.currentUser.lastName, address: props.currentUser.address, email: props.currentUser.email, hikingLevel: props.currentUser.hikingLevel, bio: props.currentUser.bio, img: props.currentUser.img, trails: props.currentUser.trails}
         const db = getDatabase();
         const user = ref(db,"user/allUsers/" + props.currentUser.userId);

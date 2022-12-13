@@ -53,7 +53,7 @@ export default function TrailPage(props) {
                 //filter temp array with search term
                 // console.log("here")
                 tempArray = tempArray.filter((element) => {
-                    console.log("element" + element.title.toLowerCase())
+                    //console.log("element" + element.title.toLowerCase())
                     // console.log("searchterm" + searchTerm)
                     // console.log(element.title.toLowerCase().includes(searchTerm.toLowerCase()))
                     //.include seem to have some problem with searching. It wont search words in words.
@@ -66,7 +66,7 @@ export default function TrailPage(props) {
                     alert("No results found")
                 }
 
-                console.log(tempArray)
+                //console.log(tempArray)
                 setDisplayedCards(tempArray)
             }
             

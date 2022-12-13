@@ -109,7 +109,7 @@ function SeeMoreButton(props) {
 
         const db = getDatabase()
         const statusRef = ref(db, "trail/trail cards/"+cardsData.key+"/status")
-        console.log(event.target.value)
+        //console.log(event.target.value)
         if (event.target.value === "Clear") {
             firebaseSet(statusRef, "Clear")
         } else if (event.target.value === "Use Caution") {

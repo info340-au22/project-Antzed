@@ -36,8 +36,6 @@ export default function UserPage(props) {
     const users = ref(db, "user/allUsers/" + props.currentUser.userId);
     firebaseSet(users, {...userObj, img: userImg});
   }
-
-  console.log(userInput)
   // users
   if (!props.currentUser.userId) {
     return <Navigate to="/" />
