@@ -8,6 +8,7 @@ import { getDatabase, ref, set as firebaseSet, onValue, push as firebasePush } f
 
 export default function TrailPage(props) {
     const [displayedCards, setDisplayedCards] = useState([])
+    const [filterDisplay, setFilterDisplay] = useState([])
 
     useEffect(() => {
         const db = getDatabase()
@@ -28,6 +29,7 @@ export default function TrailPage(props) {
             cardArrayOutside = cardArray
 
             setDisplayedCards(cardArray)
+            setFilterDisplay(cardArray)
 
         })
 
@@ -41,16 +43,16 @@ export default function TrailPage(props) {
             const searchTerm = bridgeObj.searchterm
             const isActive = bridgeObj.isActive
 
-            console.log("searchterm" + searchTerm)
-            console.log("isActive" + isActive)
+            // console.log("searchterm" + searchTerm)
+            // console.log("isActive" + isActive)
 
             // put displayCards in new temp array
             let tempArray = cardArrayOutside
-            console.log("old" + tempArray)
+            // console.log("old" + tempArray)
             //if search term is not empty
             if (searchTerm !== "" && isActive == true){
                 //filter temp array with search term
-                console.log("here")
+                // console.log("here")
                 tempArray = tempArray.filter((element) => {
                     console.log("element" + element.title.toLowerCase())
                     // console.log("searchterm" + searchTerm)
@@ -69,7 +71,6 @@ export default function TrailPage(props) {
                 setDisplayedCards(tempArray)
             }
             
-
             firebaseSet(searchtermRef, "")
             firebaseSet(isActiveRef, false)
         })
@@ -82,7 +83,6 @@ export default function TrailPage(props) {
         return cleanup
 
     }, [])
-    console.log(displayedCards)
 
 
         
@@ -90,13 +90,13 @@ export default function TrailPage(props) {
 
     const applyFilter = (diff) => {
         if (diff == '') {
-            setDisplayedCards(props.trailData)
-          }else {
-            const difficulty = props.trailData.filter((element) => {
+            setDisplayedCards(filterDisplay)
+          } else {
+            const difficulty = filterDisplay.filter((element) => {
               return element.difficulty === diff
             })
             setDisplayedCards(difficulty)
-        }
+        } 
     }
     const uniqueHikeDiff = [...new Set(props.trailData.reduce((all, current) => {
         return all.concat([current.difficulty]);
