@@ -44,8 +44,9 @@ export default function TrailPage(props) {
 
 
             let tempArray = cardArrayOutside
-
+            //if search term is not empty
             if (searchTerm !== "" && isActive == true){
+                //filter temp array with search term
 
                 tempArray = tempArray.filter((element) => {
                     return element.title.toLowerCase().includes(searchTerm.toLowerCase())

@@ -2,12 +2,6 @@ import React, {useState, useEffect} from "react";
 import {getDatabase, onValue, ref, set as firebaseSet, push as firebasePush} from "firebase/database";
 
 export function RecentActivity(props) {
-    // const sampleTrails = [
-    //     {id: "", trailName: "Mailbox Peak", difficulty: "Hard", address: "Mailbox Peak Trail, Washington 98045"},
-    //     {id: "", trailName: "Poo Poo Point", difficulty: "Moderate/Hard", address: "Poo Poo Point Trail, Washington 98027"},
-    //     {id: "", trailName: "Rattlesnake Ledge", difficulty: "Moderate", address: "Rattlesnake Ridge, Washington 98045"},
-    //     {id: "", trailName: "Margaret Lake", difficulty: "Moderate/Hard", address: "Margaret Lake, Washington 98068"}
-    // ]
     const [savedTrails, setSavedTrails] = useState([]);
 
     useEffect(() => {

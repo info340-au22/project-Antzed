@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../component/Footer";
-import NavBar from "../component/NavBar";
 import Filtershop from "../component/Filtershop";
 import Cardshop from "../component/Cardshop";
 import "../index.css"
-// import cards from "../data/shopstore.json"
+
 
 export default function ShopPage(props) {
     const [cards, setCards] = useState([]);
