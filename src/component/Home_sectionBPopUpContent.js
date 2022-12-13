@@ -12,6 +12,7 @@ export function SectionBPopUpContent(props){
                 <div className="popup-cards popup-words overflow-auto">
                     <img className="popup-img" src={blog.img}></img>
                     <h2 className="blog-title">{blog.title}</h2>
+                    <p>{blog.author}</p>
                     <p>
                         {blog.content}
                     </p>

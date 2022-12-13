@@ -75,7 +75,7 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" />
-              <Route index element={<HomePage />} />
+              <Route index element={<HomePage currentUser={currentUser}/>} />
               <Route path="login" element={<SignInPage currentUser={currentUser} />} />
               <Route path="trail" element={<TrailPage trailData={TRAILPAGE_CARD_DATA} />} />
               <Route path="shop" element={<ShopPage />} />

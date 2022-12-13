@@ -72,7 +72,7 @@ footer {
 .home-cards {
     margin-top: 10%;
     margin-bottom: 5%;
-    height: 450px;
+    height: 475px;
 }
 
 .popup-cards {
@@ -138,7 +138,8 @@ footer {
     height: 80%;
 }
 .blog-card-img{
-    height: 200px;
+    height: 175px;
+    width: auto;
 }
 
 .blog-title {
@@ -149,7 +150,7 @@ footer {
 }
 
 .upload-form-error{
-    font-size: small;
+    font-size: x-small;
 }
 
 .text-area-width {
@@ -287,6 +288,9 @@ footer {
 .card-title {
     margin-bottom: 10px;
 }
+#card-author {
+    margin-bottom: 0;
+}
 .bookmark {
     position: absolute;
     top: 10px;
@@ -386,6 +390,12 @@ footer {
     .home-cards {
         margin-top: 15%;
         margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 412gpx) {
+    .home-searchBar {
+        display: none;
     }
 }
 
