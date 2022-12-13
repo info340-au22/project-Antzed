@@ -393,7 +393,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 412gpx) {
+@media screen and (max-width: 412px) {
     .home-searchBar {
         display: none;
     }
