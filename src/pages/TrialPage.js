@@ -25,7 +25,6 @@ export default function TrailPage(props) {
                 theCardContents.key = keys
                 return theCardContents
             })
-
             cardArrayOutside = cardArray
 
             setDisplayedCards(cardArray)
@@ -54,7 +53,7 @@ export default function TrailPage(props) {
                 //filter temp array with search term
                 // console.log("here")
                 tempArray = tempArray.filter((element) => {
-                    console.log("element" + element.title.toLowerCase())
+                    //console.log("element" + element.title.toLowerCase())
                     // console.log("searchterm" + searchTerm)
                     // console.log(element.title.toLowerCase().includes(searchTerm.toLowerCase()))
                     //.include seem to have some problem with searching. It wont search words in words.
@@ -67,7 +66,7 @@ export default function TrailPage(props) {
                     alert("No results found")
                 }
 
-                console.log(tempArray)
+                //console.log(tempArray)
                 setDisplayedCards(tempArray)
             }
             
@@ -107,7 +106,7 @@ export default function TrailPage(props) {
                 <div className="border-bottom m-2">
                     <CardSelect hikeOptions={uniqueHikeDiff} applyFilterCallBack={applyFilter}/>
                 </div>
-                <TrailCards cards={displayedCards} modalData={MODAL_DATA}/>
+                <TrailCards cards={displayedCards} modalData={MODAL_DATA} currentUser={props.currentUser} />
             </main>
 
         </div>

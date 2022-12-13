@@ -1,20 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Bookmark } from 'react-bootstrap-icons';
-import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
+import {getDatabase, onValue, ref, set as firebaseSet} from 'firebase/database';
 import Form from 'react-bootstrap/Form';
 import Carousel from 'react-bootstrap/Carousel';
 
 
 function SingleCard(props) {
-    const [isBooked, setIsBooked] = useState(false)
+    const [isBooked, setIsBooked] = useState(false);
+
     const cardData = props.cardObjData
     const modalData = props.modalData
-    const isSaved = cardData.isSaved
+
+    useEffect(() => {
+        const db = getDatabase();
+        const savedRef = ref(db, "user/allUsers/" + props.currentUser.userId + "/trails/" + cardData.key+ "/isSaved");
+        
+        const offFunction = onValue(savedRef, (snapshot) => {
+            const isSaved = snapshot.val();
+            if (isSaved) {
+                const savedTrailRef = ref(db, "trail/trail cards/" + cardData.key + "/isSaved")
+                firebaseSet(savedTrailRef, true);
+            } else {
+                const savedTrailRef = ref(db, "trail/trail cards/" + cardData.key + "/isSaved")
+                firebaseSet(savedTrailRef, false);
+            }
+        })
+        // const offFunction = onValue(trails, (snapshot) => {
+        //     const trailObj = snapshot.val();
+        //     const objKeys = Object.keys(trailObj);
+        //     const trailArray = objKeys.map((keyString) => {
+        //         return trailObj[keyString];
+        //     });
+        //     const isSavedArray = trailArray.filter((trail) => {
+        //         return trail.isSaved == true;
+        //     })
+        //     setSavedTrails(isSavedArray);
+        // })
+
+        function cleanup(){
+            offFunction();
+        }
+        return cleanup;
+    }, []);
+    const isSaved = cardData.isSaved;
+
     const singleModalObj = modalData.map((modObj) => {
         if (cardData.title == modObj.id) {
             return (
@@ -26,11 +60,14 @@ function SingleCard(props) {
     const handleClick = (event) => {
 
         const db = getDatabase()
-        const savedRef = ref(db, "trail/trail cards/"+cardData.key+"/isSaved")
+        const savedRef = ref(db, "user/allUsers/" + props.currentUser.userId + "/trails/" + cardData.key+ "/isSaved")
+        const savedTrailRef = ref(db, "trail/trail cards/" + cardData.key + "/isSaved")
 
         firebaseSet(savedRef, !isSaved);
+        firebaseSet(savedTrailRef, !isSaved);
 
     }
+
     let bmColor = "white";
     if(isSaved) {
         bmColor = "gold"
@@ -72,7 +109,7 @@ function SeeMoreButton(props) {
 
         const db = getDatabase()
         const statusRef = ref(db, "trail/trail cards/"+cardsData.key+"/status")
-        console.log(event.target.value)
+        //console.log(event.target.value)
         if (event.target.value === "Clear") {
             firebaseSet(statusRef, "Clear")
         } else if (event.target.value === "Use Caution") {
@@ -141,7 +178,7 @@ export function TrailCards(props) {
     const modalDataOrigin = props.modalData
     const singleCardObj = cardsData.map((cardObj) => {
         return (
-            <SingleCard cardObjData={cardObj} key={cardObj.title} modalData={modalDataOrigin}/>
+            <SingleCard cardObjData={cardObj} key={cardObj.title} modalData={modalDataOrigin} currentUser={props.currentUser} />
         )
     });
     return (

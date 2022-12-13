@@ -45,6 +45,9 @@ export default function App() {
           if (!("img" in userInfo)) {
             userInfo.img = "/img/blank-profile-picture.jpg";
           }
+          if (!("trails" in userInfo)) {
+            userInfo.trails = [{isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}, {isSaved: false}];
+          }
           setCurrentUser(userInfo)
         });
 
@@ -61,10 +64,8 @@ export default function App() {
 
   // re-render the navbar when the page changes using useLocation hook
   let pathname = useLocation().pathname;
-  console.log(pathname);
   pathname = pathname.substring(1);
   pathname = pathname.charAt(0).toUpperCase() + pathname.slice(1);
-  console.log(pathname + "new");
 
   return (
     <div>
@@ -77,7 +78,7 @@ export default function App() {
             <Route path="/" />
               <Route index element={<HomePage currentUser={currentUser}/>} />
               <Route path="login" element={<SignInPage currentUser={currentUser} />} />
-              <Route path="trail" element={<TrailPage trailData={TRAILPAGE_CARD_DATA} />} />
+              <Route path="trail" element={<TrailPage trailData={TRAILPAGE_CARD_DATA} currentUser={currentUser} />} />
               <Route path="shop" element={<ShopPage />} />
               <Route path="user" element={<UserPage currentUser={currentUser} />} />
               <Route path="*" element={<NoPage />}/>

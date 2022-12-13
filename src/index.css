@@ -214,7 +214,7 @@ footer {
     border-bottom: solid 1px black;
 }
 
-.recent-section .trail-header p {
+.trail .trail-header {
     font-size: 2rem;
 }
 

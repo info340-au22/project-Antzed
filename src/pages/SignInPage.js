@@ -29,8 +29,8 @@ export default function SignInPage(props) {
     }
 
     if(props.currentUser.userId) {
-        console.log(props.currentUser);
-        const userInfo = {userId: props.currentUser.userId, firstName: props.currentUser.firstName, lastName: props.currentUser.lastName, address: props.currentUser.address, email: props.currentUser.email, hikingLevel: props.currentUser.hikingLevel, bio: props.currentUser.bio, img: props.currentUser.img}
+        //console.log(props.currentUser);
+        const userInfo = {userId: props.currentUser.userId, firstName: props.currentUser.firstName, lastName: props.currentUser.lastName, address: props.currentUser.address, email: props.currentUser.email, hikingLevel: props.currentUser.hikingLevel, bio: props.currentUser.bio, img: props.currentUser.img, trails: props.currentUser.trails}
         const db = getDatabase();
         const user = ref(db,"user/allUsers/" + props.currentUser.userId);
         firebaseSet(user, userInfo);
@@ -49,9 +49,8 @@ export default function SignInPage(props) {
     // }
 
     return (
-    <div>
-      <h1>Get To The Trail</h1>
-      <p>Please sign-in:</p>
+    <div className='container mb-4'>
+      <h1 className='text-center mt-4 mb-4'>Please sign-in:</h1>
       <StyledFirebaseAuth uiConfig={configObj} firebaseAuth={auth} />
     </div>
     )
