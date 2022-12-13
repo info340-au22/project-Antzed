@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 
-import { get, getDatabase, ref, set, onValue, query, child} from 'firebase/database';
+import { get, getDatabase, ref, set, onValue} from 'firebase/database';
 import { useForm } from "react-hook-form";
+// import { SearchBar } from "../component/Home_search_bar";
+import { UploadForm } from "../component/Home_uploadForm";
+import { Card } from "../component/Home_card";
 
 // Todo: universal search
 let title;
@@ -40,10 +43,6 @@ export default function HomePage(props) {
         return cleanup;
     }, []);
 
-   
-    // console.log(returnedPopup.tosString());
-
-
     //search bar in section a
     const [query, setQuery] = useState("");
     function handleSearch(event){
@@ -68,7 +67,7 @@ export default function HomePage(props) {
     // then set the access the data with reference /HomeTrailBridge/searchterm in firebase and set that data into the variable otherPageSearchTerm
 
     if (query.includes("/trail ") && query.length > 7){
-        let otherPageSearchTerm = query.slice(6);
+        let otherPageSearchTerm = query.slice(7);
         console.log(otherPageSearchTerm);
         const db = getDatabase();
         let searchTermRef = ref(db, 'HomeTrailBridge/searchterm');
@@ -149,10 +148,6 @@ export default function HomePage(props) {
     
     let submitStuff = [register, handleSubmit, onSubmit];
 
-
-
-
-
     const [sectionBPopup, setSectionBPopup] = useState(false);
     const [uploadFormPopup, setUploadFormPopup] = useState(false);
     const popupConditions = [setSectionBPopup, setUploadFormPopup]
@@ -181,10 +176,7 @@ export default function HomePage(props) {
         <div>
             <SectionA setQuery={setQuery} handleSearch={handleSearch}/>
             <SectionB  popupConditions={popupConditions} handleReset={handleReset} blogSection={blogSection} showPopup = {showPopup} setShowPopup ={setShowPopup} handlePopup={handlePopup} blogData={blogData}/>  
-
             <ReturnPopup/>
-
-            {/* <Footer isInherit={true}/> */} {/* Footer is not needed in this page */}
         </div>
     )
 }
@@ -200,9 +192,9 @@ function SectionBPopUpContent(props){
     return (
         <div className="d-flex rounded mt-4 cards" >
             <div className="col-12 bg-transparent">
-                <div className="popup-cards  popup-words overflow-auto">
+                <div className="popup-cards popup-words overflow-auto">
                     <img className="popup-img" src={blog.img}></img>
-                    <h2>{blog.title}</h2>
+                    <h2 className="blog-title">{blog.title}</h2>
                     <p>
                         {blog.content}
                     </p>
@@ -228,7 +220,7 @@ function SearchBar(props){
         <div className={searchBarStyle}>
           <div className="align-item-center justify-content-center px-5">
             <div className="input-group rounded">
-              <input type="search" className="form-control rounded" placeholder="Search for a blog, or a page by /(page name)" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch} onKeyDown={handleKeyDown}/>
+              <input type="search" className="form-control rounded" placeholder="Try search 'lake' or '/trail poo poo point'" aria-label="a form for inputing wanted search terms" aria-describedby="search-addon" onChange={handleSearch} onKeyDown={handleKeyDown}/>
               <span className="input-group-text border-0" id="search-addon">
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="a button that initiate search" onClick={() => setQuery(searchResult)}>Search</button>
               </span>
@@ -260,7 +252,6 @@ function SectionB(props){
     const [showPopup, setShowPopup, handlePopup] = [props.showPopup, props.setShowPopup, props.handlePopup];
     const cardList = [];
 
-    let [exmapletext, setExampleText] = React.useState("");
     let blogSection = props.blogSection;
     
     let blogData = props.blogData;
@@ -296,64 +287,8 @@ function SectionB(props){
     )
 }
 
-function Card(props){
-    const [showPopup, setShowPopup, handlePopup, setSectionBPopup] = [props.showPopup, props.setShowPopup, props.handlePopup, props.setSectionBPopup];
 
-    function set(){
-        setSectionBPopup(true);
-        
-    }
-    return (     
-        <div className="d-flex col-lg-6 col-md-6 col-xs-12 col-xl-3 rounded mx-auto cards">
-            <div className="col-12 position-center">
-                <div className="card shadow-lg bg-secondary  home-cards">
-                    <img className="card-img-top blog-card-img" src={props.img} alt="Card image cap"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">{props.title}</h5>
-                        <p className="card-text">{props.description}</p>
-                        <button id={props.title} href="#" className="btn btn-primary" aria-label="a button that leads to a pop up" onClick={() => {handlePopup(props.title); set();}}>Go see blog</button>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    )
-}
 
-function UploadForm(props){
-    let [register, handleSubmit, onSubmit] = props.submitStuff;
 
-    const [textAreaWidth, settextAreaWidth] = useState(Math.round(window.innerWidth/28));
 
-    console.log(window.innerWidth)
-    
-
-    console.log(textAreaWidth)
-
-    
-    
-    
-    return(
-        <form id="uploadForm" onSubmit={handleSubmit(onSubmit)}>
-            <label >
-                Title:<br/>
-                <input {...register("title")} type="text" name="title" className="text-area-width"/>
-            </label> <br/>
-            
-            <label>
-                Image link:<br/>
-                <input {...register("img")} type="text" name="img" />
-            </label><br/>
-            <label>
-                Description of image:<br/>
-                <input {...register("description")} type="text" name="description" />
-            </label><br/>
-            <label>
-                Content:<br/>
-                <textarea className="overflow-auto" {...register("content")} type="text" name="content" />
-            </label><br/>
-            <input type="submit" value="Submit" />
-        </form>
-       
-    )
-}
 

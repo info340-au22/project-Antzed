@@ -109,6 +109,7 @@ footer {
     max-height: 90%;
     background-color: #fff;
     z-index: 29;
+    border-radius: 1rem;
 }
 
 .popup-inner .close-btn {
@@ -127,16 +128,24 @@ footer {
 
 .popup-words {
     font-size: x-large;;
+    border-radius: 1rem;
 }
 
 .popup-img{
     position: center;
     /* cover */
     width: 100%;
-    height: 80%
+    height: 80%;
 }
 .blog-card-img{
-    height: 200px;
+    height: 175px;
+}
+
+.blog-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .text-area-width {
@@ -261,8 +270,37 @@ footer {
 }
 /* Trail page */
 
-
-
+.card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    border-top: none;
+}
+.card-text {
+    margin-bottom: 50px;
+}
+.card-title {
+    margin-bottom: 10px;
+}
+.bookmark {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.bookmark-modal {
+    position: absolute;
+    left: 240px;
+}
+.status {
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+    font-size: 13pt;
+}
+.carousel {
+    margin-bottom: 20px;
+}
 @media (min-width:992px) {
     .main-card {
         height: 145vh;

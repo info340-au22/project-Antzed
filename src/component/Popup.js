@@ -1,5 +1,6 @@
 import React from "react";
 import { SendX } from "react-bootstrap-icons";
+import { Button } from "react-bootstrap";
 
 export default function Popup(props){
     let popupClass = "popup"
@@ -16,7 +17,7 @@ export default function Popup(props){
     return (props.trigger) ? (
         <div className={popupClass}>
                 <div className="popup-inner">
-                <button className="close-btn" onClick={() =>{props.setTrigger(false)}}>close me</button>
+                <Button className="close-btn" variant="secondary" onClick={() =>{props.setTrigger(false)}}>X</Button>
                     <h1>{props.content}</h1>
                 </div>
         </div>
